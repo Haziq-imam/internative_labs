@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiAlertTriangle, FiLock } from 'react-icons/fi';
 
 const legalData = {
   'privacy-policy': {
@@ -78,7 +79,7 @@ export default function CatchAllPage({ params }) {
     return (
       <section className="page-hero" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
         <div className="container page-hero-content" style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '6rem', marginBottom: '1rem' }}>⚠️</div>
+          <div style={{ fontSize: '6rem', marginBottom: '1rem', color: '#E74C3C' }}><FiAlertTriangle size={64} /></div>
           <span className="section-label" style={{ color: '#E74C3C', borderColor: 'rgba(231,76,60,0.3)', background: 'rgba(231,76,60,0.1)' }}>
             Error 404 · Page Not Found
           </span>
@@ -105,7 +106,7 @@ export default function CatchAllPage({ params }) {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>{data.title}</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            🔒 Official Policy
+            <FiLock size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Official Policy
           </span>
           <h1>{data.title}</h1>
           <p>

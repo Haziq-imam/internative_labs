@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiVolume2, FiHome, FiActivity, FiAward, FiPackage, FiMail } from 'react-icons/fi';
 
 export const metadata = {
   title: 'Press Releases & Company News | InterNative Labs',
@@ -12,7 +13,7 @@ const pressReleases = [
     date: 'May 15, 2026',
     excerpt: 'Lawrenceville, GA — Digital agency InterNative Labs announced today the expansion of its physical office space and the launch of a startup digital launch package designed to help funded local businesses.',
     tags: ['Expansion', 'Lawrenceville GA', 'Community Startup Plan'],
-    icon: '🏢',
+    icon: FiHome,
     color: 'var(--brand)'
   },
   {
@@ -20,7 +21,7 @@ const pressReleases = [
     date: 'April 02, 2026',
     excerpt: 'Lawrenceville, GA — Pioneering digital partner InterNative Labs has officially released a proprietary WebRTC Next.js telehealth framework, enabling healthcare providers to launch secure video clinics in under 30 days.',
     tags: ['HIPAA', 'Next.js App', 'Telemedicine Release'],
-    icon: '🏥',
+    icon: FiActivity,
     color: '#27AE60'
   },
   {
@@ -28,7 +29,7 @@ const pressReleases = [
     date: 'January 10, 2026',
     excerpt: 'Lawrenceville, GA — Clutch, the leading global B2B ratings directory, has recognized InterNative Labs as the #1 custom web systems and organic SEO development team in Lawrenceville.',
     tags: ['Clutch Award', 'Rankings Recognition'],
-    icon: '🏆',
+    icon: FiAward,
     color: '#F39C12'
   }
 ];
@@ -44,7 +45,7 @@ export default function PressPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>Press</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            📣 Press Releases
+            <FiVolume2 size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Press Releases
           </span>
           <h1>Company Announcements &amp; <span className="gradient-text">Media Kits</span></h1>
           <p>
@@ -82,7 +83,7 @@ export default function PressPage() {
                   fontSize: '2.2rem',
                   margin: '0 auto'
                 }}>
-                  {pr.icon}
+                  <pr.icon size={28} />
                 </div>
                 <div>
                   <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: '0.5rem' }}>
@@ -121,7 +122,7 @@ export default function PressPage() {
               </p>
             </div>
             <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: '2rem', border: '1px solid rgba(255,255,255,0.12)' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>📦</div>
+              <div style={{ fontSize: '3rem', marginBottom: '0.5rem', color: 'var(--brand)' }}><FiPackage size={36} /></div>
               <h4 style={{ color: '#fff', fontSize: '1rem', marginBottom: '1.5rem' }}>InterNative_Labs_Kit.zip</h4>
               <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
                 Download Assets (14.2 MB)
@@ -140,7 +141,7 @@ export default function PressPage() {
             Are you a journalist, local business editor, or developer podcast host? Reach out directly to our communications office for inquiries, speaking panels, or technical articles.
           </p>
           <div style={{ display: 'inline-flex', flexDirection: 'column', gap: '0.5rem', background: 'var(--bg-gray)', padding: '1.5rem 3rem', borderRadius: 16, border: '1px solid var(--border)' }}>
-            <span style={{ fontWeight: 700, color: 'var(--brand)' }}>📧 Email: media@internativelabs.com</span>
+            <span style={{ fontWeight: 700, color: 'var(--brand)' }}><FiMail size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Email: media@internativelabs.com</span>
             <span style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Response timeframe: Within 24 business hours</span>
           </div>
         </div>

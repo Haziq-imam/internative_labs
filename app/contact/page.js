@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiMail, FiPhone, FiMapPin, FiClock, FiCheckCircle, FiLock } from 'react-icons/fi';
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', service: '', budget: '', message: '' });
@@ -35,23 +36,28 @@ export default function ContactPage() {
             <div>
               <h2 style={{ color: 'var(--brand)', marginBottom: '2rem' }}>Contact Information</h2>
               {[
-                { icon: '📧', label: 'Email', value: 'info@internativelabs.com', href: 'mailto:info@internativelabs.com' },
-                { icon: '📞', label: 'Phone', value: '+1 (888) 908-5040', href: 'tel:+18889085040' },
-                { icon: '📍', label: 'Address', value: '811 Mason Grove Pkwy, Lawrenceville, GA 30043, USA', href: null },
-                { icon: '🕐', label: 'Hours', value: 'Monday – Friday, 9:00 AM – 6:00 PM EST', href: null },
-              ].map(c => (
-                <div key={c.label} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', padding: '1.2rem', background: 'var(--bg-gray)', borderRadius: 12, border: '1px solid var(--border)' }}>
-                  <div style={{ width: 44, height: 44, background: 'var(--light-blue)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', flexShrink: 0 }}>{c.icon}</div>
-                  <div>
-                    <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{c.label}</div>
-                    {c.href ? (
-                      <a href={c.href} style={{ color: 'var(--brand)', fontWeight: 600, fontSize: '0.95rem' }}>{c.value}</a>
-                    ) : (
-                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.93rem' }}>{c.value}</span>
-                    )}
+                { icon: FiMail, label: 'Email', value: 'info@internativelabs.com', href: 'mailto:info@internativelabs.com' },
+                { icon: FiPhone, label: 'Phone', value: '+1 (888) 908-5040', href: 'tel:+18889085040' },
+                { icon: FiMapPin, label: 'Address', value: '811 Mason Grove Pkwy, Lawrenceville, GA 30043, USA', href: null },
+                { icon: FiClock, label: 'Hours', value: 'Monday – Friday, 9:00 AM – 6:00 PM EST', href: null },
+              ].map(c => {
+                const ContactIcon = c.icon;
+                return (
+                  <div key={c.label} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', padding: '1.2rem', background: 'var(--bg-gray)', borderRadius: 12, border: '1px solid var(--border)' }}>
+                    <div style={{ width: 44, height: 44, background: 'var(--light-blue)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--brand)', flexShrink: 0 }}>
+                      <ContactIcon size={20} />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{c.label}</div>
+                      {c.href ? (
+                        <a href={c.href} style={{ color: 'var(--brand)', fontWeight: 600, fontSize: '0.95rem' }}>{c.value}</a>
+                      ) : (
+                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.93rem' }}>{c.value}</span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
 
               <div style={{ background: 'var(--gradient-brand)', borderRadius: 16, padding: '1.8rem', marginTop: '1.5rem' }}>
                 <h3 style={{ color: '#fff', marginBottom: '0.8rem', fontSize: '1.1rem' }}>Prefer a Call?</h3>
@@ -67,8 +73,8 @@ export default function ContactPage() {
             {/* Form */}
             <div className="contact-form">
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '3rem 2rem' }}>
-                  <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>✅</div>
+                <div style={{ textAlign: 'center', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <FiCheckCircle size={48} style={{ color: 'var(--success)', marginBottom: '1.2rem' }} />
                   <h2 style={{ color: 'var(--brand)', marginBottom: '1rem' }}>Message Sent!</h2>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
                     Thank you for reaching out. Our team will respond within 2 business hours.
@@ -137,8 +143,8 @@ export default function ContactPage() {
                   <button type="submit" className="btn btn-primary btn-lg" id="contact-submit-btn" style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}>
                     Submit — Get Free Consultation →
                   </button>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '1rem' }}>
-                    🔒 Your information is 100% secure and will never be shared.
+                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginTop: '1rem' }}>
+                    <FiLock size={12} /> Your information is 100% secure and will never be shared.
                   </p>
                 </form>
               )}

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiDollarSign, FiTrendingDown, FiSmartphone, FiMapPin, FiSearch, FiLock, FiFileText, FiZap, FiCheckCircle } from 'react-icons/fi';
 
 const categories = ['All', 'Web Design', 'Mobile Apps', 'SEO', 'CRO'];
 
@@ -11,7 +12,7 @@ const posts = [
     excerpt: 'An honest, transparent breakdown of design, development, and hosting costs for small businesses, eCommerce brands, and custom SaaS platforms.',
     date: 'May 28, 2026',
     readTime: '8 min read',
-    icon: '💵',
+    icon: FiDollarSign,
     author: 'Rashid M., Technical Director',
     featured: true
   },
@@ -21,7 +22,7 @@ const posts = [
     excerpt: 'Are you getting traffic but no calls or checkout sales? We outline the 10 friction points currently draining your revenue pipeline.',
     date: 'May 24, 2026',
     readTime: '6 min read',
-    icon: '📉',
+    icon: FiTrendingDown,
     author: 'Sarah J., Head of UI/UX'
   },
   {
@@ -30,7 +31,7 @@ const posts = [
     excerpt: 'A comprehensive, unbiased comparison of React Native and Flutter. We compare speed, cost-effectiveness, and Apple/Google store compatibility.',
     date: 'May 18, 2026',
     readTime: '10 min read',
-    icon: '📱',
+    icon: FiSmartphone,
     author: 'Alex K., Lead Mobile Architect'
   },
   {
@@ -39,7 +40,7 @@ const posts = [
     excerpt: 'Step-by-step roadmap to dominate Google Maps listings and organic search queries locally. Win local phone calls without spending a dollar on ads.',
     date: 'May 12, 2026',
     readTime: '7 min read',
-    icon: '📍',
+    icon: FiMapPin,
     author: 'James D., Senior SEO Strategist'
   },
   {
@@ -48,7 +49,7 @@ const posts = [
     excerpt: 'Most agencies promise instant rankings. We analyze real case histories to show exactly when to expect high-intent traffic growth.',
     date: 'May 05, 2026',
     readTime: '5 min read',
-    icon: '🔍',
+    icon: FiSearch,
     author: 'James D., Senior SEO Strategist'
   },
   {
@@ -57,7 +58,7 @@ const posts = [
     excerpt: 'WordPress powers 43% of the web, making it a target. Secure your customer database and forms with our 25-step technical checklist.',
     date: 'Apr 28, 2026',
     readTime: '9 min read',
-    icon: '🔒',
+    icon: FiLock,
     author: 'Rashid M., Technical Director'
   }
 ];
@@ -90,8 +91,8 @@ export default function BlogPage() {
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Blog Insights</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            📝 Digital Knowledge
+          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <FiFileText size={14} /> Digital Knowledge
           </span>
           <h1>Strategy, Technology &amp; <span className="gradient-text">Growth Marketing</span></h1>
           <p>
@@ -118,8 +119,8 @@ export default function BlogPage() {
             }}>
               <div>
                 <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: '1.2rem' }}>
-                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', background: 'rgba(46,134,193,0.1)', padding: '4px 10px', borderRadius: 99 }}>
-                    🔥 {featuredPost.category}
+                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', background: 'rgba(46,134,193,0.1)', padding: '4px 10px', borderRadius: 99, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <FiZap size={12} /> {featuredPost.category}
                   </span>
                   <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>{featuredPost.date}</span>
                 </div>
@@ -141,8 +142,13 @@ export default function BlogPage() {
                 <Link href="/blog" className="btn btn-primary" id="featured-blog-read">Read Full Article →</Link>
               </div>
 
-              <div style={{ background: 'var(--gradient-brand)', color: '#fff', borderRadius: 20, padding: '4rem 2rem', textAlign: 'center', boxShadow: 'var(--shadow-brand)' }}>
-                <div style={{ fontSize: '5rem', marginBottom: '1rem' }}>{featuredPost.icon}</div>
+              <div style={{ background: 'var(--gradient-brand)', color: '#fff', borderRadius: 20, padding: '4rem 2rem', textAlign: 'center', boxShadow: 'var(--shadow-brand)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 100, height: 100, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', marginBottom: '1.5rem', color: '#fff' }}>
+                  {(() => {
+                    const FeaturedIcon = featuredPost.icon;
+                    return <FeaturedIcon size={44} />;
+                  })()}
+                </div>
                 <h3 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem' }}>InterNative Labs Guides</h3>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>Comprehensive 2026 digital roadmap for business owners</p>
               </div>
@@ -200,29 +206,34 @@ export default function BlogPage() {
           {/* Grid posts */}
           {filteredPosts.length > 0 ? (
             <div className="grid-3 animate-fadeUp">
-              {filteredPosts.map(p => (
-                <div key={p.title} className="service-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
-                    <div style={{ fontSize: '1.8rem' }}>{p.icon}</div>
-                    <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--accent)', background: 'rgba(46,134,193,0.1)', padding: '3px 10px', borderRadius: 99 }}>
-                      {p.category}
-                    </span>
+              {filteredPosts.map(p => {
+                const PostIcon = p.icon;
+                return (
+                  <div key={p.title} className="service-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
+                      <div className="service-icon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'var(--brand)', marginBottom: 0, width: 44, height: 44 }}>
+                        <PostIcon size={20} />
+                      </div>
+                      <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--accent)', background: 'rgba(46,134,193,0.1)', padding: '3px 10px', borderRadius: 99 }}>
+                        {p.category}
+                      </span>
+                    </div>
+
+                    <h3 style={{ fontSize: '1.15rem', color: 'var(--brand)', marginBottom: '0.8rem', lineHeight: 1.3, flexGrow: 0 }}>
+                      {p.title}
+                    </h3>
+
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, flexGrow: 1, marginBottom: '1.5rem' }}>
+                      {p.excerpt}
+                    </p>
+
+                    <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem', marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{p.date}</span>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>{p.readTime}</span>
+                    </div>
                   </div>
-
-                  <h3 style={{ fontSize: '1.15rem', color: 'var(--brand)', marginBottom: '0.8rem', lineHeight: 1.3, flexGrow: 0 }}>
-                    {p.title}
-                  </h3>
-
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, flexGrow: 1, marginBottom: '1.5rem' }}>
-                    {p.excerpt}
-                  </p>
-
-                  <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem', marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{p.date}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>{p.readTime}</span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div style={{ textAlign: 'center', padding: '4rem 0' }}>
@@ -248,8 +259,9 @@ export default function BlogPage() {
             </div>
             <div>
               {subscribed ? (
-                <div style={{ background: 'rgba(39, 174, 96, 0.1)', border: '1px solid var(--success)', padding: '2rem', borderRadius: 16, textAlign: 'center' }}>
-                  <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>✓ Registration Complete!</h4>
+                <div style={{ background: 'rgba(39, 174, 96, 0.1)', border: '1px solid var(--success)', padding: '2rem', borderRadius: 16, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                  <FiCheckCircle size={32} className="text-success" style={{ color: 'var(--success)' }} />
+                  <h4 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>Registration Complete!</h4>
                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>Welcome to the InterNative Labs growth network. Check your inbox next Tuesday!</p>
                 </div>
               ) : (

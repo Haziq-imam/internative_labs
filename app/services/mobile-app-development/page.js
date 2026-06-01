@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { FiSmartphone, FiShoppingCart, FiBook, FiZap } from 'react-icons/fi';
+import { FaBuilding, FaPlusSquare, FaCar, FaApple, FaAndroid } from 'react-icons/fa';
 
 export const metadata = {
   title: 'Mobile App Development Company | iOS & Android | InterNative Labs',
@@ -10,12 +12,12 @@ export const metadata = {
 };
 
 const appTypes = [
-  { icon: '📱', title: 'Consumer Apps', desc: 'B2C apps for iOS & Android including on-demand services, marketplaces, and lifestyle apps.' },
-  { icon: '🏢', title: 'Enterprise Mobile Apps', desc: 'Internal tools, field management, employee apps, and workflow automation.' },
-  { icon: '🛒', title: 'mCommerce Apps', desc: 'Mobile shopping experiences integrated with existing eCommerce platforms.' },
-  { icon: '🏥', title: 'Healthcare Apps', desc: 'HIPAA-compliant telemedicine, patient portals, and health tracking apps.' },
-  { icon: '🚗', title: 'On-Demand Service Apps', desc: 'Delivery, booking, and service marketplace apps with real-time tracking.' },
-  { icon: '🎓', title: 'EdTech Apps', desc: 'E-learning platforms, course delivery, quizzes, and progress tracking.' },
+  { icon: FiSmartphone, title: 'Consumer Apps', desc: 'B2C apps for iOS & Android including on-demand services, marketplaces, and lifestyle apps.' },
+  { icon: FaBuilding, title: 'Enterprise Mobile Apps', desc: 'Internal tools, field management, employee apps, and workflow automation.' },
+  { icon: FiShoppingCart, title: 'mCommerce Apps', desc: 'Mobile shopping experiences integrated with existing eCommerce platforms.' },
+  { icon: FaPlusSquare, title: 'Healthcare Apps', desc: 'HIPAA-compliant telemedicine, patient portals, and health tracking apps.' },
+  { icon: FaCar, title: 'On-Demand Service Apps', desc: 'Delivery, booking, and service marketplace apps with real-time tracking.' },
+  { icon: FiBook, title: 'EdTech Apps', desc: 'E-learning platforms, course delivery, quizzes, and progress tracking.' },
 ];
 
 const techOptions = [
@@ -77,13 +79,18 @@ export default function MobileAppDevelopmentPage() {
             <h2>Mobile Solutions Across Every Industry <span className="gradient-text">and Use Case</span></h2>
           </div>
           <div className="services-grid">
-            {appTypes.map(a => (
-              <div key={a.title} className="service-card">
-                <div className="service-icon">{a.icon}</div>
-                <h3>{a.title}</h3>
-                <p>{a.desc}</p>
-              </div>
-            ))}
+            {appTypes.map(a => {
+              const IconComponent = a.icon;
+              return (
+                <div key={a.title} className="service-card">
+                  <div className="service-icon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'var(--brand)' }}>
+                    <IconComponent size={24} />
+                  </div>
+                  <h3>{a.title}</h3>
+                  <p>{a.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -98,8 +105,8 @@ export default function MobileAppDevelopmentPage() {
           <div className="grid-2">
             {techOptions.map(t => (
               <div key={t.tech} className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ width: 44, height: 44, borderRadius: 10, background: 'var(--light-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  📱
+                <div style={{ width: 44, height: 44, borderRadius: 10, background: 'var(--light-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'var(--brand)' }}>
+                  <FiSmartphone size={20} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
@@ -142,17 +149,22 @@ export default function MobileAppDevelopmentPage() {
           </div>
           <div className="grid-3">
             {[
-              { icon: '🍎', title: 'iOS App Development', desc: 'Native Swift development for iPhone and iPad with full Apple ecosystem integration.', href: '/services/ios-app-development' },
-              { icon: '🤖', title: 'Android App Development', desc: 'Native Kotlin apps with Material Design for the Google Play ecosystem.', href: '/services/android-app-development' },
-              { icon: '⚡', title: 'Cross-Platform Apps', desc: 'React Native and Flutter apps that run natively on both iOS and Android.', href: '/services/cross-platform-apps' },
-            ].map(s => (
-              <div key={s.title} className="service-card">
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <Link href={s.href} className="service-card-link">Learn More →</Link>
-              </div>
-            ))}
+              { icon: FaApple, title: 'iOS App Development', desc: 'Native Swift development for iPhone and iPad with full Apple ecosystem integration.', href: '/services/ios-app-development' },
+              { icon: FaAndroid, title: 'Android App Development', desc: 'Native Kotlin apps with Material Design for the Google Play ecosystem.', href: '/services/android-app-development' },
+              { icon: FiZap, title: 'Cross-Platform Apps', desc: 'React Native and Flutter apps that run natively on both iOS and Android.', href: '/services/cross-platform-apps' },
+            ].map(s => {
+              const IconComponent = s.icon;
+              return (
+                <div key={s.title} className="service-card">
+                  <div className="service-icon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'var(--brand)' }}>
+                    <IconComponent size={24} />
+                  </div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <Link href={s.href} className="service-card-link">Learn More →</Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

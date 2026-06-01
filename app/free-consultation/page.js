@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiTarget, FiSearch, FiMap, FiDollarSign, FiMail, FiPhone, FiCheckCircle, FiLock } from 'react-icons/fi';
 
 export default function FreeConsultationPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', service: '', budget: '', message: '' });
@@ -16,8 +17,8 @@ export default function FreeConsultationPage() {
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Free Consultation</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            🎯 Free — No Obligation
+          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <FiTarget size={14} /> Free — No Obligation
           </span>
           <h1>Get a Free 30-Minute Strategy Session with a <span className="gradient-text">Digital Growth Expert</span></h1>
           <p>Tell us about your business goals. We'll analyze your current digital presence and map out a clear strategy to help you grow online — completely free, no strings attached.</p>
@@ -35,30 +36,39 @@ export default function FreeConsultationPage() {
             <div>
               <h2 style={{ color: 'var(--brand)', marginBottom: '1.5rem' }}>What Happens on the Call?</h2>
               {[
-                { icon: '🔍', title: 'Business Analysis', desc: 'We review your current website, competitors, and market position to identify quick wins.' },
-                { icon: '🎯', title: 'Goal Alignment', desc: 'We learn about your growth targets — leads, traffic, revenue — and align our strategy to them.' },
-                { icon: '🗺️', title: 'Strategy Roadmap', desc: 'You leave with a clear, actionable plan — whether you work with us or not.' },
-                { icon: '💰', title: 'Investment Overview', desc: 'We provide transparent pricing guidance specific to your project scope.' },
-              ].map(s => (
-                <div key={s.title} className="value-card" style={{ marginBottom: '1rem' }}>
-                  <div className="value-icon">{s.icon}</div>
-                  <div><h4>{s.title}</h4><p>{s.desc}</p></div>
-                </div>
-              ))}
+                { icon: FiSearch, title: 'Business Analysis', desc: 'We review your current website, competitors, and market position to identify quick wins.' },
+                { icon: FiTarget, title: 'Goal Alignment', desc: 'We learn about your growth targets — leads, traffic, revenue — and align our strategy to them.' },
+                { icon: FiMap, title: 'Strategy Roadmap', desc: 'You leave with a clear, actionable plan — whether you work with us or not.' },
+                { icon: FiDollarSign, title: 'Investment Overview', desc: 'We provide transparent pricing guidance specific to your project scope.' },
+              ].map(s => {
+                const ProcessIcon = s.icon;
+                return (
+                  <div key={s.title} className="value-card" style={{ marginBottom: '1rem' }}>
+                    <div className="value-icon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'var(--brand)' }}>
+                      <ProcessIcon size={22} />
+                    </div>
+                    <div><h4>{s.title}</h4><p>{s.desc}</p></div>
+                  </div>
+                );
+              })}
 
               <div style={{ background: 'var(--bg-gray)', border: '1px solid var(--border)', borderRadius: 16, padding: '1.8rem', marginTop: '1.5rem' }}>
                 <h3 style={{ color: 'var(--brand)', marginBottom: '1rem', fontSize: '1.1rem' }}>Prefer to reach out directly?</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-                  <a href="mailto:info@internativelabs.com" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem' }}>📧 info@internativelabs.com</a>
-                  <a href="tel:+18889085040" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem' }}>📞 +1 (888) 908-5040</a>
+                  <a href="mailto:info@internativelabs.com" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <FiMail size={14} /> info@internativelabs.com
+                  </a>
+                  <a href="tel:+18889085040" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <FiPhone size={14} /> +1 (888) 908-5040
+                  </a>
                 </div>
               </div>
             </div>
 
             <div className="contact-form">
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '3rem 2rem' }}>
-                  <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎉</div>
+                <div style={{ textAlign: 'center', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <FiCheckCircle size={48} style={{ color: 'var(--success)', marginBottom: '1.2rem' }} />
                   <h2 style={{ color: 'var(--brand)', marginBottom: '1rem' }}>You're on the List!</h2>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
                     We'll reach out within 2 business hours to schedule your free strategy session.
@@ -121,8 +131,8 @@ export default function FreeConsultationPage() {
                   <button type="submit" className="btn btn-primary btn-lg" id="consultation-submit-btn" style={{ width: '100%', justifyContent: 'center' }}>
                     Book My Free Consultation →
                   </button>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '1rem' }}>
-                    🔒 100% free. No contracts, no obligation, no spam.
+                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginTop: '1rem' }}>
+                    <FiLock size={12} /> 100% free. No contracts, no obligation, no spam.
                   </p>
                 </form>
               )}

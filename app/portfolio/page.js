@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiShoppingCart, FiActivity, FiSliders, FiMonitor, FiZap, FiPenTool, FiTrendingUp, FiBriefcase } from 'react-icons/fi';
 
 const categories = ['All', 'Web Design', 'Mobile Apps', 'SEO', 'Branding'];
 
@@ -12,7 +13,7 @@ const projects = [
     metric: '+180% Traffic Increase',
     desc: 'Full-service Shopify store redesign with custom theme, fast performance optimization, and transactional checkout pipelines.',
     tags: ['Shopify', 'Liquid', 'SEO', 'UX Research'],
-    icon: '🛒',
+    icon: FiShoppingCart,
     color: 'var(--brand)',
     slug: 'retailedge-usa'
   },
@@ -23,7 +24,7 @@ const projects = [
     metric: '4.8★ App Store Rating',
     desc: 'HIPAA-compliant native Swift & Android Kotlin telemedicine app featuring video consultations and encrypted chat logs.',
     tags: ['Swift', 'Kotlin', 'WebRTC', 'HIPAA'],
-    icon: '🏥',
+    icon: FiActivity,
     color: '#27AE60',
     slug: 'medconnect-telehealth'
   },
@@ -34,7 +35,7 @@ const projects = [
     metric: '+340% Lead Growth',
     desc: 'Aggressive local SEO mapping and transactional search term bidding that drove page-1 rankings for competitive local keywords.',
     tags: ['Local SEO', 'Citation Building', 'Schema Markup'],
-    icon: '⚖️',
+    icon: FiSliders,
     color: '#F39C12',
     slug: 'lawfirm-pro'
   },
@@ -45,7 +46,7 @@ const projects = [
     metric: '+45% Signup Lift',
     desc: 'High-converting next-generation SaaS dashboard architecture with interactive charts, stripe payment billing, and user profiles.',
     tags: ['Next.js', 'React', 'Tailwind', 'Stripe'],
-    icon: '💻',
+    icon: FiMonitor,
     color: 'var(--accent)',
     slug: 'zenith-saas'
   },
@@ -56,7 +57,7 @@ const projects = [
     metric: '15k+ Monthly Active Users',
     desc: 'Stunning Flutter fitness app with offline sync capability, interactive charts, and apple watch Bluetooth syncing.',
     tags: ['Flutter', 'Dart', 'Firebase', 'BLE Sync'],
-    icon: '⚡',
+    icon: FiZap,
     color: '#E74C3C',
     slug: 'apex-fitness'
   },
@@ -67,7 +68,7 @@ const projects = [
     metric: '100% Custom Design',
     desc: 'Premium packaging design, curated color typography, high-fidelity brand guide booklets, and visual media files.',
     tags: ['Branding', 'Logo Design', 'Vector Assets', 'Typography'],
-    icon: '🎨',
+    icon: FiPenTool,
     color: '#9B59B6',
     slug: 'aura-cosmetics'
   }
@@ -89,7 +90,7 @@ export default function PortfolioPage() {
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Our Work</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            💼 Case Portfolio
+            <FiBriefcase size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Case Portfolio
           </span>
           <h1>Our Projects Speak Louder Than <span className="gradient-text">Words</span></h1>
           <p>
@@ -126,7 +127,7 @@ export default function PortfolioPage() {
               <div key={p.title} className="service-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
                   <div className="service-icon" style={{ background: `${p.color}15`, color: p.color, marginBottom: 0 }}>
-                    {p.icon}
+                    <p.icon size={24} />
                   </div>
                   <span style={{
                     fontSize: '0.78rem',
@@ -157,7 +158,7 @@ export default function PortfolioPage() {
                   alignSelf: 'flex-start',
                   marginBottom: '1rem'
                 }}>
-                  📈 {p.metric}
+                  <FiTrendingUp size={16} style={{ marginRight: 6 }} /> {p.metric}
                 </div>
 
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, flexGrow: 1, marginBottom: '1.5rem' }}>

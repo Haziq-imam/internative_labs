@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiBriefcase, FiMonitor, FiCoffee, FiBookOpen, FiClock, FiZap, FiCheckCircle } from 'react-icons/fi';
+import { FaStethoscope } from 'react-icons/fa';
 
 const openRoles = [
   {
@@ -49,8 +51,8 @@ export default function CareersPage() {
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>About Us</span><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>Careers</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            💼 Join Our Team
+          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <FiBriefcase size={14} /> Join Our Team
           </span>
           <h1>Build Products That Drive Real <span className="gradient-text">Growth</span></h1>
           <p>
@@ -68,19 +70,24 @@ export default function CareersPage() {
           </div>
           <div className="grid-3 animate-fadeUp">
             {[
-              { icon: '💻', title: 'Top-Spec Workstation', desc: 'Choose your weapon. We fully fund customized MacBook Pro setups, ergonomic desks, and professional external 4K monitors.' },
-              { icon: '🩺', title: 'Comprehensive Health', desc: '100% company-paid premium health, dental, and vision insurance for you and competitive options for your family.' },
-              { icon: '🌴', title: 'Flexible PTO & Time Off', desc: 'Unlimited vacation days with a mandatory 3-week minimum per year. We work hard, but we prioritize mental wellness.' },
-              { icon: '📚', title: 'Professional Growth', desc: 'Annual budget of $2,500 for online courses, specialized developer books, tech certificates, and annual conferences.' },
-              { icon: '🕒', title: 'Hybrid Schedule', desc: 'Work remotely or join us in our Lawrenceville, GA agency office. Flexible core hours tailored around your life.' },
-              { icon: '🚀', title: 'Agile & Autonomous', desc: 'We do not micromanage. You own your code blocks and lead design reviews directly with client directors.' }
-            ].map(perk => (
-              <div key={perk.title} className="card" style={{ padding: '2rem' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{perk.icon}</div>
-                <h3 style={{ fontSize: '1.15rem', color: 'var(--brand)', marginBottom: '0.6rem' }}>{perk.title}</h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{perk.desc}</p>
-              </div>
-            ))}
+              { icon: FiMonitor, title: 'Top-Spec Workstation', desc: 'Choose your weapon. We fully fund customized MacBook Pro setups, ergonomic desks, and professional external 4K monitors.' },
+              { icon: FaStethoscope, title: 'Comprehensive Health', desc: '100% company-paid premium health, dental, and vision insurance for you and competitive options for your family.' },
+              { icon: FiCoffee, title: 'Flexible PTO & Time Off', desc: 'Unlimited vacation days with a mandatory 3-week minimum per year. We work hard, but we prioritize mental wellness.' },
+              { icon: FiBookOpen, title: 'Professional Growth', desc: 'Annual budget of $2,500 for online courses, specialized developer books, tech certificates, and annual conferences.' },
+              { icon: FiClock, title: 'Hybrid Schedule', desc: 'Work remotely or join us in our Lawrenceville, GA agency office. Flexible core hours tailored around your life.' },
+              { icon: FiZap, title: 'Agile & Autonomous', desc: 'We do not micromanage. You own your code blocks and lead design reviews directly with client directors.' }
+            ].map(perk => {
+              const PerkIcon = perk.icon;
+              return (
+                <div key={perk.title} className="card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 56, height: 56, borderRadius: 14, background: 'rgba(114,193,146,0.1)', color: 'var(--brand)', marginBottom: '1.2rem' }}>
+                    <PerkIcon size={24} />
+                  </div>
+                  <h3 style={{ fontSize: '1.15rem', color: 'var(--brand)', marginBottom: '0.6rem' }}>{perk.title}</h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{perk.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -152,8 +159,8 @@ export default function CareersPage() {
 
           <div className="contact-form">
             {submitted ? (
-              <div style={{ background: 'rgba(39, 174, 96, 0.08)', border: '1px solid var(--success)', padding: '3rem 2rem', borderRadius: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎉</div>
+              <div style={{ background: 'rgba(39, 174, 96, 0.08)', border: '1px solid var(--success)', padding: '3rem 2rem', borderRadius: 16, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <FiCheckCircle size={48} style={{ color: 'var(--success)', marginBottom: '1.2rem' }} />
                 <h3 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>Application Submitted!</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: 1.6 }}>
                   Thank you for applying to join InterNative Labs, {form.name}. Our engineering and design directors will review your details and respond within 48 business hours.

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiSearch, FiSettings, FiFileText, FiLink, FiMapPin, FiBarChart2 } from 'react-icons/fi';
 
 export const metadata = {
   title: 'SEO Services Company | Page 1 Rankings | InterNative Labs',
@@ -10,12 +11,12 @@ export const metadata = {
 };
 
 const seoServices = [
-  { icon: '🔍', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, header optimization, keyword mapping, internal linking structure, image alt text, schema markup.' },
-  { icon: '⚙️', title: 'Technical SEO', desc: 'Site speed optimization, Core Web Vitals, crawlability, indexation, XML sitemaps, canonical tags, HTTPS, mobile-first optimization.' },
-  { icon: '📝', title: 'Content Strategy', desc: 'Keyword research, content gap analysis, blog content creation, pillar pages, topic clusters, FAQ content.' },
-  { icon: '🔗', title: 'Link Building', desc: 'White-hat backlink acquisition, digital PR, guest posting, HARO outreach, local citations, competitor analysis.' },
-  { icon: '📍', title: 'Local SEO', desc: 'Google Business Profile optimization, local citations, NAP consistency, local keyword targeting, review generation.' },
-  { icon: '📊', title: 'SEO Analytics & Reporting', desc: 'Monthly rank tracking, traffic analysis, conversion attribution, competitor monitoring, ROI reporting.' },
+  { icon: FiSearch, title: 'On-Page SEO', desc: 'Title tags, meta descriptions, header optimization, keyword mapping, internal linking structure, image alt text, schema markup.' },
+  { icon: FiSettings, title: 'Technical SEO', desc: 'Site speed optimization, Core Web Vitals, crawlability, indexation, XML sitemaps, canonical tags, HTTPS, mobile-first optimization.' },
+  { icon: FiFileText, title: 'Content Strategy', desc: 'Keyword research, content gap analysis, blog content creation, pillar pages, topic clusters, FAQ content.' },
+  { icon: FiLink, title: 'Link Building', desc: 'White-hat backlink acquisition, digital PR, guest posting, HARO outreach, local citations, competitor analysis.' },
+  { icon: FiMapPin, title: 'Local SEO', desc: 'Google Business Profile optimization, local citations, NAP consistency, local keyword targeting, review generation.' },
+  { icon: FiBarChart2, title: 'SEO Analytics & Reporting', desc: 'Monthly rank tracking, traffic analysis, conversion attribution, competitor monitoring, ROI reporting.' },
 ];
 
 const caseStudies = [
@@ -78,13 +79,18 @@ export default function SEOServicesPage() {
             <h2>A Complete SEO Solution — <span className="gradient-text">Not Just Keywords</span></h2>
           </div>
           <div className="services-grid">
-            {seoServices.map(s => (
-              <div key={s.title} className="service-card">
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </div>
-            ))}
+            {seoServices.map(s => {
+              const IconComponent = s.icon;
+              return (
+                <div key={s.title} className="service-card">
+                  <div className="service-icon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'var(--brand)' }}>
+                    <IconComponent size={24} />
+                  </div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

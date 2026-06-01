@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiGlobe, FiArrowRight } from 'react-icons/fi';
 
 export const metadata = {
   title: 'HTML Site Map Directory | InterNative Labs',
@@ -113,7 +114,7 @@ export default function SitemapPage() {
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Site Map</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            🌐 Directory Hub
+            <FiGlobe size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Directory Hub
           </span>
           <h1>Structured Website <span className="gradient-text">Directory</span></h1>
           <p>
@@ -167,7 +168,7 @@ export default function SitemapPage() {
                         }}
                         className="service-card-link"
                       >
-                        <span style={{ color: 'var(--accent)', fontSize: '0.75rem' }}>➜</span>
+                        <span style={{ color: 'var(--accent)', fontSize: '0.75rem' }}><FiArrowRight size={12} /></span>
                         <span>{l.name}</span>
                       </Link>
                     </li>

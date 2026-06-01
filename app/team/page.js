@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiUsers, FiMapPin } from 'react-icons/fi';
 
 export const metadata = {
   title: 'Our Executive Leadership & Digital Team | InterNative Labs',
@@ -68,7 +69,7 @@ export default function TeamPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>Our Team</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            👥 The Builders
+            <FiUsers size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> The Builders
           </span>
           <h1>Meet the Minds Behind the <span className="gradient-text">Code</span></h1>
           <p>
@@ -116,7 +117,7 @@ export default function TeamPage() {
                 </p>
 
                 <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem', marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>📍 Lawrenceville, GA</span>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}><FiMapPin size={13} /> Lawrenceville, GA</span>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.78rem', color: 'var(--accent)', fontWeight: 600 }}>
                     LinkedIn Profile ↗
                   </a>
@@ -142,7 +143,7 @@ export default function TeamPage() {
               </p>
             </div>
             <div style={{ background: 'var(--dark)', color: '#fff', borderRadius: 24, padding: '3.5rem', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <div style={{ fontSize: '4.5rem', marginBottom: '1rem' }}>🤝</div>
+              <div style={{ fontSize: '4.5rem', marginBottom: '1rem', color: 'var(--brand)' }}><FiUsers size={56} /></div>
               <h3 style={{ color: '#fff', marginBottom: '1rem' }}>In-House Integrity</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '2rem' }}>
                 We believe in code review pipelines, HIPAA server environments, and white-hat Google guidelines. Always speak directly with our engineering team.

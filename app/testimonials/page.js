@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiStar, FiCheckCircle, FiAward } from 'react-icons/fi';
 
 export const metadata = {
   title: 'Client Reviews & Verified Testimonials | InterNative Labs',
@@ -107,7 +108,7 @@ export default function TestimonialsPage() {
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Testimonials</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            ★ Verified Reviews
+            <FiStar size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Verified Reviews
           </span>
           <h1>Success Stories from <span className="gradient-text">Our Clients</span></h1>
           <p>
@@ -147,7 +148,7 @@ export default function TestimonialsPage() {
                     <div className="testimonial-stars">{'★'.repeat(r.stars)}</div>
                     {r.verified && (
                       <span style={{ fontSize: '0.72rem', background: 'rgba(39,174,96,0.1)', color: 'var(--success)', padding: '3px 8px', borderRadius: 99, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
-                        ✓ VERIFIED
+                        <FiCheckCircle size={12} /> VERIFIED
                       </span>
                     )}
                   </div>
@@ -183,9 +184,9 @@ export default function TestimonialsPage() {
             <h2>Top Rated Lawrenceville Agency</h2>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap', opacity: 0.85 }}>
-            {['🏆 Top Web Developers Clutch', '⭐ Google Certified Partner', '🥇 DesignRush Accredited Agency', '💎 HubSpot Agency Partner'].map(badge => (
-              <div key={badge} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--brand)', background: 'var(--dark)', border: '1px solid var(--border)', padding: '12px 24px', borderRadius: 12 }}>
-                {badge}
+            {['Top Web Developers Clutch', 'Google Certified Partner', 'DesignRush Accredited Agency', 'HubSpot Agency Partner'].map(badge => (
+              <div key={badge} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--brand)', background: 'var(--dark)', border: '1px solid var(--border)', padding: '12px 24px', borderRadius: 12, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <FiAward size={18} style={{ color: 'var(--accent)' }} /> {badge}
               </div>
             ))}
           </div>

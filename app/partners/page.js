@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiUsers, FiDollarSign, FiHome, FiTag, FiCheckCircle, FiMail, FiPackage } from 'react-icons/fi';
 
 export default function PartnersPage() {
   const [form, setForm] = useState({ name: '', email: '', company: '', type: 'Referral Partner', message: '' });
@@ -22,7 +23,7 @@ export default function PartnersPage() {
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Partner Up</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            🤝 Referral Network
+            <FiUsers size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Referral Network
           </span>
           <h1>Earn 10% Commission on Client <span className="gradient-text">Referrals</span></h1>
           <p>
@@ -40,12 +41,12 @@ export default function PartnersPage() {
           </div>
           <div className="grid-3 animate-fadeUp">
             {[
-              { icon: '💰', title: 'Referral Affiliates', desc: 'Perfect for consultancies, freelance developers, and agencies. Introduce a client needing our custom engineering or white-hat SEO. Earn a flat 10% commission on the signed contract value.' },
-              { icon: '🏢', title: 'Agency Partnerships', desc: 'Do you offer branding or PPC marketing but lack complex software engineering capability? Outsource Next.js platforms or HIPAA app builds to us under a transparent, reliable, high-speed agency partnership.' },
-              { icon: '🏷️', title: 'White-Label Engineering', desc: 'Deliver custom software and mobile applications under your own agency brand. We handle the entire engineering, technical specifications, and bug support while you own the client relationships.' }
+              { icon: FiDollarSign, title: 'Referral Affiliates', desc: 'Perfect for consultancies, freelance developers, and agencies. Introduce a client needing our custom engineering or white-hat SEO. Earn a flat 10% commission on the signed contract value.' },
+              { icon: FiHome, title: 'Agency Partnerships', desc: 'Do you offer branding or PPC marketing but lack complex software engineering capability? Outsource Next.js platforms or HIPAA app builds to us under a transparent, reliable, high-speed agency partnership.' },
+              { icon: FiTag, title: 'White-Label Engineering', desc: 'Deliver custom software and mobile applications under your own agency brand. We handle the entire engineering, technical specifications, and bug support while you own the client relationships.' }
             ].map(prog => (
               <div key={prog.title} className="card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{prog.icon}</div>
+              <div style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--brand)' }}><prog.icon size={32} /></div>
                 <h3 style={{ fontSize: '1.2rem', color: 'var(--brand)', marginBottom: '0.8rem' }}>{prog.title}</h3>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, flexGrow: 1 }}>{prog.desc}</p>
               </div>
@@ -91,7 +92,7 @@ export default function PartnersPage() {
           <div className="contact-form">
             {submitted ? (
               <div style={{ background: 'rgba(39, 174, 96, 0.08)', border: '1px solid var(--success)', padding: '3rem 2rem', borderRadius: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎉</div>
+                <div style={{ fontSize: '4rem', marginBottom: '1rem', color: 'var(--success)' }}><FiCheckCircle size={48} /></div>
                 <h3 style={{ color: 'var(--success)', marginBottom: '0.5rem' }}>Partner Application Received!</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: 1.6 }}>
                   Thank you for applying to partner with us, {form.name}. Our agency directors will review your website/company profile and contact you within 24 business hours to set up your referral account.

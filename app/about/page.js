@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiTarget, FiLock, FiZap, FiUsers, FiBriefcase, FiCode, FiTrendingUp, FiLayout } from 'react-icons/fi';
 
 export const metadata = {
   title: 'About InterNative Labs | Full-Service Digital Agency | Lawrenceville GA',
@@ -9,10 +10,10 @@ export const metadata = {
 };
 
 const values = [
-  { icon: '🎯', title: 'Results Over Deliverables', desc: 'We measure success in traffic, leads, and revenue. Not just lines of code or pages published.' },
-  { icon: '🔒', title: 'Radical Transparency', desc: "You'll always know what we're doing, why, and what results to expect. No black boxes, no fluff reports." },
-  { icon: '⚡', title: 'Relentless Improvement', desc: "Markets change. We stay ahead of algorithm updates, emerging platforms, and new technologies so you don't have to." },
-  { icon: '🤝', title: 'Partnership Mentality', desc: 'We think of ourselves as your in-house digital team. Your success is our success.' },
+  { icon: FiTarget, title: 'Results Over Deliverables', desc: 'We measure success in traffic, leads, and revenue. Not just lines of code or pages published.' },
+  { icon: FiLock, title: 'Radical Transparency', desc: "You'll always know what we're doing, why, and what results to expect. No black boxes, no fluff reports." },
+  { icon: FiZap, title: 'Relentless Improvement', desc: "Markets change. We stay ahead of algorithm updates, emerging platforms, and new technologies so you don't have to." },
+  { icon: FiUsers, title: 'Partnership Mentality', desc: 'We think of ourselves as your in-house digital team. Your success is our success.' },
 ];
 
 const teamStats = [
@@ -23,10 +24,10 @@ const teamStats = [
 ];
 
 const teamMembers = [
-  { name: 'Alex Rivera', role: 'CEO & Co-Founder', emoji: '👨‍💼', bg: '#1A3C6E' },
-  { name: 'Priya Sharma', role: 'Head of Development', emoji: '👩‍💻', bg: '#2E86C1' },
-  { name: 'Jordan Lee', role: 'Head of SEO & Marketing', emoji: '📊', bg: '#27AE60' },
-  { name: 'Sam Okonkwo', role: 'Lead UI/UX Designer', emoji: '🎨', bg: '#9B59B6' },
+  { name: 'Alex Rivera', role: 'CEO & Co-Founder', emoji: FiBriefcase, bg: '#1A3C6E' },
+  { name: 'Priya Sharma', role: 'Head of Development', emoji: FiCode, bg: '#2E86C1' },
+  { name: 'Jordan Lee', role: 'Head of SEO & Marketing', emoji: FiTrendingUp, bg: '#27AE60' },
+  { name: 'Sam Okonkwo', role: 'Lead UI/UX Designer', emoji: FiLayout, bg: '#9B59B6' },
 ];
 
 export default function AboutPage() {
@@ -93,15 +94,20 @@ export default function AboutPage() {
             <h2>The Principles That <span className="gradient-text">Drive Everything We Do</span></h2>
           </div>
           <div className="grid-2">
-            {values.map(v => (
-              <div key={v.title} className="value-card">
-                <div className="value-icon">{v.icon}</div>
-                <div>
-                  <h4>{v.title}</h4>
-                  <p>{v.desc}</p>
+            {values.map(v => {
+              const ValueIcon = v.icon;
+              return (
+                <div key={v.title} className="value-card">
+                  <div className="value-icon" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'var(--brand)' }}>
+                    <ValueIcon size={24} />
+                  </div>
+                  <div>
+                    <h4>{v.title}</h4>
+                    <p>{v.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -115,20 +121,23 @@ export default function AboutPage() {
             <p>35+ passionate professionals dedicated to your digital growth.</p>
           </div>
           <div className="grid-4">
-            {teamMembers.map(m => (
-              <div key={m.name} className="card" style={{ textAlign: 'center' }}>
-                <div style={{
-                  width: 80, height: 80, borderRadius: '50%',
-                  background: m.bg,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '2rem', margin: '0 auto 1rem',
-                }}>
-                  {m.emoji}
+            {teamMembers.map(m => {
+              const EmojiIcon = m.emoji;
+              return (
+                <div key={m.name} className="card" style={{ textAlign: 'center' }}>
+                  <div style={{
+                    width: 80, height: 80, borderRadius: '50%',
+                    background: m.bg,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#fff', margin: '0 auto 1rem',
+                  }}>
+                    <EmojiIcon size={28} />
+                  </div>
+                  <h3 style={{ fontSize: '1rem', color: 'var(--brand)', marginBottom: 4 }}>{m.name}</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{m.role}</p>
                 </div>
-                <h3 style={{ fontSize: '1rem', color: 'var(--brand)', marginBottom: 4 }}>{m.name}</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{m.role}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <Link href="/team" className="btn btn-outline btn-lg" id="full-team-btn">Meet the Full Team →</Link>

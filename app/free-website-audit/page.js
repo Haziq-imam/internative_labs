@@ -1,16 +1,17 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { FiSearch, FiZap, FiSmartphone, FiFileText, FiBarChart2, FiLink, FiDollarSign, FiLock, FiCheckCircle } from 'react-icons/fi';
 
 const auditPoints = [
-  { icon: '🔍', cat: 'Technical SEO', items: ['Crawlability & indexation', 'XML sitemaps & robots.txt', 'Canonical tags', 'HTTPS & security headers'] },
-  { icon: '⚡', cat: 'Page Speed', items: ['Core Web Vitals scores', 'Server response time', 'Image optimization', 'JavaScript & CSS minification'] },
-  { icon: '📱', cat: 'Mobile Experience', items: ['Mobile-friendliness test', 'Tap target sizing', 'Viewport configuration', 'Mobile page speed'] },
-  { icon: '📝', cat: 'On-Page SEO', items: ['Title tags & meta descriptions', 'Header structure (H1-H6)', 'Keyword usage & density', 'Internal linking structure'] },
-  { icon: '📊', cat: 'Content Quality', items: ['Thin content detection', 'Duplicate content check', 'Content gap vs. competitors', 'Readability analysis'] },
-  { icon: '🔗', cat: 'Link Profile', items: ['Backlink quality analysis', 'Toxic link identification', 'Internal link audit', 'Anchor text distribution'] },
-  { icon: '💰', cat: 'Conversion Elements', items: ['CTA placement & clarity', 'Form usability', 'Trust signals audit', 'Friction points identification'] },
-  { icon: '🔒', cat: 'Security', items: ['SSL certificate status', 'Security headers', 'Vulnerability exposure', 'GDPR compliance check'] },
+  { icon: FiSearch, cat: 'Technical SEO', items: ['Crawlability & indexation', 'XML sitemaps & robots.txt', 'Canonical tags', 'HTTPS & security headers'] },
+  { icon: FiZap, cat: 'Page Speed', items: ['Core Web Vitals scores', 'Server response time', 'Image optimization', 'JavaScript & CSS minification'] },
+  { icon: FiSmartphone, cat: 'Mobile Experience', items: ['Mobile-friendliness test', 'Tap target sizing', 'Viewport configuration', 'Mobile page speed'] },
+  { icon: FiFileText, cat: 'On-Page SEO', items: ['Title tags & meta descriptions', 'Header structure (H1-H6)', 'Keyword usage & density', 'Internal linking structure'] },
+  { icon: FiBarChart2, cat: 'Content Quality', items: ['Thin content detection', 'Duplicate content check', 'Content gap vs. competitors', 'Readability analysis'] },
+  { icon: FiLink, cat: 'Link Profile', items: ['Backlink quality analysis', 'Toxic link identification', 'Internal link audit', 'Anchor text distribution'] },
+  { icon: FiDollarSign, cat: 'Conversion Elements', items: ['CTA placement & clarity', 'Form usability', 'Trust signals audit', 'Friction points identification'] },
+  { icon: FiLock, cat: 'Security', items: ['SSL certificate status', 'Security headers', 'Vulnerability exposure', 'GDPR compliance check'] },
 ];
 
 export default function FreeWebsiteAuditPage() {
@@ -30,7 +31,7 @@ export default function FreeWebsiteAuditPage() {
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Free Website Audit</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            🔍 Free — No Obligation
+            <FiSearch size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Free — No Obligation
           </span>
           <h1>Get Your Free Website Audit — Discover What's <span className="gradient-text">Holding Your Business Back Online</span></h1>
           <p>Our team performs a comprehensive 25-point audit of your website covering SEO health, page speed, mobile experience, conversion optimization, and security vulnerabilities. You'll receive a detailed report with prioritized action items — completely free.</p>
@@ -47,7 +48,7 @@ export default function FreeWebsiteAuditPage() {
         <div className="container" style={{ maxWidth: 700 }}>
           {submitted ? (
             <div style={{ background: 'var(--dark)', border: '1px solid var(--border)', borderRadius: 24, padding: '4rem', textAlign: 'center', boxShadow: 'var(--shadow-md)' }}>
-              <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📊</div>
+              <div style={{ fontSize: '4rem', marginBottom: '1rem', color: 'var(--brand)' }}><FiBarChart2 size={48} /></div>
               <h2 style={{ color: 'var(--brand)', marginBottom: '1rem' }}>Audit Request Received!</h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.05rem' }}>
                 We're auditing <strong>{url}</strong> now. You'll receive your complete 25-point report within 24 business hours at <strong>{email}</strong>.
@@ -79,7 +80,7 @@ export default function FreeWebsiteAuditPage() {
                   Get My Free Audit — Delivered in 24 Hours →
                 </button>
                 <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '1rem' }}>
-                  🔒 No credit card. No obligation. Reviewed by a real human expert.
+                  <FiLock size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} /> No credit card. No obligation. Reviewed by a real human expert.
                 </p>
               </form>
             </div>
@@ -98,12 +99,12 @@ export default function FreeWebsiteAuditPage() {
           <div className="grid-4">
             {auditPoints.map(a => (
               <div key={a.cat} className="card">
-                <div style={{ fontSize: '2rem', marginBottom: '0.8rem' }}>{a.icon}</div>
+                <div style={{ fontSize: '2rem', marginBottom: '0.8rem', color: 'var(--brand)' }}><a.icon size={28} /></div>
                 <h3 style={{ fontSize: '1rem', color: 'var(--brand)', marginBottom: '0.8rem' }}>{a.cat}</h3>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   {a.items.map(i => (
                     <li key={i} style={{ fontSize: '0.83rem', color: 'var(--text-secondary)', display: 'flex', gap: '6px' }}>
-                      <span style={{ color: 'var(--success)', flexShrink: 0 }}>✓</span> {i}
+                      <span style={{ color: 'var(--success)', flexShrink: 0 }}><FiCheckCircle size={14} /></span> {i}
                     </li>
                   ))}
                 </ul>

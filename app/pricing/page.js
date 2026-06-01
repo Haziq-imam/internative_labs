@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiLock } from 'react-icons/fi';
 
 export const metadata = {
   title: 'Transparent Pricing | Web, App & SEO Costs | InterNative Labs',
@@ -61,7 +62,7 @@ export default function PricingPage() {
       <div style={{ background: '#27AE60', padding: '20px 0' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <p style={{ color: '#fff', fontWeight: 600, fontSize: '1rem' }}>
-            🔒 30-Day Satisfaction Guarantee — If you're not fully satisfied in the first 30 days, we'll make it right or refund your investment.
+            <FiLock size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> 30-Day Satisfaction Guarantee — If you're not fully satisfied in the first 30 days, we'll make it right or refund your investment.
           </p>
         </div>
       </div>

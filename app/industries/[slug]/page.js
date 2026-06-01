@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FiActivity, FiHome, FiShoppingCart, FiCoffee, FiShield, FiMonitor, FiSmartphone, FiMapPin, FiSettings, FiGlobe, FiEdit, FiSearch, FiTrendingUp, FiPenTool, FiDollarSign, FiMessageCircle, FiServer, FiAlertTriangle, FiCheckCircle } from 'react-icons/fi';
 
 const industryData = {
   'healthcare': {
@@ -6,7 +7,7 @@ const industryData = {
     meta: 'HIPAA-compliant healthcare web & app development. Patient portals, telemedicine apps, and medical SEO designed to grow your clinic.',
     hero: 'HIPAA-Compliant Digital Solutions for <span>Healthcare Providers</span>',
     heroSub: 'We build secure, compliant, and highly intuitive patient portals, telemedicine applications, and medical websites that improve patient outcomes and drive clinic growth.',
-    icon: '🏥',
+    icon: FiActivity,
     stats: [['HIPAA', 'Compliant'], ['100k+', 'Patients Served'], ['99.9%', 'Uptime SLA'], ['Telehealth', 'Integrated']],
     challenges: [
       'Patient onboarding friction and complex medical registration forms.',
@@ -21,9 +22,9 @@ const industryData = {
     caseStudy: { client: 'MedConnect Telehealth', stat: '+312%', label: 'Patient Inquiries' },
     price: 'From $6,000',
     related: [
-      { title: 'Mobile App Development', href: '/services/mobile-app-development', icon: '📱' },
-      { title: 'Local SEO Services', href: '/services/local-seo', icon: '📍' },
-      { title: 'Custom Web Apps', href: '/services/custom-web-applications', icon: '⚙️' }
+      { title: 'Mobile App Development', href: '/services/mobile-app-development', icon: FiSmartphone },
+      { title: 'Local SEO Services', href: '/services/local-seo', icon: FiMapPin },
+      { title: 'Custom Web Apps', href: '/services/custom-web-applications', icon: FiSettings }
     ]
   },
   'real-estate': {
@@ -31,7 +32,7 @@ const industryData = {
     meta: 'Real estate web development & marketing. Custom MLS/IDX integrations, lead-generating agent portals, and local real estate SEO.',
     hero: 'IDX/MLS Websites That Capture <span>High-Value Real Estate Leads</span>',
     heroSub: 'We build fast, interactive property search engines, custom agent branding websites, and automated client nurture portals that convert property searches into listing leads.',
-    icon: '🏠',
+    icon: FiHome,
     stats: [['IDX / MLS', 'Integrated'], ['10k+', 'Listings Synced'], ['5x', 'Avg Lead Increase'], ['Interactive', 'Map Search']],
     challenges: [
       'Slow and outdated IDX search experiences causing users to bounce.',
@@ -46,9 +47,9 @@ const industryData = {
     caseStudy: { client: 'Avenue Homes Realty', stat: '5.2x', label: 'More Monthly Leads' },
     price: 'From $4,500',
     related: [
-      { title: 'Web Development', href: '/services/web-development', icon: '🌐' },
-      { title: 'Local SEO Services', href: '/services/local-seo', icon: '📍' },
-      { title: 'Graphic Design', href: '/services/graphic-design', icon: '✏️' }
+      { title: 'Web Development', href: '/services/web-development', icon: FiGlobe },
+      { title: 'Local SEO Services', href: '/services/local-seo', icon: FiMapPin },
+      { title: 'Graphic Design', href: '/services/graphic-design', icon: FiEdit }
     ]
   },
   'ecommerce-retail': {
@@ -56,7 +57,7 @@ const industryData = {
     meta: 'High-converting eCommerce stores & retail websites. Shopify & WooCommerce experts. Scale your organic online sales and customer lifetime value.',
     hero: 'eCommerce Solutions Designed to <span>Scale Organic Sales</span>',
     heroSub: 'From retail store migrations to custom headless eCommerce architectures — we build shopping experiences that load in milliseconds and maximize average order value.',
-    icon: '🛒',
+    icon: FiShoppingCart,
     stats: [['Shopify & Woo', 'Experts'], ['+428%', 'Avg Revenue Lift'], ['100k+', 'Products Synced'], ['Secure Checkout', 'Integrated']],
     challenges: [
       'High cart abandonment rates and friction-heavy checkout systems.',
@@ -71,9 +72,9 @@ const industryData = {
     caseStudy: { client: 'RetailEdge USA', stat: '+180%', label: 'Organic Traffic Lift' },
     price: 'From $5,000',
     related: [
-      { title: 'eCommerce SEO', href: '/services/ecommerce-seo', icon: '🔍' },
-      { title: 'eCommerce Development', href: '/services/ecommerce-development', icon: '🛒' },
-      { title: 'Conversion Rate Optimization', href: '/services/cro', icon: '📈' }
+      { title: 'eCommerce SEO', href: '/services/ecommerce-seo', icon: FiSearch },
+      { title: 'eCommerce Development', href: '/services/ecommerce-development', icon: FiShoppingCart },
+      { title: 'Conversion Rate Optimization', href: '/services/cro', icon: FiTrendingUp }
     ]
   },
   'restaurants': {
@@ -81,7 +82,7 @@ const industryData = {
     meta: 'Beautiful restaurant website design. Online ordering integrations, booking systems, and local SEO to dominate local search results.',
     hero: 'Restaurant Websites That Drive <span>Reservations & Online Orders</span>',
     heroSub: 'We design high-converting restaurant websites featuring online menu ordering integrations, digital booking tables, and local restaurant SEO to drive foot traffic.',
-    icon: '🍽️',
+    icon: FiCoffee,
     stats: [['Zero Commission', 'Ordering'], ['3x', 'Avg Reservation Lift'], ['Google Maps', 'Domination'], ['Mobile-First', 'Menu Design']],
     challenges: [
       'Paying high 30% commission rates to third-party delivery apps like GrubHub or UberEats.',
@@ -96,9 +97,9 @@ const industryData = {
     caseStudy: { client: 'Gourmet Bistro Group', stat: '$0', label: 'Third-Party Commissions' },
     price: 'From $2,500',
     related: [
-      { title: 'Local SEO Services', href: '/services/local-seo', icon: '📍' },
-      { title: 'Social Media Marketing', href: '/services/social-media-marketing', icon: '💬' },
-      { title: 'Web Hosting & Maintenance', href: '/services/hosting-maintenance', icon: '🖥️' }
+      { title: 'Local SEO Services', href: '/services/local-seo', icon: FiMapPin },
+      { title: 'Social Media Marketing', href: '/services/social-media-marketing', icon: FiMessageCircle },
+      { title: 'Web Hosting & Maintenance', href: '/services/hosting-maintenance', icon: FiServer }
     ]
   },
   'legal': {
@@ -106,7 +107,7 @@ const industryData = {
     meta: 'Professional law firm web development & local attorney SEO. Rank #1 for high-value legal search terms and win more client consultations.',
     hero: 'Law Firm Websites That Build <span>Authority & Win Cases</span>',
     heroSub: 'We build credible, search-optimized websites for trial attorneys, personal injury lawyers, and corporate practices. Rank #1 locally and convert consultations.',
-    icon: '⚖️',
+    icon: FiShield,
     stats: [['#1 Rankings', 'For Attorney SEO'], ['340%', 'Lead Volume Lift'], ['Secure Intake', 'Portals'], ['Professional', 'Firm Branding']],
     challenges: [
       'Fierce local competition for valuable patient and client consultations.',
@@ -121,9 +122,9 @@ const industryData = {
     caseStudy: { client: 'LawFirm Pro Partners', stat: '+340%', label: 'Consultation Requests' },
     price: 'From $4,000',
     related: [
-      { title: 'Local SEO Services', href: '/services/local-seo', icon: '📍' },
-      { title: 'Web Development', href: '/services/web-development', icon: '🌐' },
-      { title: 'PPC & Paid Advertising', href: '/services/ppc-advertising', icon: '💰' }
+      { title: 'Local SEO Services', href: '/services/local-seo', icon: FiMapPin },
+      { title: 'Web Development', href: '/services/web-development', icon: FiGlobe },
+      { title: 'PPC & Paid Advertising', href: '/services/ppc-advertising', icon: FiDollarSign }
     ]
   },
   'saas-tech': {
@@ -131,7 +132,7 @@ const industryData = {
     meta: 'Custom SaaS web development, landing pages, and tech marketing. Built for conversions, fast signups, and scalable cloud performance.',
     hero: 'SaaS Websites Built to Convert <span>Traffic Into Active Trials</span>',
     heroSub: 'We build modern, glassmorphic SaaS landing pages, interactive pricing models, and developer-focused portals that communicate complex value and drive signups.',
-    icon: '💻',
+    icon: FiMonitor,
     stats: [['API integrations', 'Built'], ['45%', 'Avg Trial Increase'], ['Modern', 'Glassmorphism'], ['AWS & GCP', 'Cloud Hosting']],
     challenges: [
       'Low traffic-to-signup conversion rates on landing pages.',
@@ -146,9 +147,9 @@ const industryData = {
     caseStudy: { client: 'CloudSync SaaS', stat: '+45%', label: 'Trial Signups Lift' },
     price: 'From $7,000',
     related: [
-      { title: 'Custom Web Apps', href: '/services/custom-web-applications', icon: '⚙️' },
-      { title: 'UI/UX Design', href: '/services/ui-ux-design', icon: '🎨' },
-      { title: 'PPC & Paid Advertising', href: '/services/ppc-advertising', icon: '💰' }
+      { title: 'Custom Web Apps', href: '/services/custom-web-applications', icon: FiSettings },
+      { title: 'UI/UX Design', href: '/services/ui-ux-design', icon: FiPenTool },
+      { title: 'PPC & Paid Advertising', href: '/services/ppc-advertising', icon: FiDollarSign }
     ]
   }
 };
@@ -209,7 +210,7 @@ export default function IndustryPage({ params }) {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>{data.title}</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            {data.icon} {data.title} Industry Specialist
+            <data.icon size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> {data.title} Industry Specialist
           </span>
           <h1 dangerouslySetInnerHTML={{ __html: data.hero }} />
           <p>{data.heroSub}</p>
@@ -247,7 +248,7 @@ export default function IndustryPage({ params }) {
             {/* Challenges */}
             <div style={{ background: 'rgba(231, 76, 60, 0.03)', border: '1px solid rgba(231, 76, 60, 0.15)', borderRadius: 20, padding: '2.5rem' }}>
               <h3 style={{ color: '#E74C3C', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                ⚠️ Key Industry Obstacles
+                <FiAlertTriangle size={20} /> Key Industry Obstacles
               </h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {data.challenges.map((c, i) => (
@@ -262,7 +263,7 @@ export default function IndustryPage({ params }) {
             {/* Solutions */}
             <div style={{ background: 'rgba(39, 174, 96, 0.03)', border: '1px solid rgba(39, 174, 96, 0.15)', borderRadius: 20, padding: '2.5rem' }}>
               <h3 style={{ color: '#27AE60', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                ✓ Our Strategic Solutions
+                <FiCheckCircle size={20} /> Our Strategic Solutions
               </h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {data.solutions.map((s, i) => (
@@ -324,7 +325,7 @@ export default function IndustryPage({ params }) {
               </div>
             </div>
             <div style={{ background: 'var(--dark)', color: '#fff', borderRadius: 24, padding: '3.5rem', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'var(--shadow-lg)' }}>
-              <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>{data.icon}</div>
+              <div style={{ fontSize: '4rem', marginBottom: '1rem', color: 'var(--brand)' }}><data.icon size={48} /></div>
               <h3 style={{ color: '#fff', marginBottom: '0.5rem' }}>{data.title} Blueprint</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Tailored Strategy + Premium Execution</p>
               <div style={{ fontSize: '2.8rem', fontWeight: 800, color: '#7ec8e3', marginBottom: '0.5rem' }}>{data.price}</div>
@@ -347,7 +348,7 @@ export default function IndustryPage({ params }) {
           <div className="grid-3">
             {data.related.map(r => (
               <Link key={r.href} href={r.href} className="card" style={{ textAlign: 'center', display: 'block' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '0.8rem' }}>{r.icon}</div>
+                <div style={{ fontSize: '2.5rem', marginBottom: '0.8rem', color: 'var(--brand)' }}><r.icon size={28} /></div>
                 <h3 style={{ fontSize: '1.1rem', color: 'var(--brand)', marginBottom: '0.5rem' }}>{r.title}</h3>
                 <span style={{ color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 600 }}>Explore Service →</span>
               </Link>

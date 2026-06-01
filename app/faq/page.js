@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+import { FiHelpCircle } from 'react-icons/fi';
+
 const faqCategories = ['All', 'Web Development', 'Mobile Apps', 'SEO', 'Pricing & Support'];
 
 const faqs = [
@@ -78,7 +80,7 @@ export default function FAQPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>FAQ</span>
           </div>
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            ❓ Got Questions?
+            <FiHelpCircle size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Got Questions?
           </span>
           <h1>Frequently Asked <span className="gradient-text">Questions</span></h1>
           <p>
