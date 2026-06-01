@@ -78,7 +78,7 @@ export default function ServicesPage() {
       </section>
 
       {allServices.map((cat, ci) => (
-        <section key={cat.category} className="section" style={{ background: ci % 2 === 0 ? '#fff' : 'var(--bg-gray)' }}>
+        <section key={cat.category} className="section" style={{ background: ci % 2 === 0 ? 'var(--bg-white)' : 'var(--bg-gray)' }}>
           <div className="container">
             <div className="section-header">
               <span className="section-label" style={{ color: cat.color, borderColor: `${cat.color}40`, background: `${cat.color}12` }}>
