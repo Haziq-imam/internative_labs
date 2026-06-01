@@ -1,7 +1,6 @@
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import StickyCTA from '@/components/StickyCTA';
 import Preloader from '@/components/Preloader';
 
 export const metadata = {
@@ -73,7 +72,6 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <StickyCTA />
       </body>
     </html>
   );
