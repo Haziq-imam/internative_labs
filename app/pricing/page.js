@@ -51,7 +51,7 @@ export default function PricingPage() {
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Transparent Pricing</span>
           <h1>Know Exactly What You're Getting <span className="gradient-text">and What It Costs</span></h1>
           <p>No hidden fees, no vague retainers. Every service is priced clearly with defined deliverables. Choose a plan or get a custom proposal tailored to your exact needs and budget.</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id="pricing-hero-cta">Get a Custom Quote →</Link>
             <Link href="/contact" className="btn btn-secondary btn-lg">Talk to Our Team</Link>
           </div>
@@ -121,7 +121,7 @@ export default function PricingPage() {
             <p style={{ color: 'rgba(255,255,255,0.75)', marginBottom: '2rem', fontSize: '1.05rem' }}>
               Not sure which plan fits? Our team will analyze your business and create a custom proposal with exactly what you need — and nothing you don't.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="cta-buttons" style={{ justifyContent: 'center' }}>
               <Link href="/free-consultation" className="btn" id="pricing-final-cta" style={{ background: '#fff', color: 'var(--brand)', fontWeight: 700 }}>
                 Get a Custom Quote →
               </Link>

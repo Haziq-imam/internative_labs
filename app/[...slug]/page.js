@@ -87,7 +87,7 @@ export default function CatchAllPage({ params }) {
           <p style={{ maxWidth: 600, margin: '0 auto 2rem' }}>
             The URL path you entered does not exist or has been relocated to a new optimized folder. Navigate through our complete sitemap to find what you need.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <div className="cta-buttons">
             <Link href="/" className="btn btn-primary btn-lg">Return Home →</Link>
             <Link href="/sitemap" className="btn btn-secondary btn-lg">Browse HTML Site Map</Link>
           </div>

@@ -191,7 +191,7 @@ export default function PortfolioPage() {
             <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 600, margin: '0 auto 2rem', fontSize: '1.05rem' }}>
               We collaborate with clients to turn technical ideas into profit centers. Contact our Lawrenceville growth experts to outline your milestones.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <div className="cta-buttons">
               <Link href="/free-consultation" className="btn btn-secondary" style={{ background: '#fff', color: 'var(--brand)', fontWeight: 700 }}>
                 Schedule Consultation Call →
               </Link>

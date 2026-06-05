@@ -63,7 +63,7 @@ export default function WebDevelopmentPage() {
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Web Development</span>
           <h1>Custom Web Development That Turns <span className="gradient-text">Visitors Into Customers</span></h1>
           <p>We build fast, secure, and beautifully designed websites that perform in search engines and convert visitors into paying customers. Every line of code is written with business results in mind.</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id="webdev-hero-cta">Get a Free Website Proposal →</Link>
             <Link href="/portfolio" className="btn btn-secondary btn-lg">View Web Portfolio</Link>
           </div>

@@ -51,7 +51,7 @@ export default function SEOServicesPage() {
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>SEO Services</span>
           <h1>SEO Services That Put Your Business on <span className="gradient-text">Page 1 and Keep It There</span></h1>
           <p>Our data-driven SEO strategies combine technical excellence, strategic content, and authoritative link building to drive qualified organic traffic that converts. We build sustainable rankings that generate leads for years.</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-website-audit" className="btn btn-primary btn-lg" id="seo-hero-cta">Get Your Free SEO Audit — $0 →</Link>
             <Link href="/case-studies" className="btn btn-secondary btn-lg">View SEO Case Studies</Link>
           </div>

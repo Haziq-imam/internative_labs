@@ -76,7 +76,7 @@ export default function ServicesPage() {
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>All Services</span>
           <h1>Everything You Need to <span className="gradient-text">Win Online</span></h1>
           <p>From strategy and design to development and marketing — 22+ specialized services under one roof, all focused on growing your business.</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id="services-hero-cta">Get a Free Consultation →</Link>
             <Link href="/pricing" className="btn btn-secondary btn-lg">View Pricing</Link>
           </div>

@@ -51,7 +51,7 @@ export default function MobileAppDevelopmentPage() {
           <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Mobile App Development</span>
           <h1>Mobile App Development That Transforms Ideas Into <span className="gradient-text">Revenue-Generating Apps</span></h1>
           <p>We build native iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences. From MVP to full-scale enterprise solutions — designed for performance, security, and user adoption.</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id="mobile-hero-cta">Get Your Free App Development Quote →</Link>
             <Link href="/portfolio" className="btn btn-secondary btn-lg">View App Portfolio</Link>
           </div>

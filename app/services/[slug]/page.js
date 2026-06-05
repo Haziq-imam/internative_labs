@@ -274,7 +274,7 @@ export default function ServicePage({ params }) {
           </span>
           <h1 dangerouslySetInnerHTML={{ __html: data.hero.replace('<span>', '<span class="gradient-text">') }} />
           <p>{data.heroSub}</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id={`${params.slug}-hero-cta`}>Get a Free Quote →</Link>
             <Link href="/portfolio" className="btn btn-secondary btn-lg">View Portfolio</Link>
           </div>

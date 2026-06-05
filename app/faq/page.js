@@ -209,7 +209,7 @@ export default function FAQPage() {
             <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 600, margin: '0 auto 2rem', fontSize: '1.05rem' }}>
               Our project managers and strategists are happy to jump on a quick, zero-obligation call to talk about your technical milestones.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <div className="cta-buttons">
               <Link href="/free-consultation" className="btn btn-secondary" style={{ background: '#fff', color: 'var(--brand)', fontWeight: 700 }}>
                 Schedule Consultation Call →
               </Link>

@@ -46,7 +46,7 @@ export default function AboutPage() {
           </span>
           <h1>A Team of Builders, Strategists, and <span className="gradient-text">Digital Growth Experts</span></h1>
           <p>Founded in Lawrenceville, GA, InterNative Labs is a results-driven digital agency that combines deep technical expertise with growth-focused marketing strategies.</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id="about-cta">Get a Free Consultation →</Link>
             <Link href="/portfolio" className="btn btn-secondary btn-lg">View Our Work</Link>
           </div>

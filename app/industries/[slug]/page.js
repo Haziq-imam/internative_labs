@@ -214,7 +214,7 @@ export default function IndustryPage({ params }) {
           </span>
           <h1 dangerouslySetInnerHTML={{ __html: data.hero }} />
           <p>{data.heroSub}</p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id={`${params.slug}-ind-hero-cta`}>Book Free Industry Consult →</Link>
             <Link href="/portfolio" className="btn btn-secondary btn-lg">Browse Industry Work</Link>
           </div>
@@ -319,7 +319,7 @@ export default function IndustryPage({ params }) {
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '2rem' }}>
                 Get an expert consultation. We will audit your current search rankings, competitor architectures, and security compliance, creating a custom plan that fits your exact budget.
               </p>
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div className="hero-actions">
                 <Link href="/free-consultation" className="btn btn-primary" id={`${params.slug}-final-pricing-cta`}>Get a Free Quote →</Link>
                 <Link href="/pricing" className="btn btn-outline">View Full Price Sheet</Link>
               </div>
