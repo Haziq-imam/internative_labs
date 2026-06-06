@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { FiSmartphone, FiShoppingCart, FiBook, FiZap } from 'react-icons/fi';
 import { FaBuilding, FaPlusSquare, FaCar, FaApple, FaAndroid } from 'react-icons/fa';
+import MockupPhone from '@/components/MockupPhone';
+import FloatingCard from '@/components/FloatingCard';
+import SectionPattern from '@/components/SectionPattern';
 
 export const metadata = {
   title: 'Mobile App Development Company | iOS & Android | InterNative Labs',
@@ -41,30 +44,46 @@ const phases = [
 export default function MobileAppDevelopmentPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <Link href="/services">Services</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Mobile App Development</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Mobile App Development</span>
-          <h1>Mobile App Development That Transforms Ideas Into <span className="gradient-text">Revenue-Generating Apps</span></h1>
-          <p>We build native iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences. From MVP to full-scale enterprise solutions — designed for performance, security, and user adoption.</p>
-          <div className="hero-actions">
-            <Link href="/free-consultation" className="btn btn-primary btn-lg" id="mobile-hero-cta">Get Your Free App Development Quote →</Link>
-            <Link href="/portfolio" className="btn btn-secondary btn-lg">View App Portfolio</Link>
+          <div className="hero-split">
+            <div>
+              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Mobile App Development</span>
+              <h1>Mobile App Development That Transforms Ideas Into <span className="gradient-text">Revenue-Generating Apps</span></h1>
+              <p>We build native iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences. From MVP to full-scale enterprise solutions — designed for performance, security, and user adoption.</p>
+              <div className="hero-actions">
+                <Link href="/free-consultation" className="btn btn-primary btn-lg" id="mobile-hero-cta">Get Your Free App Development Quote →</Link>
+                <Link href="/portfolio" className="btn btn-secondary btn-lg">View App Portfolio</Link>
+              </div>
+            </div>
+            <div className="hero-visual">
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
+              <MockupPhone imageUrl="/images/medconnect-screenshot.png" />
+              <div className="hero-float-1">
+                <FloatingCard icon="📱" value="150+" label="Apps Shipped" color="#72c192" />
+              </div>
+              <div className="hero-float-2">
+                <FloatingCard icon="⭐" value="4.8★" label="Avg App Rating" color="#5ac0ec" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <div style={{ background: 'var(--brand-dark)', padding: '30px 0' }}>
+      <div style={{ background: 'var(--brand-dark)', padding: '24px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
             {[['150+','Apps Shipped'],['4.8★','Avg App Store Rating'],['99.9%','Crash-Free Sessions'],['iOS & Android','All Platforms']].map(([n,l]) => (
               <div key={l} style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 800, color: '#7ec8e3', lineHeight: 1 }}>{n}</div>
-                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>{l}</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4, whiteSpace: 'nowrap' }}>{l}</div>
               </div>
             ))}
           </div>

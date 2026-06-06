@@ -5,6 +5,9 @@ import {
   FiHeart, FiHome, FiShoppingCart, FiCoffee, FiBriefcase, FiCode,
   FiArrowRight,
 } from 'react-icons/fi';
+import MockupBrowser from '@/components/MockupBrowser';
+import FloatingCard from '@/components/FloatingCard';
+import SectionPattern from '@/components/SectionPattern';
 
 export const metadata = {
   title: 'Digital Agency | Web Dev, Mobile Apps & SEO — InterNative Labs',
@@ -145,39 +148,79 @@ export default function HomePage() {
         </div>
         <div className="hero-grid-overlay" />
         <div className="container hero-content">
-          <div className="hero-badge">
-            <span className="hero-badge-dot" />
-            Full-Service Digital Agency · Lawrenceville, GA
-          </div>
-          <h1>
-            Build, Grow &amp; Scale Your Business with a{' '}
-            <span className="gradient-text">Full-Service Digital Agency</span>
-          </h1>
-          <p className="hero-sub">
-            InterNative Labs delivers custom web development, mobile apps, SEO, and digital
-            marketing solutions that drive traffic, generate qualified leads, and grow your
-            revenue. From startups to enterprises — we build digital experiences that convert.
-          </p>
-          <div className="hero-actions">
-            <Link href="/free-consultation" className="btn btn-primary btn-lg" id="hero-cta-primary">
-              Get a Free Consultation <FiArrowRight />
-            </Link>
-            <Link href="/portfolio" className="btn btn-secondary btn-lg" id="hero-cta-secondary">
-              View Our Portfolio
-            </Link>
-          </div>
-          <div className="hero-stats">
-            {[
-              { num: '500+', label: 'Projects Delivered' },
-              { num: '97%',  label: 'Client Retention Rate' },
-              { num: '10x',  label: 'Average Client ROI' },
-              { num: '15+',  label: 'Countries Served' },
-            ].map(s => (
-              <div key={s.label}>
-                <div className="hero-stat-num">{s.num}</div>
-                <div className="hero-stat-label">{s.label}</div>
+          <div className="hero-split">
+            {/* Left: existing text + CTAs */}
+            <div>
+              <div className="hero-badge">
+                <span className="hero-badge-dot" />
+                Full-Service Digital Agency · Lawrenceville, GA
               </div>
-            ))}
+              <h1>
+                Build, Grow &amp; Scale Your Business with a{' '}
+                <span className="gradient-text">Full-Service Digital Agency</span>
+              </h1>
+              <p className="hero-sub">
+                InterNative Labs delivers custom web development, mobile apps, SEO, and digital
+                marketing solutions that drive traffic, generate qualified leads, and grow your
+                revenue. From startups to enterprises — we build digital experiences that convert.
+              </p>
+              <div className="hero-actions">
+                <Link href="/free-consultation" className="btn btn-primary btn-lg" id="hero-cta-primary">
+                  Get a Free Consultation <FiArrowRight />
+                </Link>
+                <Link href="/portfolio" className="btn btn-secondary btn-lg" id="hero-cta-secondary">
+                  View Our Portfolio
+                </Link>
+              </div>
+              <div className="hero-stats">
+                {[
+                  { num: '500+', label: 'Projects Delivered' },
+                  { num: '97%',  label: 'Client Retention Rate' },
+                  { num: '10x',  label: 'Average Client ROI' },
+                  { num: '15+',  label: 'Countries Served' },
+                ].map(s => (
+                  <div key={s.label}>
+                    <div className="hero-stat-num">{s.num}</div>
+                    <div className="hero-stat-label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Browser Mockup + Floating Cards */}
+            <div className="hero-visual">
+              {/* Soft glow behind mockup */}
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
+
+              <MockupBrowser imageUrl="/images/agency-dashboard.png" />
+
+              {/* Floating accent cards */}
+              <div className="hero-float-1">
+                <FloatingCard
+                  icon="📈"
+                  value="+180%"
+                  label="Traffic Increase"
+                  color="#72c192"
+                />
+              </div>
+              <div className="hero-float-2">
+                <FloatingCard
+                  icon="⭐"
+                  value="4.9★"
+                  label="Google Rating"
+                  color="#FFBD2E"
+                />
+              </div>
+              <div className="hero-float-3">
+                <FloatingCard
+                  icon="🚀"
+                  value="500+"
+                  label="Projects Shipped"
+                  color="#5ac0ec"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -197,7 +240,8 @@ export default function HomePage() {
       </div>
 
       {/* ── WHY CHOOSE ── */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section section-with-pattern" style={{ background: 'var(--bg-gray)' }}>
+        <SectionPattern opacity={0.035} color="#72c192" />
         <div className="container">
           <div className="section-header">
             <span className="section-label">Why InterNative Labs</span>
@@ -262,7 +306,7 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS BANNER ── */}
-      <section style={{ background: 'linear-gradient(135deg, #18191d, #1e2028)', padding: '80px 0', borderTop: '1px solid rgba(114,193,146,0.15)', borderBottom: '1px solid rgba(114,193,146,0.15)' }}>
+      <section style={{ background: 'linear-gradient(135deg, #18191d, #1e2028)', padding: '45px 0', borderTop: '1px solid rgba(114,193,146,0.15)', borderBottom: '1px solid rgba(114,193,146,0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ color: '#fff', marginBottom: '0.5rem' }}>Proven Results Across Every Industry</h2>
@@ -292,7 +336,8 @@ export default function HomePage() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section section-with-pattern" style={{ background: 'var(--bg-gray)' }}>
+        <SectionPattern opacity={0.03} color="#5ac0ec" />
         <div className="container">
           <div className="section-header">
             <span className="section-label">Industries We Serve</span>
@@ -328,7 +373,10 @@ export default function HomePage() {
                 <div className="testimonial-stars">{'★'.repeat(t.stars)}</div>
                 <p className="testimonial-text">{t.text}</p>
                 <div className="testimonial-author">
-                  <div className="testimonial-avatar">{t.initials}</div>
+                  {/* Upgraded avatar with gradient ring */}
+                  <div className="testimonial-avatar-ring">
+                    <div className="testimonial-avatar-ring-inner">{t.initials}</div>
+                  </div>
                   <div>
                     <div className="testimonial-name">{t.name}</div>
                     <div className="testimonial-role">{t.role}</div>

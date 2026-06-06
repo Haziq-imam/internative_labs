@@ -44,10 +44,10 @@ export default function FreeWebsiteAuditPage() {
       </section>
 
       {/* Audit Form */}
-      <section style={{ background: 'var(--bg-gray)', padding: '70px 0' }}>
+      <section style={{ background: 'var(--bg-gray)', padding: '40px 0' }}>
         <div className="container" style={{ maxWidth: 700 }}>
           {submitted ? (
-            <div style={{ background: 'var(--dark)', border: '1px solid var(--border)', borderRadius: 24, padding: '4rem', textAlign: 'center', boxShadow: 'var(--shadow-md)' }}>
+            <div style={{ background: 'var(--dark)', border: '1px solid var(--border)', borderRadius: 24, padding: '2.5rem 2rem', textAlign: 'center', boxShadow: 'var(--shadow-md)' }}>
               <div style={{ fontSize: '4rem', marginBottom: '1rem', color: 'var(--brand)' }}><FiBarChart2 size={48} /></div>
               <h2 style={{ color: 'var(--brand)', marginBottom: '1rem' }}>Audit Request Received!</h2>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.05rem' }}>

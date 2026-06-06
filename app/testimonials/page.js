@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FiStar, FiCheckCircle, FiAward } from 'react-icons/fi';
+import SectionPattern from '@/components/SectionPattern';
 
 export const metadata = {
   title: 'Client Reviews & Verified Testimonials | InterNative Labs',
@@ -82,6 +83,13 @@ const reviews = [
   }
 ];
 
+const awards = [
+  { name: 'Top Web Developers', sub: 'Clutch · 2024', accent: '#72c192' },
+  { name: 'Google Certified Partner', sub: 'Verified Agency', accent: '#5ac0ec' },
+  { name: 'DesignRush Accredited', sub: 'Agency Recognition', accent: '#88c248' },
+  { name: 'HubSpot Agency Partner', sub: 'Certified Partner', accent: '#72c192' },
+];
+
 export default function TestimonialsPage() {
   return (
     <>
@@ -101,7 +109,8 @@ export default function TestimonialsPage() {
         }}
       />
 
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
@@ -137,7 +146,7 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* Reviews Grid */}
+      {/* Reviews Grid — with upgraded avatars */}
       <section className="section">
         <div className="container">
           <div className="grid-3 animate-fadeUp">
@@ -152,18 +161,15 @@ export default function TestimonialsPage() {
                       </span>
                     )}
                   </div>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '0.92rem',
-                    lineHeight: 1.7,
-                    fontStyle: 'italic',
-                    marginBottom: '1.5rem'
-                  }}>
-                    "{r.text}"
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.7, fontStyle: 'italic', marginBottom: '1.5rem' }}>
+                    &ldquo;{r.text}&rdquo;
                   </p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', borderTop: '1px solid var(--border)', paddingTop: '1rem', marginTop: 'auto' }}>
-                  <div className="testimonial-avatar" style={{ background: 'var(--brand)', width: 40, height: 40 }}>{r.initials}</div>
+                  {/* Gradient ring avatar */}
+                  <div className="testimonial-avatar-ring">
+                    <div className="testimonial-avatar-ring-inner">{r.initials}</div>
+                  </div>
                   <div>
                     <div className="testimonial-name" style={{ fontSize: '0.88rem' }}>{r.name}</div>
                     <div className="testimonial-role" style={{ fontSize: '0.78rem' }}>{r.role}</div>
@@ -176,17 +182,24 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* Trust awards block */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      {/* Awards — upgraded to visual badge cards */}
+      <section className="section section-with-pattern" style={{ background: 'var(--bg-gray)' }}>
+        <SectionPattern opacity={0.035} color="#5ac0ec" />
         <div className="container">
           <div className="section-header">
             <span className="section-label">AWARDS &amp; RECOGNITION</span>
             <h2>Top Rated Lawrenceville Agency</h2>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap', opacity: 0.85 }}>
-            {['Top Web Developers Clutch', 'Google Certified Partner', 'DesignRush Accredited Agency', 'HubSpot Agency Partner'].map(badge => (
-              <div key={badge} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--brand)', background: 'var(--dark)', border: '1px solid var(--border)', padding: '12px 24px', borderRadius: 12, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <FiAward size={18} style={{ color: 'var(--accent)' }} /> {badge}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+            {awards.map(badge => (
+              <div key={badge.name} className="award-badge">
+                <div className="award-badge-icon" style={{ background: `${badge.accent}15`, border: `1px solid ${badge.accent}30` }}>
+                  <FiAward size={20} style={{ color: badge.accent }} />
+                </div>
+                <div>
+                  <div className="award-badge-name">{badge.name}</div>
+                  <div className="award-badge-sub">{badge.sub}</div>
+                </div>
               </div>
             ))}
           </div>

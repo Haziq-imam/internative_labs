@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import MockupBrowser from '@/components/MockupBrowser';
+import FloatingCard from '@/components/FloatingCard';
+import SectionPattern from '@/components/SectionPattern';
 
 export const metadata = {
   title: 'Custom Web Development Services | InterNative Labs',
@@ -53,31 +56,47 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <Link href="/services">Services</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Web Development</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Web Development</span>
-          <h1>Custom Web Development That Turns <span className="gradient-text">Visitors Into Customers</span></h1>
-          <p>We build fast, secure, and beautifully designed websites that perform in search engines and convert visitors into paying customers. Every line of code is written with business results in mind.</p>
-          <div className="hero-actions">
-            <Link href="/free-consultation" className="btn btn-primary btn-lg" id="webdev-hero-cta">Get a Free Website Proposal →</Link>
-            <Link href="/portfolio" className="btn btn-secondary btn-lg">View Web Portfolio</Link>
+          <div className="hero-split">
+            <div>
+              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Web Development</span>
+              <h1>Custom Web Development That Turns <span className="gradient-text">Visitors Into Customers</span></h1>
+              <p>We build fast, secure, and beautifully designed websites that perform in search engines and convert visitors into paying customers. Every line of code is written with business results in mind.</p>
+              <div className="hero-actions">
+                <Link href="/free-consultation" className="btn btn-primary btn-lg" id="webdev-hero-cta">Get a Free Website Proposal →</Link>
+                <Link href="/portfolio" className="btn btn-secondary btn-lg">View Web Portfolio</Link>
+              </div>
+            </div>
+            <div className="hero-visual">
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
+              <MockupBrowser imageUrl="/images/retailedge-screenshot.png" />
+              <div className="hero-float-1">
+                <FloatingCard icon="⚡" value="300+" label="Websites Built" color="#72c192" />
+              </div>
+              <div className="hero-float-2">
+                <FloatingCard icon="🔒" value="< 2s" label="Avg Page Load" color="#5ac0ec" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Key Stats */}
-      <div style={{ background: 'var(--brand-dark)', padding: '30px 0' }}>
+      <div style={{ background: 'var(--brand-dark)', padding: '24px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
             {[['300+','Websites Built'],['< 2s','Avg Page Load'],['98%','Client Satisfaction'],['Mobile-First','SEO-Ready']].map(([n,l]) => (
               <div key={l} style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 800, color: '#7ec8e3', lineHeight: 1 }}>{n}</div>
-                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>{l}</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4, whiteSpace: 'nowrap' }}>{l}</div>
               </div>
             ))}
           </div>
@@ -106,7 +125,8 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* Tech Stack */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section section-with-pattern" style={{ background: 'var(--bg-gray)' }}>
+        <SectionPattern opacity={0.03} color="#5ac0ec" />
         <div className="container">
           <div className="section-header">
             <span className="section-label">Technology Stack</span>

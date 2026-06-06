@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { FiSearch, FiSettings, FiFileText, FiLink, FiMapPin, FiBarChart2 } from 'react-icons/fi';
+import MockupDashboard from '@/components/MockupDashboard';
+import FloatingCard from '@/components/FloatingCard';
+import SectionPattern from '@/components/SectionPattern';
 
 export const metadata = {
   title: 'SEO Services Company | Page 1 Rankings | InterNative Labs',
@@ -41,30 +44,46 @@ const faqs = [
 export default function SEOServicesPage() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <Link href="/services">Services</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>SEO Services</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>SEO Services</span>
-          <h1>SEO Services That Put Your Business on <span className="gradient-text">Page 1 and Keep It There</span></h1>
-          <p>Our data-driven SEO strategies combine technical excellence, strategic content, and authoritative link building to drive qualified organic traffic that converts. We build sustainable rankings that generate leads for years.</p>
-          <div className="hero-actions">
-            <Link href="/free-website-audit" className="btn btn-primary btn-lg" id="seo-hero-cta">Get Your Free SEO Audit — $0 →</Link>
-            <Link href="/case-studies" className="btn btn-secondary btn-lg">View SEO Case Studies</Link>
+          <div className="hero-split">
+            <div>
+              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>SEO Services</span>
+              <h1>SEO Services That Put Your Business on <span className="gradient-text">Page 1 and Keep It There</span></h1>
+              <p>Our data-driven SEO strategies combine technical excellence, strategic content, and authoritative link building to drive qualified organic traffic that converts. We build sustainable rankings that generate leads for years.</p>
+              <div className="hero-actions">
+                <Link href="/free-website-audit" className="btn btn-primary btn-lg" id="seo-hero-cta">Get Your Free SEO Audit — $0 →</Link>
+                <Link href="/case-studies" className="btn btn-secondary btn-lg">View SEO Case Studies</Link>
+              </div>
+            </div>
+            <div className="hero-visual">
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
+              <MockupDashboard imageUrl="/images/lawfirm-screenshot.png" />
+              <div className="hero-float-1">
+                <FloatingCard icon="📈" value="+187%" label="Traffic Increase" color="#72c192" />
+              </div>
+              <div className="hero-float-2">
+                <FloatingCard icon="🏆" value="Rank #1" label="Organic Dominance" color="#5ac0ec" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <div style={{ background: 'var(--brand-dark)', padding: '30px 0' }}>
+      <div style={{ background: 'var(--brand-dark)', padding: '24px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
             {[['92%','Clients Reach Page 1'],['187%','Avg Traffic Increase'],['300+','SEO Campaigns'],['White-Hat','Google Compliant']].map(([n,l]) => (
               <div key={l} style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 800, color: '#7ec8e3', lineHeight: 1 }}>{n}</div>
-                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>{l}</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4, whiteSpace: 'nowrap' }}>{l}</div>
               </div>
             ))}
           </div>
@@ -116,7 +135,8 @@ export default function SEOServicesPage() {
       </section>
 
       {/* Pricing */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section section-with-pattern" style={{ background: 'var(--bg-gray)' }}>
+        <SectionPattern opacity={0.03} color="#5ac0ec" />
         <div className="container">
           <div className="section-header">
             <span className="section-label">SEO Pricing</span>

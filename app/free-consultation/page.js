@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FiTarget, FiSearch, FiMap, FiDollarSign, FiMail, FiPhone, FiCheckCircle, FiLock } from 'react-icons/fi';
+import MockupDashboard from '@/components/MockupDashboard';
+import SectionPattern from '@/components/SectionPattern';
 
 export default function FreeConsultationPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', service: '', budget: '', message: '' });
@@ -11,7 +13,8 @@ export default function FreeConsultationPage() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
@@ -51,6 +54,12 @@ export default function FreeConsultationPage() {
                   </div>
                 );
               })}
+
+              {/* Strategy session dashboard mockup */}
+              <div style={{ marginTop: '2rem', position: 'relative' }}>
+                <div className="mockup-glow mockup-glow-green" style={{ width: 300, height: 300 }} />
+                <MockupDashboard title="Strategy Overview" imageUrl="/images/agency-dashboard.png" />
+              </div>
 
               <div style={{ background: 'var(--bg-gray)', border: '1px solid var(--border)', borderRadius: 16, padding: '1.8rem', marginTop: '1.5rem' }}>
                 <h3 style={{ color: 'var(--brand)', marginBottom: '1rem', fontSize: '1.1rem' }}>Prefer to reach out directly?</h3>

@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { FiTarget, FiLock, FiZap, FiUsers, FiBriefcase, FiCode, FiTrendingUp, FiLayout } from 'react-icons/fi';
+import MockupBrowser from '@/components/MockupBrowser';
+import FloatingCard from '@/components/FloatingCard';
+import SectionPattern from '@/components/SectionPattern';
 
 export const metadata = {
   title: 'About InterNative Labs | Full-Service Digital Agency | Lawrenceville GA',
@@ -34,7 +37,9 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
+        <div className="deco-ring deco-ring-1" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link>
@@ -56,7 +61,8 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="section">
         <div className="container">
-          <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="service-split">
+            {/* Left: Story text */}
             <div>
               <span className="section-label">Our Story</span>
               <h2 style={{ color: 'var(--brand)', marginBottom: '1.5rem' }}>Built on a Simple Belief: <span className="gradient-text">Results Matter Most</span></h2>
@@ -67,27 +73,41 @@ export default function AboutPage() {
                 Every website we build, every app we deploy, every SEO campaign we run is measured against one benchmark: <strong>did it grow your business?</strong> That accountability drives everything we do.
               </p>
             </div>
-            <div className="responsive-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              {teamStats.map(s => (
-                <div key={s.label} style={{
-                  background: 'var(--gradient-brand)',
-                  borderRadius: 20,
-                  padding: '2rem',
-                  textAlign: 'center',
-                  color: '#fff',
-                }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 800, color: '#7ec8e3', lineHeight: 1, marginBottom: 8 }}>{s.num}</div>
-                  <div style={{ fontWeight: 700, marginBottom: 4 }}>{s.label}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}>{s.sub}</div>
-                </div>
-              ))}
+
+            {/* Right: Visual with browser mockup + floating stat cards */}
+            <div className="hero-visual" style={{ minHeight: 340 }}>
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
+              <MockupBrowser />
+              <div className="hero-float-1">
+                <FloatingCard icon="👥" value="35+" label="Team Members" color="#72c192" />
+              </div>
+              <div className="hero-float-2">
+                <FloatingCard icon="🌍" value="15+" label="Countries Reached" color="#5ac0ec" />
+              </div>
             </div>
+          </div>
+
+          {/* Stats grid below the split */}
+          <div className="responsive-grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem', marginTop: '3rem' }}>
+            {teamStats.map(s => (
+              <div key={s.label} style={{
+                background: 'var(--gradient-brand)',
+                borderRadius: 20, padding: '2rem',
+                textAlign: 'center', color: '#fff',
+              }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 800, color: '#7ec8e3', lineHeight: 1, marginBottom: 8 }}>{s.num}</div>
+                <div style={{ fontWeight: 700, marginBottom: 4, whiteSpace: 'nowrap' }}>{s.label}</div>
+                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}>{s.sub}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Our Values */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section section-with-pattern" style={{ background: 'var(--bg-gray)' }}>
+        <SectionPattern opacity={0.03} color="#5ac0ec" />
         <div className="container">
           <div className="section-header">
             <span className="section-label">Our Values</span>
@@ -125,13 +145,11 @@ export default function AboutPage() {
               const EmojiIcon = m.emoji;
               return (
                 <div key={m.name} className="card" style={{ textAlign: 'center' }}>
-                  <div style={{
-                    width: 80, height: 80, borderRadius: '50%',
-                    background: m.bg,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#fff', margin: '0 auto 1rem',
-                  }}>
-                    <EmojiIcon size={28} />
+                  {/* Upgraded avatar with gradient ring */}
+                  <div className="team-avatar-ring">
+                    <div className="team-avatar-ring-inner" style={{ background: m.bg }}>
+                      <EmojiIcon size={28} />
+                    </div>
                   </div>
                   <h3 style={{ fontSize: '1rem', color: 'var(--brand)', marginBottom: 4 }}>{m.name}</h3>
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{m.role}</p>

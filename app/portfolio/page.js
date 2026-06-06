@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FiShoppingCart, FiActivity, FiSliders, FiMonitor, FiZap, FiPenTool, FiTrendingUp, FiBriefcase } from 'react-icons/fi';
+import MockupMacbook from '@/components/MockupMacbook';
+import SectionPattern from '@/components/SectionPattern';
 
 const categories = ['All', 'Web Design', 'Mobile Apps', 'SEO', 'Branding'];
 
@@ -15,7 +17,9 @@ const projects = [
     tags: ['Shopify', 'Liquid', 'SEO', 'UX Research'],
     icon: FiShoppingCart,
     color: 'var(--brand)',
-    slug: 'retailedge-usa'
+    accentColor: '#72c192',
+    slug: 'retailedge-usa',
+    imageUrl: '/images/retailedge-screenshot.png'
   },
   {
     title: 'MedConnect Telehealth',
@@ -26,7 +30,9 @@ const projects = [
     tags: ['Swift', 'Kotlin', 'WebRTC', 'HIPAA'],
     icon: FiActivity,
     color: '#27AE60',
-    slug: 'medconnect-telehealth'
+    accentColor: '#27AE60',
+    slug: 'medconnect-telehealth',
+    imageUrl: '/images/medconnect-screenshot.png'
   },
   {
     title: 'LawFirm Pro Partners',
@@ -37,7 +43,9 @@ const projects = [
     tags: ['Local SEO', 'Citation Building', 'Schema Markup'],
     icon: FiSliders,
     color: '#F39C12',
-    slug: 'lawfirm-pro'
+    accentColor: '#F39C12',
+    slug: 'lawfirm-pro',
+    imageUrl: '/images/lawfirm-screenshot.png'
   },
   {
     title: 'Zenith SaaS Platform',
@@ -48,7 +56,9 @@ const projects = [
     tags: ['Next.js', 'React', 'Tailwind', 'Stripe'],
     icon: FiMonitor,
     color: 'var(--accent)',
-    slug: 'zenith-saas'
+    accentColor: '#5ac0ec',
+    slug: 'zenith-saas',
+    imageUrl: '/images/zenith-screenshot.png'
   },
   {
     title: 'Apex Fitness Tracker',
@@ -59,7 +69,9 @@ const projects = [
     tags: ['Flutter', 'Dart', 'Firebase', 'BLE Sync'],
     icon: FiZap,
     color: '#E74C3C',
-    slug: 'apex-fitness'
+    accentColor: '#E74C3C',
+    slug: 'apex-fitness',
+    imageUrl: '/images/apex-screenshot.png'
   },
   {
     title: 'Aura Cosmetics Identity',
@@ -70,7 +82,9 @@ const projects = [
     tags: ['Branding', 'Logo Design', 'Vector Assets', 'Typography'],
     icon: FiPenTool,
     color: '#9B59B6',
-    slug: 'aura-cosmetics'
+    accentColor: '#9B59B6',
+    slug: 'aura-cosmetics',
+    imageUrl: ''
   }
 ];
 
@@ -83,7 +97,8 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero section-with-pattern">
+        <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
           <div className="breadcrumb">
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
@@ -121,62 +136,57 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          {/* Grid */}
-          <div className="grid-3 animate-fadeUp">
-            {filteredProjects.map((p, index) => (
-              <div key={p.title} className="service-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem' }}>
-                  <div className="service-icon" style={{ background: `${p.color}15`, color: p.color, marginBottom: 0 }}>
-                    <p.icon size={24} />
+          {/* Grid — with MacBook mockup thumbnails */}
+          <div className="portfolio-grid animate-fadeUp">
+            {filteredProjects.map((p) => (
+              <div key={p.title} className="portfolio-card" style={{ background: '#1c1e24' }}>
+                {/* MacBook Mockup Thumbnail */}
+                <div className="portfolio-mockup-thumb">
+                  <MockupMacbook
+                    accentColor={p.accentColor}
+                    label={p.metric}
+                    imageUrl={p.imageUrl}
+                  />
+                </div>
+
+                {/* Card Info */}
+                <div className="portfolio-info" style={{ padding: '1.4rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
+                    <span className="portfolio-tag">{p.subCat}</span>
+                    <div className="service-icon" style={{ background: `${p.color}15`, color: p.color, marginBottom: 0, width: 36, height: 36 }}>
+                      <p.icon size={18} />
+                    </div>
                   </div>
-                  <span style={{
-                    fontSize: '0.78rem',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    color: p.color,
-                    background: `${p.color}12`,
-                    padding: '4px 10px',
-                    borderRadius: 99
+
+                  <h3 style={{ fontSize: '1.1rem', color: 'var(--brand)', marginBottom: '0.4rem' }}>{p.title}</h3>
+
+                  {/* Metric Badge */}
+                  <div style={{
+                    display: 'inline-flex', alignItems: 'center',
+                    background: 'var(--bg-gray)', border: '1px solid var(--border)',
+                    color: 'var(--success)', fontWeight: 700, fontSize: '0.82rem',
+                    padding: '3px 10px', borderRadius: 6, alignSelf: 'flex-start', marginBottom: '0.8rem'
                   }}>
-                    {p.subCat}
-                  </span>
+                    <FiTrendingUp size={14} style={{ marginRight: 5 }} /> {p.metric}
+                  </div>
+
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                    {p.desc}
+                  </p>
+
+                  {/* Tech tags */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '1rem' }}>
+                    {p.tags.map(t => (
+                      <span key={t} style={{ fontSize: '0.72rem', background: 'var(--bg-gray)', border: '1px solid var(--border)', padding: '3px 8px', borderRadius: 4, color: 'var(--text-muted)' }}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link href="/case-studies" className="service-card-link" style={{ alignSelf: 'flex-start', color: p.color }}>
+                    View Full Case Study →
+                  </Link>
                 </div>
-
-                <h3 style={{ fontSize: '1.3rem', color: 'var(--brand)', marginBottom: '0.4rem' }}>{p.title}</h3>
-                
-                {/* Metric Badge */}
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  background: 'var(--bg-gray)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--success)',
-                  fontWeight: 700,
-                  fontSize: '0.85rem',
-                  padding: '4px 12px',
-                  borderRadius: 6,
-                  alignSelf: 'flex-start',
-                  marginBottom: '1rem'
-                }}>
-                  <FiTrendingUp size={16} style={{ marginRight: 6 }} /> {p.metric}
-                </div>
-
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, flexGrow: 1, marginBottom: '1.5rem' }}>
-                  {p.desc}
-                </p>
-
-                {/* Tech tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
-                  {p.tags.map(t => (
-                    <span key={t} style={{ fontSize: '0.75rem', background: 'var(--bg-gray)', border: '1px solid var(--border)', padding: '3px 8px', borderRadius: 4, color: 'var(--text-muted)' }}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <Link href="/case-studies" className="service-card-link" style={{ alignSelf: 'flex-start', color: p.color }}>
-                  View Full Case Study →
-                </Link>
               </div>
             ))}
           </div>

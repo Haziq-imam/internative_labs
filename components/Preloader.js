@@ -44,10 +44,19 @@ export default function Preloader() {
         opacity: fadeOut ? 0 : 1,
         visibility: fadeOut ? 'hidden' : 'visible',
         transition: 'opacity 0.4s ease, visibility 0.4s ease',
+        padding: '20px',
       }}
     >
-      <div style={{ position: 'relative', width: '120px', height: '120px', marginBottom: '24px' }}>
-        {/* Creative outer spinning gradient circle */}
+      {/* Spinner container — responsive sizing */}
+      <div
+        style={{
+          position: 'relative',
+          width: 'clamp(80px, 20vw, 120px)',
+          height: 'clamp(80px, 20vw, 120px)',
+          marginBottom: 'clamp(16px, 3vw, 24px)',
+        }}
+      >
+        {/* Outer spinning gradient ring */}
         <div
           style={{
             position: 'absolute',
@@ -62,14 +71,14 @@ export default function Preloader() {
             animation: 'loader-spin 1.2s linear infinite',
           }}
         />
-        {/* Inner static/pulsing logo placeholder */}
+        {/* Inner pulsing logo circle */}
         <div
           style={{
             position: 'absolute',
-            top: '15px',
-            left: '15px',
-            width: '90px',
-            height: '90px',
+            top: '12.5%',
+            left: '12.5%',
+            width: '75%',
+            height: '75%',
             borderRadius: '50%',
             background: '#18191d',
             display: 'flex',
@@ -82,8 +91,8 @@ export default function Preloader() {
             src="/logo-header.png"
             alt="IL logo"
             style={{
-              width: '45px',
-              height: '45px',
+              width: '50%',
+              height: '50%',
               objectFit: 'contain',
               animation: 'loader-pulse 2s ease-in-out infinite',
             }}
@@ -91,41 +100,58 @@ export default function Preloader() {
         </div>
       </div>
 
-      {/* Bouncing/letter-animating text */}
-      <div className="preloader-text-container" style={{ display: 'flex', gap: '4px' }}>
-        {['I', 'n', 't', 'e', 'r', 'N', 'a', 't', 'i', 'v', 'e'].map((letter, i) => (
-          <span
-            key={i}
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: '1.25rem',
-              background: 'linear-gradient(to right, #88c248, #5ac0ec)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              animation: `loader-bounce 1.4s ease-in-out infinite`,
-              animationDelay: `${i * 0.08}s`,
-            }}
-          >
-            {letter}
-          </span>
-        ))}
+      {/* Animated text — responsive font size */}
+      <div
+        className="preloader-text-container"
+        style={{
+          display: 'flex',
+          gap: 'clamp(2px, 0.5vw, 4px)',
+          marginBottom: 'clamp(16px, 3vw, 24px)',
+        }}
+      >
+        {['I', 'n', 't', 'e', 'r', 'N', 'a', 't', 'i', 'v', 'e'].map(
+          (letter, i) => (
+            <span
+              key={i}
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                fontSize: 'clamp(0.95rem, 2.5vw, 1.25rem)',
+                background: 'linear-gradient(to right, #88c248, #5ac0ec)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                animation: `loader-bounce 1.4s ease-in-out infinite`,
+                animationDelay: `${i * 0.08}s`,
+              }}
+            >
+              {letter}
+            </span>
+          )
+        )}
       </div>
 
-      <style jsx global>{`
-        @keyframes loader-spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes loader-pulse {
-          0%, 100% { transform: scale(0.95); opacity: 0.8; }
-          50% { transform: scale(1.05); opacity: 1; }
-        }
-        @keyframes loader-bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-      `}</style>
+      {/* Progress bar */}
+      <div
+        style={{
+          width: 'clamp(120px, 30vw, 200px)',
+          height: '3px',
+          background: 'rgba(255,255,255,0.06)',
+          borderRadius: '3px',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(to right, #88c248, #72c192, #5ac0ec)',
+            borderRadius: '3px',
+            animation: 'loader-progress 1.2s ease-in-out forwards',
+          }}
+        />
+      </div>
+
+
     </div>
   );
 }
