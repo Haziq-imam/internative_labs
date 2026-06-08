@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FiTarget, FiSearch, FiMap, FiDollarSign, FiMail, FiPhone, FiCheckCircle, FiLock } from 'react-icons/fi';
-import MockupDashboard from '@/components/MockupDashboard';
 import SectionPattern from '@/components/SectionPattern';
 
 export default function FreeConsultationPage() {
@@ -58,7 +57,11 @@ export default function FreeConsultationPage() {
               {/* Strategy session dashboard mockup */}
               <div style={{ marginTop: '2rem', position: 'relative' }}>
                 <div className="mockup-glow mockup-glow-green" style={{ width: 300, height: 300 }} />
-                <MockupDashboard title="Strategy Overview" imageUrl="/images/agency-dashboard.png" />
+                <img
+                  src="/images/agency-dashboard.png"
+                  alt="InterNative Labs Agency Dashboard"
+                  className="hero-image"
+                />
               </div>
 
               <div style={{ background: 'var(--bg-gray)', border: '1px solid var(--border)', borderRadius: 16, padding: '1.8rem', marginTop: '1.5rem' }}>

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { FiSearch, FiSettings, FiFileText, FiLink, FiMapPin, FiBarChart2 } from 'react-icons/fi';
-import MockupDashboard from '@/components/MockupDashboard';
 import FloatingCard from '@/components/FloatingCard';
 import SectionPattern from '@/components/SectionPattern';
 
@@ -65,7 +64,11 @@ export default function SEOServicesPage() {
             <div className="hero-visual">
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <MockupDashboard imageUrl="/images/lawfirm-screenshot.png" />
+              <img
+                src="/images/lawfirm-screenshot.png"
+                alt="SEO Rankings Dashboard"
+                className="hero-image"
+              />
               <div className="hero-float-1">
                 <FloatingCard icon="📈" value="+187%" label="Traffic Increase" color="#72c192" />
               </div>
@@ -152,7 +155,7 @@ export default function SEOServicesPage() {
                 <div className="pricing-desc">{p.desc}</div>
                 <ul className="pricing-features">{p.features.map(f => <li key={f}>{f}</li>)}</ul>
                 <Link href="/free-consultation" className={`btn btn-lg${p.featured ? '' : ' btn-outline'}`} id={p.id}
-                  style={p.featured ? { background: '#fff', color: 'var(--brand)', display: 'block', textAlign: 'center', fontWeight: 700 } : { display: 'block', textAlign: 'center' }}>
+                  style={p.featured ? { background: '#fff', color: 'var(--dark)', display: 'block', textAlign: 'center', fontWeight: 700 } : { display: 'block', textAlign: 'center' }}>
                   {p.cta} →
                 </Link>
               </div>

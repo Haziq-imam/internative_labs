@@ -316,15 +316,15 @@ export default function ServicePage({ params }) {
                 ))}
               </div>
             </div>
-            <div style={{ background: 'var(--gradient-brand)', borderRadius: 24, padding: '3rem', textAlign: 'center', color: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 90, height: 90, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', marginBottom: '1.5rem' }}>
+            <div style={{ background: 'linear-gradient(135deg, var(--dark-2) 0%, var(--brand-dark) 100%)', border: '1.5px solid rgba(114,193,146,0.18)', borderRadius: 24, padding: '3rem', textAlign: 'center', color: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 90, height: 90, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(114,193,146,0.25)', marginBottom: '1.5rem', color: 'var(--brand)' }}>
                 <HeroIcon size={44} />
               </div>
               <h3 style={{ color: '#fff', marginBottom: '0.8rem' }}>{data.title}</h3>
               <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#7ec8e3', marginBottom: '0.5rem' }}>{data.price}</div>
-              <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', marginBottom: '2rem' }}>Custom quotes available based on your specific needs</p>
+              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', marginBottom: '2rem' }}>Custom quotes available based on your specific needs</p>
               <Link href="/free-consultation" className="btn" id={`${params.slug}-card-cta`}
-                style={{ background: '#fff', color: 'var(--brand)', display: 'inline-flex', fontWeight: 700 }}>
+                style={{ background: '#fff', color: 'var(--dark)', display: 'inline-flex', fontWeight: 700 }}>
                 Get a Free Quote →
               </Link>
             </div>

@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FiShoppingCart, FiActivity, FiSliders, FiMonitor, FiZap, FiPenTool, FiTrendingUp, FiBriefcase } from 'react-icons/fi';
-import MockupMacbook from '@/components/MockupMacbook';
 import SectionPattern from '@/components/SectionPattern';
 
 const categories = ['All', 'Web Design', 'Mobile Apps', 'SEO', 'Branding'];
@@ -136,17 +135,44 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          {/* Grid — with MacBook mockup thumbnails */}
+          {/* Project Cards Grid */}
           <div className="portfolio-grid animate-fadeUp">
             {filteredProjects.map((p) => (
               <div key={p.title} className="portfolio-card" style={{ background: '#1c1e24' }}>
-                {/* MacBook Mockup Thumbnail */}
+                {/* Screenshot / Branded Thumbnail */}
                 <div className="portfolio-mockup-thumb">
-                  <MockupMacbook
-                    accentColor={p.accentColor}
-                    label={p.metric}
-                    imageUrl={p.imageUrl}
-                  />
+                  {p.imageUrl ? (
+                    <img
+                      src={p.imageUrl}
+                      alt={p.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block',
+                      }}
+                    />
+                  ) : (
+                    /* Gradient fallback for projects without a screenshot */
+                    <div style={{
+                      width: '100%', height: '100%',
+                      background: `linear-gradient(135deg, ${p.accentColor}22, ${p.accentColor}08)`,
+                      display: 'flex', flexDirection: 'column',
+                      alignItems: 'center', justifyContent: 'center', gap: '0.8rem',
+                    }}>
+                      <div style={{
+                        width: 64, height: 64, borderRadius: 16,
+                        background: `${p.accentColor}20`,
+                        border: `1.5px solid ${p.accentColor}40`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}>
+                        <p.icon size={28} style={{ color: p.accentColor }} />
+                      </div>
+                      <span style={{ color: p.accentColor, fontWeight: 700, fontSize: '0.85rem' }}>
+                        {p.subCat}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Info */}
@@ -196,16 +222,16 @@ export default function PortfolioPage() {
       {/* Trust Strip */}
       <section className="section">
         <div className="container">
-          <div style={{ background: 'var(--gradient-brand)', borderRadius: 24, padding: '4rem 3rem', color: '#fff', textAlign: 'center', boxShadow: 'var(--shadow-brand)' }}>
+          <div style={{ background: 'linear-gradient(135deg, var(--dark-2) 0%, var(--brand-dark) 100%)', border: '1.5px solid rgba(114,193,146,0.18)', borderRadius: 24, padding: '4rem 3rem', color: '#fff', textAlign: 'center', boxShadow: 'var(--shadow-brand)' }}>
             <h2 style={{ color: '#fff', marginBottom: '1rem' }}>Have a Similar Project in Mind?</h2>
-            <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 600, margin: '0 auto 2rem', fontSize: '1.05rem' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 600, margin: '0 auto 2rem', fontSize: '1.05rem' }}>
               We collaborate with clients to turn technical ideas into profit centers. Contact our Lawrenceville growth experts to outline your milestones.
             </p>
             <div className="cta-buttons">
-              <Link href="/free-consultation" className="btn btn-secondary" style={{ background: '#fff', color: 'var(--brand)', fontWeight: 700 }}>
+              <Link href="/free-consultation" className="btn btn-secondary" style={{ background: '#fff', color: 'var(--dark)', fontWeight: 700 }}>
                 Schedule Consultation Call →
               </Link>
-              <Link href="/contact" className="btn btn-outline" style={{ borderColor: '#fff', color: '#fff' }}>
+              <Link href="/contact" className="btn btn-outline">
                 Contact Our Team
               </Link>
             </div>

@@ -204,16 +204,16 @@ export default function FAQPage() {
       {/* Support CTA */}
       <section className="section" style={{ background: 'var(--bg-gray)' }}>
         <div className="container">
-          <div style={{ background: 'var(--gradient-brand)', borderRadius: 24, padding: '4rem', color: '#fff', textAlign: 'center', boxShadow: 'var(--shadow-brand)' }}>
+          <div style={{ background: 'linear-gradient(135deg, var(--dark-2) 0%, var(--brand-dark) 100%)', border: '1.5px solid rgba(114,193,146,0.18)', borderRadius: 24, padding: '4rem', color: '#fff', textAlign: 'center', boxShadow: 'var(--shadow-brand)' }}>
             <h2 style={{ color: '#fff', marginBottom: '1rem' }}>Still Have Unanswered Questions?</h2>
-            <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 600, margin: '0 auto 2rem', fontSize: '1.05rem' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 600, margin: '0 auto 2rem', fontSize: '1.05rem' }}>
               Our project managers and strategists are happy to jump on a quick, zero-obligation call to talk about your technical milestones.
             </p>
             <div className="cta-buttons">
-              <Link href="/free-consultation" className="btn btn-secondary" style={{ background: '#fff', color: 'var(--brand)', fontWeight: 700 }}>
+              <Link href="/free-consultation" className="btn btn-secondary" style={{ background: '#fff', color: 'var(--dark)', fontWeight: 700 }}>
                 Schedule Consultation Call →
               </Link>
-              <Link href="/contact" className="btn btn-outline" style={{ borderColor: '#fff', color: '#fff' }}>
+              <Link href="/contact" className="btn btn-outline">
                 Contact Our Team
               </Link>
             </div>

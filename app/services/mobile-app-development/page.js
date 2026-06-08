@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { FiSmartphone, FiShoppingCart, FiBook, FiZap } from 'react-icons/fi';
 import { FaBuilding, FaPlusSquare, FaCar, FaApple, FaAndroid } from 'react-icons/fa';
-import MockupPhone from '@/components/MockupPhone';
 import FloatingCard from '@/components/FloatingCard';
 import SectionPattern from '@/components/SectionPattern';
 
@@ -65,7 +64,12 @@ export default function MobileAppDevelopmentPage() {
             <div className="hero-visual">
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <MockupPhone imageUrl="/images/medconnect-screenshot.png" />
+              <img
+                src="/images/medconnect-screenshot.png"
+                alt="MedConnect Mobile App Prototype"
+                className="hero-image"
+                style={{ maxWidth: '300px', margin: '0 auto' }}
+              />
               <div className="hero-float-1">
                 <FloatingCard icon="📱" value="150+" label="Apps Shipped" color="#72c192" />
               </div>

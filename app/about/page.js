@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { FiTarget, FiLock, FiZap, FiUsers, FiBriefcase, FiCode, FiTrendingUp, FiLayout } from 'react-icons/fi';
-import MockupBrowser from '@/components/MockupBrowser';
 import FloatingCard from '@/components/FloatingCard';
 import SectionPattern from '@/components/SectionPattern';
 
@@ -78,7 +77,11 @@ export default function AboutPage() {
             <div className="hero-visual" style={{ minHeight: 340 }}>
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <MockupBrowser />
+              <img
+                src="/images/agency-dashboard.png"
+                alt="InterNative Labs Agency Dashboard"
+                className="hero-image"
+              />
               <div className="hero-float-1">
                 <FloatingCard icon="👥" value="35+" label="Team Members" color="#72c192" />
               </div>

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import MockupBrowser from '@/components/MockupBrowser';
 import FloatingCard from '@/components/FloatingCard';
 import SectionPattern from '@/components/SectionPattern';
 
@@ -77,7 +76,11 @@ export default function WebDevelopmentPage() {
             <div className="hero-visual">
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <MockupBrowser imageUrl="/images/retailedge-screenshot.png" />
+              <img
+                src="/images/retailedge-screenshot.png"
+                alt="RetailEdge eCommerce Dashboard"
+                className="hero-image"
+              />
               <div className="hero-float-1">
                 <FloatingCard icon="⚡" value="300+" label="Websites Built" color="#72c192" />
               </div>
@@ -185,7 +188,7 @@ export default function WebDevelopmentPage() {
                 <div className="pricing-desc">{t.desc}</div>
                 <ul className="pricing-features">{t.features.map(f => <li key={f}>{f}</li>)}</ul>
                 <Link href="/free-consultation" className={`btn btn-lg${t.featured ? '' : ' btn-outline'}`} id={t.id}
-                  style={t.featured ? { background: '#fff', color: 'var(--brand)', display: 'block', textAlign: 'center', fontWeight: 700 } : { display: 'block', textAlign: 'center' }}>
+                  style={t.featured ? { background: '#fff', color: 'var(--dark)', display: 'block', textAlign: 'center', fontWeight: 700 } : { display: 'block', textAlign: 'center' }}>
                   {t.cta} →
                 </Link>
               </div>

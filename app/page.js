@@ -5,7 +5,6 @@ import {
   FiHeart, FiHome, FiShoppingCart, FiCoffee, FiBriefcase, FiCode,
   FiArrowRight,
 } from 'react-icons/fi';
-import MockupBrowser from '@/components/MockupBrowser';
 import FloatingCard from '@/components/FloatingCard';
 import SectionPattern from '@/components/SectionPattern';
 
@@ -193,7 +192,11 @@ export default function HomePage() {
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
 
-              <MockupBrowser imageUrl="/images/agency-dashboard.png" />
+              <img
+                src="/images/agency-dashboard.png"
+                alt="InterNative Labs Agency Dashboard"
+                className="hero-image"
+              />
 
               {/* Floating accent cards */}
               <div className="hero-float-1">
