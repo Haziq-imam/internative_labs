@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FiShoppingCart, FiTrendingUp, FiTarget, FiZap, FiCheckCircle } from 'react-icons/fi';
 import { FaPlusSquare, FaBalanceScale } from 'react-icons/fa';
 
@@ -19,7 +20,9 @@ const caseStudies = [
     solution: 'We fully redesigned the custom Shopify storefront, optimizing Core Web Vitals to load under 1.8 seconds. We restructured product categorizations, wrote keyword-optimized descriptions, and streamlined their checkout flow into a single step.',
     result: 'Within 3 months, organic traffic skyrocketed by 180%. E-commerce conversion rate lifted by 2.1x, resulting in over $34,000 in monthly organic revenue.',
     icon: FiShoppingCart,
-    color: 'var(--brand)'
+    color: 'var(--brand)',
+    mockup: '/images/retailedge-mockup.png',
+    mockupAlt: 'RetailEdge USA – Shopify eCommerce redesign mockup showing neon-green dark storefront with traffic metrics',
   },
   {
     client: 'MedConnect Telehealth',
@@ -31,7 +34,9 @@ const caseStudies = [
     solution: 'We designed and engineered native iOS and Android apps using Swift and Kotlin, featuring highly secure WebRTC peer-to-peer video streaming. We implemented end-to-end encryption compliant with HIPAA standards and streamlined scheduling workflows.',
     result: 'The apps launched on both stores with a 99.9% crash-free rate. Within 6 months, remote consulting sessions rose by 312% with over 100k patients served.',
     icon: FaPlusSquare,
-    color: '#27AE60'
+    color: '#27AE60',
+    mockup: '/images/medconnect-mockup.png',
+    mockupAlt: 'MedConnect Telehealth – HIPAA-compliant iOS & Android app mockup with doctor video consultation screens',
   },
   {
     client: 'LawFirm Pro Partners',
@@ -43,26 +48,66 @@ const caseStudies = [
     solution: 'We audited and corrected their citations, optimized their Google Business Profile, wrote legal blogs answering common local litigation questions, and deployed a secure intake form.',
     result: 'Rankings rose to #1 locally for their competitive target keywords, driving a 340% increase in consultation request forms with zero ongoing ad spend.',
     icon: FaBalanceScale,
-    color: '#F39C12'
+    color: '#F39C12',
+    mockup: '/images/lawfirm-mockup.png',
+    mockupAlt: 'LawFirm Pro Partners – attorney SEO and legal intake portal mockup showing #1 ranking dashboard',
   }
 ];
 
 export default function CaseStudiesPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container page-hero-content">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
-            <span style={{ color: 'rgba(255,255,255,0.7)' }}>Case Studies</span>
+      {/* ── Hero ── */}
+      <section className="page-hero" style={{ paddingBottom: '60px', overflow: 'hidden' }}>
+        <div className="container" style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '3rem',
+          alignItems: 'center',
+        }}>
+          {/* Left — text */}
+          <div className="page-hero-content" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="breadcrumb">
+              <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
+              <span style={{ color: 'rgba(255,255,255,0.7)' }}>Case Studies</span>
+            </div>
+            <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <FiTrendingUp size={14} /> Business Outcomes
+            </span>
+            <h1>Proven Results for <span className="gradient-text">Real Businesses</span></h1>
+            <p>
+              We don't just deliver pages; we build revenue machines. Check out our client deep-dives across healthcare, legal, and retail spaces.
+            </p>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-            <FiTrendingUp size={14} /> Business Outcomes
-          </span>
-          <h1>Proven Results for <span className="gradient-text">Real Businesses</span></h1>
-          <p>
-            We don't just deliver pages; we build revenue machines. Check out our client deep-dives across healthcare, legal, and retail spaces.
-          </p>
+
+          {/* Right — mockup image */}
+          <div style={{ position: 'relative' }}>
+            {/* Glow backdrop */}
+            <div style={{
+              position: 'absolute',
+              inset: '10% 5%',
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(114,193,146,0.22) 0%, transparent 70%)',
+              filter: 'blur(36px)',
+              zIndex: 0,
+              pointerEvents: 'none',
+            }} />
+            <div style={{
+              position: 'relative',
+              zIndex: 1,
+              borderRadius: 20,
+              overflow: 'hidden',
+              boxShadow: '0 30px 90px rgba(0,0,0,0.65)',
+            }}>
+              <Image
+                src="/images/case-studies-hero.png"
+                alt="Three client project mockups – RetailEdge eCommerce, MedConnect Telehealth, and LawFirm Pro Partners – floating in 3D perspective with key result metrics"
+                width={680}
+                height={383}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -89,6 +134,7 @@ export default function CaseStudiesPage() {
                   overflow: 'hidden'
                 }}
               >
+                {/* Text side */}
                 <div style={{ order: idx % 2 === 0 ? 1 : 2 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: '1rem' }}>
                     <div style={{
@@ -140,35 +186,58 @@ export default function CaseStudiesPage() {
                   </Link>
                 </div>
 
-                {/* Data Dashboard Card */}
+                {/* Mockup image side */}
                 <div
                   style={{
                     order: idx % 2 === 0 ? 2 : 1,
-                    background: 'var(--gradient-brand)',
-                    color: '#fff',
                     borderRadius: 20,
-                    padding: '3rem 2rem',
-                    textAlign: 'center',
-                    boxShadow: 'var(--shadow-brand)',
-                    border: '1px solid rgba(255,255,255,0.1)',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    boxShadow: `0 24px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06)`,
+                    background: '#0d0d0d',
+                    minHeight: 280,
                     display: 'flex',
-                    flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 80, height: 80, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', marginBottom: '1.5rem', color: '#fff' }}>
-                    <FiTrendingUp size={36} />
-                  </div>
-                  <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Campaign Result</h4>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '3.3rem', fontWeight: 900, color: '#7ec8e3', lineHeight: 1.1, marginBottom: 8 }}>
-                    {study.metric}
-                  </div>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 600, color: '#fff', marginBottom: '2rem' }}>
-                    {study.subMetric}
-                  </div>
-                  <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', width: '100%' }}>
-                    Verified 6-Month Campaign Audit Summary
+                  {/* Coloured glow behind mockup */}
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: `radial-gradient(ellipse at 50% 80%, ${study.color}22 0%, transparent 70%)`,
+                    pointerEvents: 'none',
+                  }} />
+                  <Image
+                    src={study.mockup}
+                    alt={study.mockupAlt}
+                    width={640}
+                    height={400}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      position: 'relative',
+                      zIndex: 1,
+                      transition: 'transform 0.4s ease',
+                    }}
+                    className="cs-mockup-img"
+                  />
+                  {/* Metric badge overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 16,
+                    left: 16,
+                    background: 'rgba(0,0,0,0.82)',
+                    backdropFilter: 'blur(12px)',
+                    border: `1px solid ${study.color}44`,
+                    borderRadius: 12,
+                    padding: '10px 16px',
+                    zIndex: 2,
+                  }}>
+                    <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 2 }}>Campaign Result</div>
+                    <div style={{ fontSize: '1.15rem', fontWeight: 800, color: study.color, lineHeight: 1.2 }}>{study.metric}</div>
+                    <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>{study.subMetric}</div>
                   </div>
                 </div>
               </div>

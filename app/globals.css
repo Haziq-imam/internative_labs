@@ -1323,6 +1323,9 @@ p { line-height: 1.7; }
 .result-label { font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-bottom: 8px; }
 .result-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
 
+/* ── Case Study Mockup Image hover ── */
+.cs-mockup-img:hover { transform: scale(1.03); }
+
 /* ============================================================
    PAGE-SPECIFIC: ABOUT
    ============================================================ */
