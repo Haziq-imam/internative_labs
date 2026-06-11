@@ -11,25 +11,18 @@ export const metadata = {
 };
 
 const pricingItems = [
-  { service: 'Starter Website (5 pages)', price: '$1,500', includes: 'Design, development, mobile-responsive, contact form, basic SEO', href: '/services/web-development', category: 'Web' },
-  { service: 'Business Website (10-20 pages)', price: '$3,500', includes: 'Custom design, CMS, advanced SEO setup, analytics, 3 months support', href: '/services/web-development', category: 'Web' },
-  { service: 'eCommerce Website', price: '$5,000', includes: 'Shopify/WooCommerce, payment gateway, product catalog, SEO', href: '/services/ecommerce-development', category: 'Web' },
-  { service: 'Custom Web Application', price: '$8,000+', includes: 'Custom development, database design, user authentication, APIs', href: '/services/custom-web-applications', category: 'Web' },
-  { service: 'iOS App Development', price: '$15,000+', includes: 'Native Swift, App Store submission, 6 months bug-fix support', href: '/services/ios-app-development', category: 'App' },
-  { service: 'Android App Development', price: '$12,000+', includes: 'Native Kotlin, Google Play submission, 6 months support', href: '/services/android-app-development', category: 'App' },
-  { service: 'Cross-Platform App (React Native)', price: '$18,000+', includes: 'iOS + Android from one codebase, both stores submission', href: '/services/cross-platform-apps', category: 'App' },
-  { service: 'Local SEO', price: '$599/month', includes: '10 keywords, Google Business, citations, monthly reports', href: '/services/local-seo', category: 'SEO' },
-  { service: 'Growth SEO', price: '$1,299/month', includes: '30 keywords, on-page + technical, content, link building', href: '/services/seo', category: 'SEO' },
-  { service: 'Enterprise SEO', price: '$2,999/month', includes: 'Unlimited keywords, dedicated manager, full SEO program', href: '/services/seo', category: 'SEO' },
-  { service: 'Social Media Marketing', price: '$499/month', includes: '2 platforms, 12 posts/month, community management', href: '/services/social-media-marketing', category: 'Marketing' },
-  { service: 'PPC / Google Ads Management', price: '$399/month + ad spend', includes: 'Campaign setup, A/B testing, optimization, reporting', href: '/services/ppc-advertising', category: 'Marketing' },
-  { service: 'Content Marketing', price: '$799/month', includes: '4 blog posts, keyword research, internal linking, optimization', href: '/services/content-marketing', category: 'Marketing' },
-  { service: 'UI/UX Design Package', price: '$2,000+', includes: 'User research, wireframes, prototype, high-fidelity design', href: '/services/ui-ux-design', category: 'Design' },
-  { service: 'Logo & Brand Identity', price: '$800+', includes: 'Logo, color palette, typography, brand guide', href: '/services/logo-branding', category: 'Design' },
-  { service: 'Graphic Design (Monthly)', price: '$599/month', includes: '15 graphics/month for social, ads, presentations', href: '/services/graphic-design', category: 'Design' },
-  { service: 'Video Editing & Animation', price: '$1,200+', includes: 'Explainer video (60 sec), script, voiceover, motion graphics', href: '/services/video-animation', category: 'Design' },
-  { service: 'Email Marketing', price: '$399/month', includes: 'Campaign design, list management, automation, A/B testing', href: '/services/email-marketing', category: 'Marketing' },
-  { service: 'Website Maintenance', price: '$199/month', includes: 'Security updates, backups, uptime monitoring, content edits', href: '/services/hosting-maintenance', category: 'Support' },
+  { service: 'Starter Website (5 pages)', price: '$999', includes: 'Design, development, mobile-responsive, contact form, basic SEO', href: '/services/web-development', category: 'Web' },
+  { service: 'Business Website (10-20 pages)', price: '$2,499', includes: 'Custom design, CMS, advanced SEO setup, analytics, 3 months support', href: '/services/web-development', category: 'Web' },
+  { service: 'Premium Website', price: '$4,999', includes: 'High-end custom animations, bespoke UX design, advanced CMS, speed optimized', href: '/services/web-development', category: 'Web' },
+  { service: 'eCommerce Store', price: '$4,499', includes: 'Shopify/WooCommerce, payment gateway, product catalog, SEO integration', href: '/services/ecommerce-development', category: 'Web' },
+  { service: 'Custom Web App', price: '$10,000+', includes: 'Custom database design, user auth pipelines, API integrations, admin dashboards', href: '/services/custom-web-applications', category: 'Web' },
+  { service: 'AI Integration', price: '$3,500+', includes: 'LLM API hookups, vector databases, custom chatbot agents, workflow automation', href: '/services/custom-web-applications', category: 'Web' },
+  { service: 'Mobile App MVP', price: '$8,000+', includes: 'Core features validation, single platform iOS or Android target, backend database', href: '/services/mobile-app-development', category: 'App' },
+  { service: 'Cross-Platform App', price: '$15,000+', includes: 'iOS + Android from single Flutter/React Native codebase, full app store submission', href: '/services/cross-platform-apps', category: 'App' },
+  { service: 'Local SEO', price: '$499/mo', includes: '10 target local keywords, Google Business setup, directories & citations', href: '/services/local-seo', category: 'SEO' },
+  { service: 'Growth SEO', price: '$999/mo', includes: '30 target national/local keywords, technical optimization, link acquisition', href: '/services/seo', category: 'SEO' },
+  { service: 'Logo Design', price: '$299', includes: '3 custom vector logo concepts, typography files, branding assets export', href: '/services/logo-branding', category: 'Design' },
+  { service: 'Brand Identity', price: '$999', includes: 'Full color guidelines, vector assets, business stationery design, style-sheet kit', href: '/services/logo-branding', category: 'Design' },
 ];
 
 const categoryColors = {

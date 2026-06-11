@@ -35,9 +35,9 @@ const footerSupport = [
 ];
 
 const socials = [
-  { Icon: FiLinkedin,  href: '#', title: 'LinkedIn' },
-  { Icon: FiFacebook,  href: '#', title: 'Facebook' },
-  { Icon: FiInstagram, href: '#', title: 'Instagram' },
+  { Icon: FiLinkedin,  href: 'https://www.linkedin.com/company/internative-labs-llc', title: 'LinkedIn' },
+  { Icon: FiFacebook,  href: 'https://www.facebook.com/internativelabs', title: 'Facebook' },
+  { Icon: FiInstagram, href: 'https://www.instagram.com/internativelabs', title: 'Instagram' },
 ];
 
 export default function Footer() {
@@ -84,7 +84,11 @@ export default function Footer() {
               </div>
               <div className="footer-contact-item">
                 <FiMapPin size={14} style={{ color: 'var(--brand)', flexShrink: 0 }} />
-                <span>811 Mason Grove Pkwy, Lawrenceville, GA 30043</span>
+                <span><strong>USA:</strong> 811 Mason Grove Pkwy, Lawrenceville, GA 30043</span>
+              </div>
+              <div className="footer-contact-item">
+                <FiMapPin size={14} style={{ color: 'var(--brand)', flexShrink: 0 }} />
+                <span><strong>Canada:</strong> 5005 Dalhousie Dr NW Unit 175, Calgary, AB T3A 5R8</span>
               </div>
               <div className="footer-contact-item">
                 <FiClock size={14} style={{ color: 'var(--brand)', flexShrink: 0 }} />

@@ -23,7 +23,7 @@ const posts = [
     date: 'May 24, 2026',
     readTime: '6 min read',
     icon: FiTrendingDown,
-    author: 'Sarah J., Head of UI/UX'
+    author: 'Faisal Majeed, CEO & Co-Founder'
   },
   {
     title: 'React Native vs Flutter: Which Is Right for Your App in 2026?',
@@ -32,7 +32,7 @@ const posts = [
     date: 'May 18, 2026',
     readTime: '10 min read',
     icon: FiSmartphone,
-    author: 'Alex K., Lead Mobile Architect'
+    author: 'Murtaza Mandokhail, Head of Development'
   },
   {
     title: 'Local SEO Guide for Small Businesses: Rank #1 in Your City',
@@ -41,7 +41,7 @@ const posts = [
     date: 'May 12, 2026',
     readTime: '7 min read',
     icon: FiMapPin,
-    author: 'James D., Senior SEO Strategist'
+    author: 'Shahid Hussain, Head of SEO & Marketing'
   },
   {
     title: 'How Long Does SEO Take? (Honest Answer with Real Campaign Data)',
@@ -50,7 +50,7 @@ const posts = [
     date: 'May 05, 2026',
     readTime: '5 min read',
     icon: FiSearch,
-    author: 'James D., Senior SEO Strategist'
+    author: 'Shahid Hussain, Head of SEO & Marketing'
   },
   {
     title: 'WordPress Security Checklist: 25 Steps to Protect Your Site',

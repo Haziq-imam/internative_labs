@@ -17,44 +17,28 @@ const team = [
     color: 'var(--brand)'
   },
   {
-    name: 'Sarah J.',
-    role: 'Head of UI/UX Design',
-    bio: 'Specialist in conversion-focused, glassmorphic UX designs. Sarah translates business processes into stunning interactive Figma flows and interfaces.',
-    initials: 'SJ',
-    experience: '8+ Yrs Exp',
+    name: 'Faisal Majeed',
+    role: 'CEO & Co-Founder',
+    bio: 'Over 10 years of business leadership and digital product engineering experience. Faisal directs the strategic expansion and customer growth models.',
+    initials: 'FM',
+    experience: '10+ Yrs Exp',
     color: '#9B59B6'
   },
   {
-    name: 'Alex K.',
-    role: 'Lead Mobile Architect',
-    bio: 'Native iOS Swift and Android Kotlin veteran. Alex is passionate about BLE Bluetooth syncing, secure WebRTC streaming, and cross-platform Flutter engines.',
-    initials: 'AK',
+    name: 'Murtaza Mandokhail',
+    role: 'Head of Development',
+    bio: 'Full-stack architect with deep systems development background. Murtaza designs scalable database layers and high-performance server architectures.',
+    initials: 'MM',
     experience: '9+ Yrs Exp',
     color: '#27AE60'
   },
   {
-    name: 'James D.',
-    role: 'Senior SEO & Growth Strategist',
-    bio: 'A search engine algorithm specialist who has successfully positioned over 150 local and eCommerce campaigns onto organic Page 1 rankings.',
-    initials: 'JD',
+    name: 'Shahid Hussain',
+    role: 'Head of SEO & Marketing',
+    bio: 'Bespoke search engine strategy expert who aligns business marketing plans with modern indexing patterns to secure high-value organic visibility.',
+    initials: 'SH',
     experience: '10+ Yrs Exp',
     color: '#F39C12'
-  },
-  {
-    name: 'Emily R.',
-    role: 'Lead Frontend Developer',
-    bio: 'Next.js and Tailwind CSS expert focused on sub-second paint timings, smooth CSS micro-animations, and full web accessibility standards.',
-    initials: 'ER',
-    experience: '6+ Yrs Exp',
-    color: 'var(--accent)'
-  },
-  {
-    name: 'Michael T.',
-    role: 'Operations & Project Manager',
-    bio: 'Keeps our client sprints organized and milestones clear. Michael manages customer feedback loops and agile releases.',
-    initials: 'MT',
-    experience: '7+ Yrs Exp',
-    color: '#E74C3C'
   }
 ];
 

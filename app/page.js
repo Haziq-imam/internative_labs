@@ -24,17 +24,32 @@ const jsonLd = {
   url: 'https://www.internativelabs.com',
   telephone: '+18889085040',
   email: 'info@internativelabs.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '811 Mason Grove Pkwy',
-    addressLocality: 'Lawrenceville',
-    addressRegion: 'GA',
-    postalCode: '30043',
-    addressCountry: 'US',
-  },
+  address: [
+    {
+      '@type': 'PostalAddress',
+      streetAddress: '811 Mason Grove Pkwy',
+      addressLocality: 'Lawrenceville',
+      addressRegion: 'GA',
+      postalCode: '30043',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'PostalAddress',
+      streetAddress: '5005 Dalhousie Dr NW Unit 175',
+      addressLocality: 'Calgary',
+      addressRegion: 'AB',
+      postalCode: 'T3A 5R8',
+      addressCountry: 'CA',
+    }
+  ],
   description:
     'Full-service digital agency offering web development, mobile apps, SEO, and digital marketing.',
-  sameAs: ['https://www.linkedin.com/company/internativelabs'],
+  sameAs: [
+    'https://www.linkedin.com/company/internative-labs-llc',
+    'https://www.facebook.com/internativelabs',
+    'https://www.instagram.com/internativelabs',
+    'https://x.com/internativelabs'
+  ],
 };
 
 const services = [

@@ -26,10 +26,9 @@ const teamStats = [
 ];
 
 const teamMembers = [
-  { name: 'Alex Rivera', role: 'CEO & Co-Founder', emoji: FiBriefcase, bg: '#1A3C6E' },
-  { name: 'Priya Sharma', role: 'Head of Development', emoji: FiCode, bg: '#2E86C1' },
-  { name: 'Jordan Lee', role: 'Head of SEO & Marketing', emoji: FiTrendingUp, bg: '#27AE60' },
-  { name: 'Sam Okonkwo', role: 'Lead UI/UX Designer', emoji: FiLayout, bg: '#9B59B6' },
+  { name: 'Faisal Majeed', role: 'CEO & Co-Founder', emoji: FiBriefcase, bg: '#1A3C6E' },
+  { name: 'Murtaza Mandokhail', role: 'Head of Development', emoji: FiCode, bg: '#2E86C1' },
+  { name: 'Shahid Hussain', role: 'Head of SEO & Marketing', emoji: FiTrendingUp, bg: '#27AE60' },
 ];
 
 export default function AboutPage() {
