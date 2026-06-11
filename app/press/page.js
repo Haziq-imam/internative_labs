@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FiVolume2, FiHome, FiActivity, FiAward, FiPackage, FiMail } from 'react-icons/fi';
+import { FiVolume2, FiHome, FiActivity, FiAward, FiMail } from 'react-icons/fi';
 
 export const metadata = {
   title: 'Press Releases & Company News | InterNative Labs',
@@ -108,29 +108,7 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* Media Kits */}
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
-        <div className="container" style={{ maxWidth: 850 }}>
-          <div className="responsive-grid" style={{ background: 'var(--dark)', color: '#fff', borderRadius: 24, padding: '3.5rem', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '3rem', alignItems: 'center' }}>
-            <div>
-              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-                Media Kit Download
-              </span>
-              <h3 style={{ color: '#fff', fontSize: '1.8rem', marginTop: '1rem', marginBottom: '1rem' }}>Need Logos, Headshots, or Brand Guidelines?</h3>
-              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.92rem', lineHeight: 1.6 }}>
-                Download our unified media package containing vector logo variations, high-resolution management photos, office snapshots, and official brand style-sheets.
-              </p>
-            </div>
-            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: '2rem', border: '1px solid rgba(255,255,255,0.12)' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '0.5rem', color: 'var(--brand)' }}><FiPackage size={36} /></div>
-              <h4 style={{ color: '#fff', fontSize: '1rem', marginBottom: '1.5rem' }}>InterNative_Labs_Kit.zip</h4>
-              <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                Download Assets (14.2 MB)
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* PR Contacts */}
       <section className="section">

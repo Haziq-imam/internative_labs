@@ -83,7 +83,7 @@ const projects = [
     color: '#9B59B6',
     accentColor: '#9B59B6',
     slug: 'aura-cosmetics',
-    imageUrl: ''
+    imageUrl: '/images/brand-identity.png'
   }
 ];
 
@@ -209,7 +209,7 @@ export default function PortfolioPage() {
                     ))}
                   </div>
 
-                  <Link href="/case-studies" className="service-card-link" style={{ alignSelf: 'flex-start', color: p.color }}>
+                  <Link href={`/case-studies#${p.slug}`} className="service-card-link" style={{ alignSelf: 'flex-start', color: p.color }}>
                     View Full Case Study →
                   </Link>
                 </div>

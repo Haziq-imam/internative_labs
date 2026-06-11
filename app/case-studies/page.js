@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FiShoppingCart, FiTrendingUp, FiTarget, FiZap, FiCheckCircle } from 'react-icons/fi';
+import { FiShoppingCart, FiTrendingUp, FiTarget, FiZap, FiCheckCircle, FiMonitor, FiPenTool } from 'react-icons/fi';
 import { FaPlusSquare, FaBalanceScale } from 'react-icons/fa';
 
 export const metadata = {
@@ -23,6 +23,7 @@ const caseStudies = [
     color: 'var(--brand)',
     mockup: '/images/retailedge-mockup.png',
     mockupAlt: 'RetailEdge USA – Shopify eCommerce redesign mockup showing neon-green dark storefront with traffic metrics',
+    slug: 'retailedge-usa'
   },
   {
     client: 'MedConnect Telehealth',
@@ -37,6 +38,7 @@ const caseStudies = [
     color: '#27AE60',
     mockup: '/images/medconnect-mockup.png',
     mockupAlt: 'MedConnect Telehealth – HIPAA-compliant iOS & Android app mockup with doctor video consultation screens',
+    slug: 'medconnect-telehealth'
   },
   {
     client: 'LawFirm Pro Partners',
@@ -51,6 +53,52 @@ const caseStudies = [
     color: '#F39C12',
     mockup: '/images/lawfirm-mockup.png',
     mockupAlt: 'LawFirm Pro Partners – attorney SEO and legal intake portal mockup showing #1 ranking dashboard',
+    slug: 'lawfirm-pro'
+  },
+  {
+    client: 'Zenith SaaS Platform',
+    industry: 'SaaS Design & Development',
+    metric: '+45% Signup Lift',
+    subMetric: 'Dashboard & Stripe Billing',
+    tags: ['Next.js', 'React', 'Tailwind', 'Stripe'],
+    challenge: 'Zenith needed a modern SaaS dashboard that could handle user accounts, subscription plans, billing activity, and real-time analytics in one clean platform. Their existing workflow was scattered across multiple tools, making it difficult for users to manage data and payments efficiently.',
+    solution: 'We designed and developed a high-converting SaaS dashboard using Next.js, React, Tailwind CSS, and Stripe integration. The platform included interactive charts, user profile management, subscription billing, payment tracking, admin controls, and a clean responsive interface for both desktop and mobile users.',
+    result: 'The new SaaS platform improved user onboarding, simplified subscription management, and increased signups by 45%. The dashboard delivered a faster, cleaner, and more scalable experience for both users and admins.',
+    icon: FiMonitor,
+    color: 'var(--accent)',
+    mockup: '/images/zenith-screenshot.png',
+    mockupAlt: 'Zenith SaaS Platform - modern dashboard design with interactive charts and Stripe billing interface',
+    slug: 'zenith-saas'
+  },
+  {
+    client: 'Apex Fitness Tracker',
+    industry: 'Cross-Platform App',
+    metric: '15k+ Monthly Active Users',
+    subMetric: 'Wearable BLE Sync',
+    tags: ['Flutter', 'Dart', 'Firebase', 'BLE Sync'],
+    challenge: 'Apex needed a reliable fitness tracking app that could sync workout data, monitor health activity, and work smoothly across iOS and Android. Their main goal was to support offline tracking, wearable device syncing, and a clean visual dashboard for fitness users.',
+    solution: 'We designed and developed a cross-platform fitness app using Flutter and Dart, backed by Firebase for real-time data syncing. The app included workout tracking, heart rate charts, calories burned, activity history, offline sync, Bluetooth wearable connectivity, and Apple Watch-style progress insights.',
+    result: 'The app reached 15k+ monthly active users and improved user engagement through interactive fitness charts, offline tracking, and smooth wearable syncing. Users could track performance anytime, even without an active internet connection.',
+    icon: FiZap,
+    color: '#E74C3C',
+    mockup: '/images/apex-screenshot.png',
+    mockupAlt: 'Apex Fitness Tracker - mobile fitness app showing workout logs and interactive health charts',
+    slug: 'apex-fitness'
+  },
+  {
+    client: 'Aura Cosmetics Identity',
+    industry: 'Brand Identity & Strategy',
+    metric: '100% Custom Design',
+    subMetric: 'Visual Media & Packaging',
+    tags: ['Branding', 'Logo Design', 'Vector Assets', 'Typography'],
+    challenge: 'Aura Cosmetics needed a premium brand identity that could stand out in the beauty and skincare market. Their previous visual direction lacked consistency across packaging, social media, typography, and product presentation.',
+    solution: 'We created a complete brand identity system including logo design, packaging concepts, curated color palette, typography selection, vector assets, brand guideline booklet, and social media visual direction. The goal was to build a polished beauty brand that felt elegant, modern, and trustworthy.',
+    result: 'Aura received a complete custom brand identity system ready for packaging, digital marketing, and retail presentation. The final identity improved brand consistency and gave the company a premium visual presence across all customer touchpoints.',
+    icon: FiPenTool,
+    color: '#9B59B6',
+    mockup: '/images/image.png',
+    mockupAlt: 'Aura Cosmetics Identity - premium beauty brand design showcasing logo, custom typography, and packaging elements',
+    slug: 'aura-cosmetics'
   }
 ];
 
@@ -119,6 +167,7 @@ export default function CaseStudiesPage() {
             return (
               <div
                 key={study.client}
+                id={study.slug}
                 className="case-study-grid"
                 style={{
                   background: 'var(--bg-gray)',

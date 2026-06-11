@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FiMail, FiPhone, FiMapPin, FiClock, FiLinkedin, FiFacebook, FiYoutube, FiTwitter, FiInstagram } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiClock, FiLinkedin, FiFacebook, FiInstagram } from 'react-icons/fi';
 
 const footerServices = [
   { label: 'Web Development',        href: '/services/web-development' },
@@ -37,8 +37,6 @@ const footerSupport = [
 const socials = [
   { Icon: FiLinkedin,  href: '#', title: 'LinkedIn' },
   { Icon: FiFacebook,  href: '#', title: 'Facebook' },
-  { Icon: FiYoutube,   href: '#', title: 'YouTube' },
-  { Icon: FiTwitter,   href: '#', title: 'X / Twitter' },
   { Icon: FiInstagram, href: '#', title: 'Instagram' },
 ];
 
