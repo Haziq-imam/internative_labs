@@ -122,19 +122,19 @@ const testimonials = [
 ];
 
 const differentiators = [
-  { Icon: FiTarget, title: 'Results-Driven',     desc: 'We measure every campaign against real business metrics — traffic, leads, revenue.' },
-  { Icon: FiZap,    title: 'Fast Turnaround',    desc: 'On-time delivery with agile processes and weekly progress updates.' },
-  { Icon: FiLock,   title: 'Transparent Pricing',desc: 'No hidden fees. Fixed-price quotes upfront with milestone-based billing.' },
-  { Icon: FiUsers,  title: 'Long-Term Partner',  desc: 'We become embedded in your team for ongoing growth, not one-off projects.' },
+  { Icon: FiTarget, title: 'Results-Driven', desc: 'We measure every campaign against real business metrics — traffic, leads, revenue.' },
+  { Icon: FiZap, title: 'Fast Turnaround', desc: 'On-time delivery with agile processes and weekly progress updates.' },
+  { Icon: FiLock, title: 'Transparent Pricing', desc: 'No hidden fees. Fixed-price quotes upfront with milestone-based billing.' },
+  { Icon: FiUsers, title: 'Long-Term Partner', desc: 'We become embedded in your team for ongoing growth, not one-off projects.' },
 ];
 
 const industries = [
-  { Icon: FiHeart,       label: 'Healthcare',      href: '/industries/healthcare' },
-  { Icon: FiHome,        label: 'Real Estate',     href: '/industries/real-estate' },
-  { Icon: FiShoppingCart,label: 'eCommerce',       href: '/industries/ecommerce-retail' },
-  { Icon: FiCoffee,      label: 'Restaurants',     href: '/industries/restaurants' },
-  { Icon: FiBriefcase,   label: 'Legal',           href: '/industries/legal' },
-  { Icon: FiCode,        label: 'SaaS & Tech',     href: '/industries/saas-tech' },
+  { Icon: FiHeart, label: 'Healthcare', href: '/industries/healthcare' },
+  { Icon: FiHome, label: 'Real Estate', href: '/industries/real-estate' },
+  { Icon: FiShoppingCart, label: 'eCommerce', href: '/industries/ecommerce-retail' },
+  { Icon: FiCoffee, label: 'Restaurants', href: '/industries/restaurants' },
+  { Icon: FiBriefcase, label: 'Legal', href: '/industries/legal' },
+  { Icon: FiCode, label: 'SaaS & Tech', href: '/industries/saas-tech' },
 ];
 
 const trustItems = [
@@ -163,7 +163,7 @@ export default function HomePage() {
         <div className="hero-grid-overlay" />
         <div className="container hero-content">
           <div className="hero-split">
-            {/* Left: existing text + CTAs */}
+            {/* Left: text + CTAs */}
             <div>
               <div className="hero-badge">
                 <span className="hero-badge-dot" />
@@ -189,9 +189,9 @@ export default function HomePage() {
               <div className="hero-stats">
                 {[
                   { num: '500+', label: 'Projects Delivered' },
-                  { num: '97%',  label: 'Client Retention Rate' },
-                  { num: '10x',  label: 'Average Client ROI' },
-                  { num: '15+',  label: 'Countries Served' },
+                  { num: '97%', label: 'Client Retention Rate' },
+                  { num: '10x', label: 'Average Client ROI' },
+                  { num: '15+', label: 'Countries Served' },
                 ].map(s => (
                   <div key={s.label}>
                     <div className="hero-stat-num">{s.num}</div>
@@ -203,40 +203,34 @@ export default function HomePage() {
 
             {/* Right: Browser Mockup + Floating Cards */}
             <div className="hero-visual">
-              {/* Soft glow behind mockup */}
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
 
-              <img
-                src="/images/agency-dashboard.png"
-                alt="InterNative Labs Agency Dashboard"
-                className="hero-image"
-              />
+              {/* Browser chrome frame */}
+              <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
+                <div className="hero-browser-bar">
+                  <span className="hero-browser-dot hero-browser-dot-red" />
+                  <span className="hero-browser-dot hero-browser-dot-yellow" />
+                  <span className="hero-browser-dot hero-browser-dot-green" />
+                  <div className="hero-browser-url">internativelabs.com</div>
+                </div>
+                <img
+                  src="/images/agency-dashboard.png"
+                  alt="InterNative Labs Agency Dashboard"
+                  className="hero-image"
+                  style={{ width: '100%', height: 'auto', display: 'block', marginTop: 0 }}
+                />
+              </div>
 
               {/* Floating accent cards */}
               <div className="hero-float-1">
-                <FloatingCard
-                  icon="📈"
-                  value="+180%"
-                  label="Traffic Increase"
-                  color="#72c192"
-                />
+                <FloatingCard icon="📈" value="+180%" label="Traffic Increase" color="#72c192" />
               </div>
               <div className="hero-float-2">
-                <FloatingCard
-                  icon="⭐"
-                  value="4.9★"
-                  label="Google Rating"
-                  color="#FFBD2E"
-                />
+                <FloatingCard icon="⭐" value="4.9★" label="Google Rating" color="#FFBD2E" />
               </div>
               <div className="hero-float-3">
-                <FloatingCard
-                  icon="🚀"
-                  value="500+"
-                  label="Projects Shipped"
-                  color="#5ac0ec"
-                />
+                <FloatingCard icon="🚀" value="500+" label="Projects Shipped" color="#5ac0ec" />
               </div>
             </div>
           </div>
@@ -332,10 +326,10 @@ export default function HomePage() {
           </div>
           <div className="grid-4">
             {[
-              { num: '300+', label: 'Websites Built',       sub: 'Across all industries' },
-              { num: '150+', label: 'Mobile Apps Shipped',  sub: 'iOS, Android & cross-platform' },
+              { num: '300+', label: 'Websites Built', sub: 'Across all industries' },
+              { num: '150+', label: 'Mobile Apps Shipped', sub: 'iOS, Android & cross-platform' },
               { num: '187%', label: 'Avg Traffic Increase', sub: 'For SEO clients' },
-              { num: '4.9★', label: 'Google Rating',        sub: 'From verified reviews' },
+              { num: '4.9★', label: 'Google Rating', sub: 'From verified reviews' },
             ].map(s => (
               <div key={s.label} style={{
                 textAlign: 'center', padding: '2rem 1.5rem',
@@ -421,10 +415,10 @@ export default function HomePage() {
           <div className="process-steps">
             {[
               { n: '01', title: 'Discovery & Strategy', desc: 'We analyze your business, competition, and target audience to define project goals.' },
-              { n: '02', title: 'UI/UX Design',          desc: 'Wireframes and high-fidelity mockups approved before writing a single line of code.' },
-              { n: '03', title: 'Development',           desc: 'Agile sprints with weekly demos. Clean, documented code that scales.' },
-              { n: '04', title: 'Testing & QA',          desc: 'Cross-browser, cross-device testing, security checks, and accessibility compliance.' },
-              { n: '05', title: 'Launch & Support',      desc: 'Smooth deployment with post-launch monitoring and continuous optimization.' },
+              { n: '02', title: 'UI/UX Design', desc: 'Wireframes and high-fidelity mockups approved before writing a single line of code.' },
+              { n: '03', title: 'Development', desc: 'Agile sprints with weekly demos. Clean, documented code that scales.' },
+              { n: '04', title: 'Testing & QA', desc: 'Cross-browser, cross-device testing, security checks, and accessibility compliance.' },
+              { n: '05', title: 'Launch & Support', desc: 'Smooth deployment with post-launch monitoring and continuous optimization.' },
             ].map(step => (
               <div key={step.n} className="process-step">
                 <div className="process-num">{step.n}</div>

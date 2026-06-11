@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { FiShoppingCart, FiActivity, FiSliders, FiMonitor, FiZap, FiPenTool, FiTrendingUp, FiBriefcase } from 'react-icons/fi';
+import { FiShoppingCart, FiActivity, FiSliders, FiMonitor, FiZap, FiPenTool, FiTrendingUp, FiBriefcase, FiArrowRight } from 'react-icons/fi';
 import SectionPattern from '@/components/SectionPattern';
 
 const categories = ['All', 'Web Design', 'Mobile Apps', 'SEO', 'Branding'];
@@ -96,20 +96,47 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <section className="page-hero section-with-pattern">
+      <section className="page-hero section-with-pattern" style={{ paddingTop: '85px', paddingBottom: '45px' }}>
         <SectionPattern opacity={0.04} color="#72c192" />
         <div className="container page-hero-content">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
-            <span style={{ color: 'rgba(255,255,255,0.7)' }}>Our Work</span>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+            {/* Left Column: Original Text & Breadcrumb styling */}
+            <div>
+              <div className="breadcrumb">
+                <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
+                <span style={{ color: 'rgba(255,255,255,0.7)' }}>Our Work</span>
+              </div>
+              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
+                <FiBriefcase size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Case Portfolio
+              </span>
+              <h1 style={{ marginBottom: '1.2rem' }}>Our Projects Speak Louder Than <span className="gradient-text">Words</span></h1>
+              <p style={{ marginBottom: 0 }}>
+                Explore our curated showcase of custom web applications, mobile apps, local SEO campaigns, and branding projects built for real business outcomes.
+              </p>
+            </div>
+
+            {/* Right Column: Browser mockup for portfolio.png */}
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="mockup-glow mockup-glow-green" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+              <div className="mockup-glow mockup-glow-blue" style={{ top: '60%', left: '45%', transform: 'translate(-50%, -50%)' }} />
+              
+              {/* Browser chrome frame */}
+              <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
+                <div className="hero-browser-bar">
+                  <span className="hero-browser-dot hero-browser-dot-red" />
+                  <span className="hero-browser-dot hero-browser-dot-yellow" />
+                  <span className="hero-browser-dot hero-browser-dot-green" />
+                  <div className="hero-browser-url">internativelabs.com/portfolio</div>
+                </div>
+                <img
+                  src="/images/portfolio.png"
+                  alt="InterNative Labs Portfolio Showcase"
+                  className="hero-image"
+                  style={{ width: '100%', height: 'auto', display: 'block', marginTop: 0 }}
+                />
+              </div>
+            </div>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-            <FiBriefcase size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Case Portfolio
-          </span>
-          <h1>Our Projects Speak Louder Than <span className="gradient-text">Words</span></h1>
-          <p>
-            Explore our curated showcase of custom web applications, mobile apps, local SEO campaigns, and branding projects built for real business outcomes.
-          </p>
         </div>
       </section>
 

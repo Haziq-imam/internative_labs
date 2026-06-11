@@ -488,9 +488,9 @@ p { line-height: 1.7; }
 }
 .hero h1 {
   color: #fff;
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
   animation: fadeUp 0.7s ease 0.2s both;
   max-width: 820px;
 }
@@ -1744,15 +1744,17 @@ p { line-height: 1.7; }
 /* --- Hero Split Layout --- */
 .hero-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  grid-template-columns: 5fr 7fr;
+  gap: 3rem;
+  align-items: flex-start;
 }
 .hero-visual {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  width: 100%;
+  padding-top: 30px;
 }
 
 /* --- Mockup Wrapper --- */
