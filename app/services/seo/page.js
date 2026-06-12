@@ -43,19 +43,27 @@ const faqs = [
 export default function SEOServicesPage() {
   return (
     <>
-      <section className="page-hero section-with-pattern">
-        <SectionPattern opacity={0.04} color="#72c192" />
-        <div className="container page-hero-content">
-          <div className="breadcrumb">
+      <section className="hero">
+        <div className="hero-bg-orbs">
+          <div className="orb orb-1" />
+          <div className="orb orb-2" />
+          <div className="orb orb-3" />
+        </div>
+        <div className="hero-grid-overlay" />
+        <div className="container hero-content">
+          <div className="breadcrumb" style={{ marginBottom: '1.5rem', position: 'relative', zIndex: 3 }}>
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <Link href="/services">Services</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>SEO Services</span>
           </div>
           <div className="hero-split">
             <div>
-              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>SEO Services</span>
+              <div className="hero-badge">
+                <span className="hero-badge-dot" />
+                SEO Services
+              </div>
               <h1>SEO Services That Put Your Business on <span className="gradient-text">Page 1 and Keep It There</span></h1>
-              <p>Our data-driven SEO strategies combine technical excellence, strategic content, and authoritative link building to drive qualified organic traffic that converts. We build sustainable rankings that generate leads for years.</p>
+              <p className="hero-sub">Our data-driven SEO strategies combine technical excellence, strategic content, and authoritative link building to drive qualified organic traffic that converts. We build sustainable rankings that generate leads for years.</p>
               <div className="hero-actions">
                 <Link href="/free-website-audit" className="btn btn-primary btn-lg" id="seo-hero-cta">Get Your Free SEO Audit — $0 →</Link>
                 <Link href="/case-studies" className="btn btn-secondary btn-lg">View SEO Case Studies</Link>
@@ -64,11 +72,23 @@ export default function SEOServicesPage() {
             <div className="hero-visual">
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <img
-                src="/images/lawfirm-screenshot.png"
-                alt="SEO Rankings Dashboard"
-                className="hero-image"
-              />
+              
+              {/* Browser chrome frame */}
+              <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
+                <div className="hero-browser-bar">
+                  <span className="hero-browser-dot hero-browser-dot-red" />
+                  <span className="hero-browser-dot hero-browser-dot-yellow" />
+                  <span className="hero-browser-dot hero-browser-dot-green" />
+                  <div className="hero-browser-url">internativelabs.com/services/seo</div>
+                </div>
+                <img
+                  src="/images/lawfirm-screenshot.png"
+                  alt="SEO Rankings Dashboard"
+                  className="hero-image"
+                  style={{ width: '100%', height: 'auto', display: 'block', marginTop: 0 }}
+                />
+              </div>
+              
               <div className="hero-float-1">
                 <FloatingCard icon="📈" value="+187%" label="Traffic Increase" color="#72c192" />
               </div>

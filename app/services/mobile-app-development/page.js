@@ -43,19 +43,27 @@ const phases = [
 export default function MobileAppDevelopmentPage() {
   return (
     <>
-      <section className="page-hero section-with-pattern">
-        <SectionPattern opacity={0.04} color="#72c192" />
-        <div className="container page-hero-content">
-          <div className="breadcrumb">
+      <section className="hero">
+        <div className="hero-bg-orbs">
+          <div className="orb orb-1" />
+          <div className="orb orb-2" />
+          <div className="orb orb-3" />
+        </div>
+        <div className="hero-grid-overlay" />
+        <div className="container hero-content">
+          <div className="breadcrumb" style={{ marginBottom: '1.5rem', position: 'relative', zIndex: 3 }}>
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <Link href="/services">Services</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Mobile App Development</span>
           </div>
           <div className="hero-split">
             <div>
-              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Mobile App Development</span>
+              <div className="hero-badge">
+                <span className="hero-badge-dot" />
+                Mobile App Development
+              </div>
               <h1>Mobile App Development That Transforms Ideas Into <span className="gradient-text">Revenue-Generating Apps</span></h1>
-              <p>We build native iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences. From MVP to full-scale enterprise solutions — designed for performance, security, and user adoption.</p>
+              <p className="hero-sub">We build native iOS, Android, and cross-platform mobile apps that deliver exceptional user experiences. From MVP to full-scale enterprise solutions — designed for performance, security, and user adoption.</p>
               <div className="hero-actions">
                 <Link href="/free-consultation" className="btn btn-primary btn-lg" id="mobile-hero-cta">Get Your Free App Development Quote →</Link>
                 <Link href="/portfolio" className="btn btn-secondary btn-lg">View App Portfolio</Link>
@@ -64,12 +72,24 @@ export default function MobileAppDevelopmentPage() {
             <div className="hero-visual">
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <img
-                src="/images/medconnect-screenshot.png"
-                alt="MedConnect Mobile App Prototype"
-                className="hero-image"
-                style={{ maxWidth: '300px', margin: '0 auto' }}
-              />
+              
+              {/* Browser chrome frame */}
+              <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
+                <div className="hero-browser-bar">
+                  <span className="hero-browser-dot hero-browser-dot-red" />
+                  <span className="hero-browser-dot hero-browser-dot-yellow" />
+                  <span className="hero-browser-dot hero-browser-dot-green" />
+                  <div className="hero-browser-url">internativelabs.com/services/mobile-app-development</div>
+                </div>
+                <img
+                  src="/images/medconnect-screenshot.png"
+                  alt="MedConnect Mobile App Showcase"
+                  className="hero-image"
+                  style={{ width: '100%', height: 'auto', display: 'block', marginTop: 0, borderRadius: 0 }}
+                />
+              </div>
+
+              {/* Floating accent cards */}
               <div className="hero-float-1">
                 <FloatingCard icon="📱" value="150+" label="Apps Shipped" color="#72c192" />
               </div>
@@ -84,7 +104,7 @@ export default function MobileAppDevelopmentPage() {
       <div style={{ background: 'var(--brand-dark)', padding: '24px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
-            {[['150+','Apps Shipped'],['4.8★','Avg App Store Rating'],['99.9%','Crash-Free Sessions'],['iOS & Android','All Platforms']].map(([n,l]) => (
+            {[['150+', 'Apps Shipped'], ['4.8★', 'Avg App Store Rating'], ['99.9%', 'Crash-Free Sessions'], ['iOS & Android', 'All Platforms']].map(([n, l]) => (
               <div key={l} style={{ textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 800, color: '#7ec8e3', lineHeight: 1 }}>{n}</div>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', marginTop: 4, whiteSpace: 'nowrap' }}>{l}</div>
@@ -132,7 +152,7 @@ export default function MobileAppDevelopmentPage() {
                   <FiSmartphone size={20} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: 4 }}>
                     <strong style={{ color: 'var(--brand)' }}>{t.tech}</strong>
                     <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', background: 'var(--light-blue)', padding: '2px 10px', borderRadius: 99 }}>{t.price}</span>
                   </div>

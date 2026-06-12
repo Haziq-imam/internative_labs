@@ -66,16 +66,25 @@ const allServices = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container page-hero-content">
-          <div className="breadcrumb">
+      <section className="hero">
+        <div className="hero-bg-orbs">
+          <div className="orb orb-1" />
+          <div className="orb orb-2" />
+          <div className="orb orb-3" />
+        </div>
+        <div className="hero-grid-overlay" />
+        <div className="container hero-content">
+          <div className="breadcrumb" style={{ marginBottom: '1.5rem', position: 'relative', zIndex: 3 }}>
             <Link href="/">Home</Link>
             <span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Services</span>
           </div>
-          <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>All Services</span>
+          <div className="hero-badge">
+            <span className="hero-badge-dot" />
+            All Services
+          </div>
           <h1>Everything You Need to <span className="gradient-text">Win Online</span></h1>
-          <p>From strategy and design to development and marketing — 22+ specialized services under one roof, all focused on growing your business.</p>
+          <p className="hero-sub">From strategy and design to development and marketing — 22+ specialized services under one roof, all focused on growing your business.</p>
           <div className="hero-actions">
             <Link href="/free-consultation" className="btn btn-primary btn-lg" id="services-hero-cta">Get a Free Consultation →</Link>
             <Link href="/pricing" className="btn btn-secondary btn-lg">View Pricing</Link>
@@ -102,7 +111,7 @@ export default function ServicesPage() {
                     </div>
                     <h3>{s.title}</h3>
                     <p>{s.desc}</p>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginTop: 'auto' }}>
                       <span style={{ fontSize: '0.85rem', fontWeight: 700, color: cat.color }}>{s.price}</span>
                       <Link href={s.href} className="service-card-link" id={`service-${s.title.toLowerCase().replace(/[\s/&]+/g, '-')}`}>Learn More →</Link>
                     </div>

@@ -55,19 +55,27 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="page-hero section-with-pattern">
-        <SectionPattern opacity={0.04} color="#72c192" />
-        <div className="container page-hero-content">
-          <div className="breadcrumb">
+      <section className="hero">
+        <div className="hero-bg-orbs">
+          <div className="orb orb-1" />
+          <div className="orb orb-2" />
+          <div className="orb orb-3" />
+        </div>
+        <div className="hero-grid-overlay" />
+        <div className="container hero-content">
+          <div className="breadcrumb" style={{ marginBottom: '1.5rem', position: 'relative', zIndex: 3 }}>
             <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
             <Link href="/services">Services</Link><span className="breadcrumb-sep">›</span>
             <span style={{ color: 'rgba(255,255,255,0.7)' }}>Web Development</span>
           </div>
           <div className="hero-split">
             <div>
-              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>Web Development</span>
+              <div className="hero-badge">
+                <span className="hero-badge-dot" />
+                Web Development
+              </div>
               <h1>Custom Web Development That Turns <span className="gradient-text">Visitors Into Customers</span></h1>
-              <p>We build fast, secure, and beautifully designed websites that perform in search engines and convert visitors into paying customers. Every line of code is written with business results in mind.</p>
+              <p className="hero-sub">We build fast, secure, and beautifully designed websites that perform in search engines and convert visitors into paying customers. Every line of code is written with business results in mind.</p>
               <div className="hero-actions">
                 <Link href="/free-consultation" className="btn btn-primary btn-lg" id="webdev-hero-cta">Get a Free Website Proposal →</Link>
                 <Link href="/portfolio" className="btn btn-secondary btn-lg">View Web Portfolio</Link>
@@ -76,11 +84,23 @@ export default function WebDevelopmentPage() {
             <div className="hero-visual">
               <div className="mockup-glow mockup-glow-green" />
               <div className="mockup-glow mockup-glow-blue" />
-              <img
-                src="/images/retailedge-screenshot.png"
-                alt="RetailEdge eCommerce Dashboard"
-                className="hero-image"
-              />
+              
+              {/* Browser chrome frame */}
+              <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
+                <div className="hero-browser-bar">
+                  <span className="hero-browser-dot hero-browser-dot-red" />
+                  <span className="hero-browser-dot hero-browser-dot-yellow" />
+                  <span className="hero-browser-dot hero-browser-dot-green" />
+                  <div className="hero-browser-url">internativelabs.com/services/web-development</div>
+                </div>
+                <img
+                  src="/images/retailedge-screenshot.png"
+                  alt="RetailEdge eCommerce Dashboard"
+                  className="hero-image"
+                  style={{ width: '100%', height: 'auto', display: 'block', marginTop: 0 }}
+                />
+              </div>
+              
               <div className="hero-float-1">
                 <FloatingCard icon="⚡" value="300+" label="Websites Built" color="#72c192" />
               </div>

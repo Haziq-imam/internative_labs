@@ -47,13 +47,23 @@
    RESET & BASE
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   font-family: var(--font-body);
   color: var(--text-primary);
   background: var(--bg-white);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
+}
+main {
+  overflow-x: hidden;
+  width: 100%;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -67,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.2;
   font-weight: 700;
+  overflow-wrap: break-word;
 }
 h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
 h2 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
@@ -992,7 +1003,9 @@ p { line-height: 1.7; }
    PAGE HERO (inner pages)
    ============================================================ */
 .page-hero {
-  background: var(--gradient-hero);
+  background: radial-gradient(circle at 80% 20%, rgba(114, 193, 146, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(90, 192, 236, 0.08) 0%, transparent 50%),
+              var(--gradient-hero);
   padding: 110px 0 60px;
   position: relative;
   overflow: hidden;
@@ -1002,25 +1015,29 @@ p { line-height: 1.7; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(46,134,193,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46,134,193,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(114, 193, 146, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(114, 193, 146, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
+  pointer-events: none;
 }
 .page-hero-content { position: relative; z-index: 1; }
 .page-hero h1 {
   color: #fff;
   max-width: 700px;
   margin-bottom: 1.2rem;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
 }
 .page-hero p {
   color: rgba(255,255,255,0.7);
-  font-size: 1.1rem;
-  max-width: 600px;
+  font-size: 1.15rem;
+  max-width: 650px;
+  line-height: 1.8;
   margin-bottom: 2rem;
 }
 .breadcrumb {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   font-size: 0.82rem;
   color: rgba(255,255,255,0.45);
@@ -1519,10 +1536,7 @@ p { line-height: 1.7; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .footer { padding: 60px 0 0; }
 
-  /* Page hero */
-  .page-hero { padding: 90px 0 45px; }
-  .page-hero h1 { font-size: clamp(1.7rem, 5.5vw, 2.4rem); }
-  .page-hero p { font-size: 0.97rem; }
+
 
   /* Section headers */
   .section-header { margin-bottom: 2.5rem; }
@@ -1598,10 +1612,31 @@ p { line-height: 1.7; }
 
   /* Responsive grid utility — add className="responsive-grid" to any inline-styled grid */
   .responsive-grid {
+    display: grid !important;
     grid-template-columns: 1fr !important;
   }
   .responsive-grid-2col {
+    display: grid !important;
     grid-template-columns: 1fr !important;
+  }
+
+  /* Service page — stats bar */
+  .service-stats-bar {
+    gap: 1.5rem !important;
+    padding: 20px 16px !important;
+  }
+  .service-stats-bar > div {
+    min-width: 0 !important;
+    flex: 1 1 40% !important;
+  }
+  .service-stats-bar > div > div:first-child {
+    font-size: 1.3rem !important;
+    word-break: break-word !important;
+  }
+
+  /* Service page — pricing card inline padding */
+  .service-pricing-card {
+    padding: 2rem 1.5rem !important;
   }
 
   /* Footer CTA banner stacking */
@@ -1674,6 +1709,11 @@ p { line-height: 1.7; }
   h2 { font-size: 1.4rem; }
   h3 { font-size: 1.15rem; }
 
+  /* Service page stats bar — very small phones */
+  .service-stats-bar > div > div:first-child {
+    font-size: 1.1rem !important;
+  }
+
   /* Buttons — force text wrap and full width on small phones */
   .btn { white-space: normal; word-break: break-word; }
   .btn-lg { padding: 13px 20px; font-size: 0.92rem; }
@@ -1744,17 +1784,20 @@ p { line-height: 1.7; }
 /* --- Hero Split Layout --- */
 .hero-split {
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 3rem;
-  align-items: flex-start;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-split > * {
+  min-width: 0;
 }
 .hero-visual {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 0;
 }
 
 /* --- Mockup Wrapper --- */
@@ -1880,6 +1923,9 @@ p { line-height: 1.7; }
   grid-template-columns: 1.1fr 1fr;
   gap: 5rem; align-items: center;
 }
+.service-split > * {
+  min-width: 0;
+}
 .service-split-reverse { grid-template-columns: 1fr 1.1fr; }
 
 /* --- Portfolio Mockup Thumbnail --- */
@@ -1946,12 +1992,29 @@ p { line-height: 1.7; }
    RESPONSIVE — Visual Enhancements
    ============================================================ */
 @media (max-width: 1024px) {
-  .hero-split { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
   .hero-float-1, .hero-float-2, .hero-float-3 { display: none; }
   .service-split, .service-split-reverse { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-visual {
+    padding-top: 0;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .hero-image-frame { width: 100%; }
 }
 @media (max-width: 768px) {
   .hero-split { gap: 2rem; }
+  .hero-visual {
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero-image-frame { width: 100%; border-radius: 14px; }
+  .hero-image { border-radius: 0 0 14px 14px !important; }
   .mockup-wrapper:hover { transform: none; }
   .award-badge { padding: 10px 14px; }
   .award-badge-icon { width: 32px; height: 32px; }

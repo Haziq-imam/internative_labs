@@ -96,29 +96,35 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <section className="page-hero section-with-pattern" style={{ paddingTop: '85px', paddingBottom: '45px' }}>
-        <SectionPattern opacity={0.04} color="#72c192" />
-        <div className="container page-hero-content">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
-            {/* Left Column: Original Text & Breadcrumb styling */}
+      <section className="hero">
+        <div className="hero-bg-orbs">
+          <div className="orb orb-1" />
+          <div className="orb orb-2" />
+          <div className="orb orb-3" />
+        </div>
+        <div className="hero-grid-overlay" />
+        <div className="container hero-content">
+          <div className="breadcrumb" style={{ marginBottom: '1.5rem', position: 'relative', zIndex: 3 }}>
+            <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
+            <span style={{ color: 'rgba(255,255,255,0.7)' }}>Our Work</span>
+          </div>
+          <div className="hero-split">
+            {/* Left Column: Original Text & Badge styling */}
             <div>
-              <div className="breadcrumb">
-                <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
-                <span style={{ color: 'rgba(255,255,255,0.7)' }}>Our Work</span>
+              <div className="hero-badge">
+                <FiBriefcase size={13} style={{ marginRight: 6, display: 'inline-block', verticalAlign: 'middle' }} />
+                Case Portfolio
               </div>
-              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
-                <FiBriefcase size={16} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Case Portfolio
-              </span>
               <h1 style={{ marginBottom: '1.2rem' }}>Our Projects Speak Louder Than <span className="gradient-text">Words</span></h1>
-              <p style={{ marginBottom: 0 }}>
+              <p className="hero-sub" style={{ marginBottom: 0 }}>
                 Explore our curated showcase of custom web applications, mobile apps, local SEO campaigns, and branding projects built for real business outcomes.
               </p>
             </div>
 
             {/* Right Column: Browser mockup for portfolio.png */}
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="mockup-glow mockup-glow-green" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-              <div className="mockup-glow mockup-glow-blue" style={{ top: '60%', left: '45%', transform: 'translate(-50%, -50%)' }} />
+            <div className="hero-visual">
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
               
               {/* Browser chrome frame */}
               <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
