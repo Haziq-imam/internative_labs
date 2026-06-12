@@ -28,8 +28,8 @@ const caseStudies = [
 ];
 
 const plans = [
-  { name: 'LOCAL SEO', price: '$599', period: '/month', desc: 'Perfect for local businesses wanting to dominate their city.', features: ['10 Target Keywords', 'Google Business Profile', 'Citation Building', 'On-Page Optimization', 'Monthly Reporting', 'Competitor Analysis'], cta: 'Get Started', id: 'seo-local-cta' },
-  { name: 'GROWTH SEO', price: '$1,299', period: '/month', desc: 'For businesses ready to scale their organic traffic significantly.', features: ['30 Target Keywords', 'On-Page + Technical SEO', '4 Blog Posts/Month', 'Link Building', 'Rank Tracking', 'Dedicated Strategist'], cta: 'Get Started — Most Popular', id: 'seo-growth-cta', featured: true },
+  { name: 'LOCAL SEO', price: '$499', period: '/month', desc: 'Perfect for local businesses wanting to dominate their city.', features: ['10 Target Keywords', 'Google Business Profile', 'Citation Building', 'On-Page Optimization', 'Monthly Reporting', 'Competitor Analysis'], cta: 'Get Started', id: 'seo-local-cta' },
+  { name: 'GROWTH SEO', price: '$999', period: '/month', desc: 'For businesses ready to scale their organic traffic significantly.', features: ['30 Target Keywords', 'On-Page + Technical SEO', '4 Blog Posts/Month', 'Link Building', 'Rank Tracking', 'Dedicated Strategist'], cta: 'Get Started — Most Popular', id: 'seo-growth-cta', featured: true },
   { name: 'ENTERPRISE SEO', price: '$2,999', period: '/month', desc: 'Full SEO program for competitive markets and large sites.', features: ['Unlimited Keywords', '8+ Blog Posts/Month', 'Aggressive Link Building', 'Dedicated SEO Manager', 'Full Technical Audits', 'Priority Support'], cta: 'Contact Sales', id: 'seo-enterprise-cta' },
 ];
 

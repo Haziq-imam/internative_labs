@@ -635,7 +635,7 @@ p { line-height: 1.7; }
   margin-bottom: 0.6rem;
 }
 .service-card p {
-  color: var(--text-secondary);
+  color: #c4c7d1;
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 1.2rem;
@@ -673,7 +673,7 @@ p { line-height: 1.7; }
 }
 .testimonial-stars { color: #f6c90e; font-size: 1rem; margin-bottom: 1rem; }
 .testimonial-text {
-  color: var(--text-secondary);
+  color: #c4c7d1;
   font-size: 0.95rem;
   line-height: 1.7;
   font-style: italic;
@@ -694,7 +694,7 @@ p { line-height: 1.7; }
   flex-shrink: 0;
 }
 .testimonial-name { font-weight: 700; font-size: 0.92rem; color: var(--brand); }
-.testimonial-role { font-size: 0.8rem; color: var(--text-muted); }
+.testimonial-role { font-size: 0.8rem; color: #b0b3c1; }
 
 /* ============================================================
    CTA SECTION
@@ -1089,11 +1089,19 @@ p { line-height: 1.7; }
   padding: 5px 16px;
   border-radius: var(--radius-full);
 }
-.pricing-card.featured h3 { color: rgba(255,255,255,0.9); }
-.pricing-card.featured .pricing-price { color: #fff; }
-.pricing-card.featured .pricing-period { color: rgba(255,255,255,0.6); }
-.pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.7); }
-.pricing-card.featured li { color: rgba(255,255,255,0.85); }
+.pricing-card.featured h3 { color: #111215; }
+.pricing-card.featured .pricing-price {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #111215;
+  background-clip: unset;
+  color: #111215;
+}
+.pricing-card.featured .pricing-period { color: rgba(17,18,21,0.65); }
+.pricing-card.featured .pricing-desc { color: rgba(17,18,21,0.75); }
+.pricing-card.featured li { color: rgba(17,18,21,0.85); }
+.pricing-card.featured .pricing-tier { color: rgba(17,18,21,0.6); }
+.pricing-card.featured .pricing-features li::before { color: #111215; font-weight: 900; }
 .pricing-tier {
   font-size: 0.78rem;
   font-weight: 700;

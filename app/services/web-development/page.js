@@ -39,9 +39,9 @@ const stack = [
 ];
 
 const tiers = [
-  { name: 'Starter Website', price: '$1,500', period: 'one-time', desc: 'Landing page, 3-5 pages, mobile-responsive, contact form, basic SEO setup', features: ['3-5 Pages', 'Mobile-Responsive Design', 'Contact Form', 'Basic SEO Setup', 'Google Analytics', '30 Days Support'], cta: 'Get Starter Quote', id: 'web-starter-cta' },
-  { name: 'Business Website', price: '$3,500', period: 'one-time', desc: 'Full corporate site, 10-20 pages, CMS integration, advanced SEO, analytics setup', features: ['10-20 Pages', 'Custom CMS', 'Advanced SEO Setup', 'Analytics Dashboard', 'Performance Optimization', '3 Months Support'], cta: 'Get Business Quote', id: 'web-business-cta', featured: true },
-  { name: 'Custom Web App', price: '$8,000+', period: 'one-time', desc: 'Custom functionality, API integrations, user portals, scalable architecture', features: ['Custom Functionality', 'API Integrations', 'User Authentication', 'Scalable Architecture', 'Database Design', '6 Months Support'], cta: 'Request Custom Quote', id: 'web-custom-cta' },
+  { name: 'Startup Website', price: '$499', period: 'one-time', desc: 'Design, development, mobile-responsive, 5 pages contact form, basic SEO setup', features: ['5 Pages Design & Dev', 'Mobile-Responsive Layout', 'Contact Form Integration', 'Basic SEO Setup', 'Google Analytics Integration', '30 Days Support'], cta: 'Get Startup Quote', id: 'web-startup-cta' },
+  { name: 'Business Website', price: '$999', period: 'one-time', desc: 'Custom design, CMS integration, advanced SEO, analytics, 10-20 pages, 3 months support', features: ['10-20 Pages CMS Website', 'Custom Design & Layout', 'Advanced SEO & Metadata', 'Analytics Dashboard Setup', 'Performance Optimization', '3 Months Support'], cta: 'Get Business Quote', id: 'web-business-cta', featured: true },
+  { name: 'Professional Website', price: '$1,499', period: 'one-time', desc: 'Premium bespoke design, speed optimization, CMS, 20+ pages, custom animations', features: ['20+ Pages Bespoke Website', 'Premium Animations', 'Speed Optimization (Core Web Vitals)', 'Full CMS Controls', 'Advanced Integration Support', '6 Months Support'], cta: 'Get Professional Quote', id: 'web-professional-cta' },
 ];
 
 const faqs = [

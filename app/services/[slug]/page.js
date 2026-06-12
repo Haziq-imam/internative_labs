@@ -29,7 +29,7 @@ const serviceData = {
     mockup: '/images/retailedge-mockup.png',
     stats: [['150+','WordPress Sites Built'],['99.9%','Uptime Guaranteed'],['Mobile-First','Design'],['SEO-Ready','Out of the Box']],
     features: ['Custom theme development','Plugin development & integration','WooCommerce setup','Performance optimization','Security hardening','Multi-site network setup','Headless WordPress','Ongoing maintenance'],
-    price: 'From $1,500',
+    price: 'From $499',
     related: [{ title: 'Web Development', href: '/services/web-development', icon: FiGlobe }, { title: 'SEO Services', href: '/services/seo', icon: FiSearch }, { title: 'Web Hosting & Maintenance', href: '/services/hosting-maintenance', icon: FiMonitor }],
   },
   'custom-web-applications': {
@@ -41,7 +41,7 @@ const serviceData = {
     mockup: '/images/agency-dashboard.png',
     stats: [['50+','Apps Launched'],['99.9%','Uptime SLA'],['Agile','Development'],['AWS & GCP','Cloud Hosting']],
     features: ['Custom business logic','User authentication & roles','Third-party API integrations','Real-time data features','Admin dashboards','Payment processing','Scalable cloud architecture','Comprehensive documentation'],
-    price: 'From $8,000',
+    price: 'From $10,000',
     related: [{ title: 'Web Development', href: '/services/web-development', icon: FiGlobe }, { title: 'Mobile App Development', href: '/services/mobile-app-development', icon: FiSmartphone }, { title: 'UI/UX Design', href: '/services/ui-ux-design', icon: FiLayout }],
   },
   'ios-app-development': {
@@ -65,7 +65,7 @@ const serviceData = {
     mockup: '/images/android-app-dev.png',
     stats: [['80+','Android Apps Shipped'],['4.7★','Avg Play Store Rating'],['Kotlin','Native Development'],['Material Design 3','Modern UI']],
     features: ['Native Kotlin development','Material Design 3 UI','Google Play submission','Firebase integration','Google Pay support','Push notifications','Offline-first architecture','Tablet optimization'],
-    price: 'From $12,000',
+    price: 'From $8,000',
     related: [{ title: 'iOS App Development', href: '/services/ios-app-development', icon: FaApple }, { title: 'Cross-Platform Apps', href: '/services/cross-platform-apps', icon: FiZap }, { title: 'Mobile App Development', href: '/services/mobile-app-development', icon: FiSmartphone }],
   },
   'cross-platform-apps': {
@@ -77,7 +77,7 @@ const serviceData = {
     mockup: '/images/cross app .png',
     stats: [['React Native','& Flutter'],['40-60%','Cost Savings vs Native'],['Both Stores','iOS + Android'],['99.9%','Crash-Free Sessions']],
     features: ['React Native & Flutter options','Shared codebase for iOS + Android','Native performance & UI','Both App Stores submission','Third-party integrations','Push notifications','Offline support','Code reuse up to 90%'],
-    price: 'From $18,000',
+    price: 'From $15,000',
     related: [{ title: 'iOS App Development', href: '/services/ios-app-development', icon: FaApple }, { title: 'Android App Development', href: '/services/android-app-development', icon: FaAndroid }, { title: 'UI/UX Design', href: '/services/ui-ux-design', icon: FiLayout }],
   },
   'local-seo': {

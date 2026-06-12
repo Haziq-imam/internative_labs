@@ -24,9 +24,9 @@ const appTypes = [
 
 const techOptions = [
   { tech: 'Native iOS (Swift)', detail: 'Best performance, full Apple feature access, App Store-ready', price: 'From $15,000' },
-  { tech: 'Native Android (Kotlin)', detail: 'Maximum Android performance, Google Play-ready', price: 'From $12,000' },
-  { tech: 'React Native', detail: 'One codebase, iOS + Android, 90% cost savings vs native', price: 'From $18,000' },
-  { tech: 'Flutter', detail: "Google's framework for beautiful cross-platform UI", price: 'From $18,000' },
+  { tech: 'Native Android (Kotlin)', detail: 'Maximum Android performance, Google Play-ready', price: 'From $8,000' },
+  { tech: 'React Native', detail: 'One codebase, iOS + Android, 90% cost savings vs native', price: 'From $15,000' },
+  { tech: 'Flutter', detail: "Google's framework for beautiful cross-platform UI", price: 'From $15,000' },
   { tech: 'Backend/API', detail: 'Node.js, Firebase, AWS, custom REST & GraphQL APIs', price: 'Included' },
   { tech: 'Integrations', detail: 'Stripe, Twilio, Google Maps, Push Notifications, Analytics', price: 'Included' },
 ];
