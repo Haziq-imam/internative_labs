@@ -2,6 +2,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Preloader from '@/components/Preloader';
+import Script from 'next/script';
 
 export const metadata = {
   metadataBase: new URL('https://www.internativelabs.com'),
@@ -68,6 +69,20 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PMN6R0ES15"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PMN6R0ES15');
+          `}
+        </Script>
         <Preloader />
         <Navbar />
         <main>{children}</main>
