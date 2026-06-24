@@ -2027,3 +2027,192 @@ p { line-height: 1.7; }
   .award-badge { padding: 10px 14px; }
   .award-badge-icon { width: 32px; height: 32px; }
 }
+
+/* ============================================================
+   CUSTOM VISUAL ENHANCEMENTS & UTILITIES
+   ============================================================ */
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--brand),
+    var(--accent)
+  );
+  border-radius: var(--radius-full);
+}
+
+/* ===== MESH BACKGROUND ===== */
+.mesh-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.mesh-background::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(114, 193, 146, 0.18), /* --brand */
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(90, 192, 236, 0.18), /* --accent */
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(136, 194, 72, 0.18), /* --accent-light */
+      transparent 35%
+    );
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== GLASS CARD ===== */
+.glass-card {
+  background: rgba(24, 25, 29, 0.55); /* --bg-gray */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(114, 193, 146, 0.4); /* --brand */
+  box-shadow:
+    0 10px 30px rgba(114, 193, 146, 0.15),
+    0 0 50px rgba(90, 192, 236, 0.12);
+}
+
+/* ===== BUTTONS ===== */
+.primary-button {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 0 20px rgba(114, 193, 146, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(114, 193, 146, 0.5);
+  color: #ffffff;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 28px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(90, 192, 236, 0.25);
+  color: #ffffff;
+}
+
+/* ===== BORDER GLOW ===== */
+.glow-border {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+/* ===== HERO GLOW ===== */
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: var(--radius-full);
+  background: rgba(114, 193, 146, 0.15); /* --brand */
+  filter: blur(140px);
+  pointer-events: none;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(114, 193, 146, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(114, 193, 146, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(114, 193, 146, 0.2);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite;
+}
+
+/* ===== NAVBAR GLASS ===== */
+.navbar-glass {
+  background: rgba(17, 18, 21, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
