@@ -106,54 +106,45 @@ export default function CaseStudiesPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="page-hero" style={{ paddingBottom: '60px', overflow: 'hidden' }}>
-        <div className="container" style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '3rem',
-          alignItems: 'center',
-        }}>
-          {/* Left — text */}
-          <div className="page-hero-content" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="breadcrumb">
-              <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
-              <span style={{ color: 'rgba(255,255,255,0.7)' }}>Case Studies</span>
+      <section className="page-hero" style={{ paddingBottom: '60px' }}>
+        <div className="container page-hero-content">
+          <div className="hero-split">
+            {/* Left — text */}
+            <div>
+              <div className="breadcrumb">
+                <Link href="/">Home</Link><span className="breadcrumb-sep">›</span>
+                <span style={{ color: 'rgba(255,255,255,0.7)' }}>Case Studies</span>
+              </div>
+              <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                <FiTrendingUp size={14} /> Business Outcomes
+              </span>
+              <h1>Proven Results for <span className="gradient-text">Real Businesses</span></h1>
+              <p className="hero-sub" style={{ marginBottom: 0 }}>
+                We don't just deliver pages; we build revenue machines. Check out our client deep-dives across healthcare, legal, and retail spaces.
+              </p>
             </div>
-            <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-              <FiTrendingUp size={14} /> Business Outcomes
-            </span>
-            <h1>Proven Results for <span className="gradient-text">Real Businesses</span></h1>
-            <p>
-              We don't just deliver pages; we build revenue machines. Check out our client deep-dives across healthcare, legal, and retail spaces.
-            </p>
-          </div>
 
-          {/* Right — mockup image */}
-          <div style={{ position: 'relative' }}>
-            {/* Glow backdrop */}
-            <div style={{
-              position: 'absolute',
-              inset: '10% 5%',
-              background: 'radial-gradient(ellipse at 50% 60%, rgba(114,193,146,0.22) 0%, transparent 70%)',
-              filter: 'blur(36px)',
-              zIndex: 0,
-              pointerEvents: 'none',
-            }} />
-            <div style={{
-              position: 'relative',
-              zIndex: 1,
-              borderRadius: 20,
-              overflow: 'hidden',
-              boxShadow: '0 30px 90px rgba(0,0,0,0.65)',
-            }}>
-              <Image
-                src="/images/case-studies-hero.png"
-                alt="Three client project mockups – RetailEdge eCommerce, MedConnect Telehealth, and LawFirm Pro Partners – floating in 3D perspective with key result metrics"
-                width={680}
-                height={383}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-                priority
-              />
+            {/* Right — mockup image */}
+            <div className="hero-visual">
+              {/* Glow backdrop */}
+              <div className="mockup-glow mockup-glow-green" />
+              <div className="mockup-glow mockup-glow-blue" />
+              <div className="hero-image-frame" style={{ width: '100%', zIndex: 1, position: 'relative' }}>
+                <div className="hero-browser-bar">
+                  <span className="hero-browser-dot hero-browser-dot-red" />
+                  <span className="hero-browser-dot hero-browser-dot-yellow" />
+                  <span className="hero-browser-dot hero-browser-dot-green" />
+                  <div className="hero-browser-url">internativelabs.com/case-studies</div>
+                </div>
+                <Image
+                  src="/images/case-studies-hero.png"
+                  alt="Three client project mockups – RetailEdge eCommerce, MedConnect Telehealth, and LawFirm Pro Partners – floating in 3D perspective with key result metrics"
+                  width={680}
+                  height={383}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

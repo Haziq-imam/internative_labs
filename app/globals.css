@@ -616,7 +616,6 @@ p { line-height: 1.7; }
   box-shadow: 0 12px 40px rgba(0,0,0,0.5);
   transform: translateY(-6px);
   border-color: rgba(114,193,146,0.3);
-  background: #202329;
 }
 .service-icon {
   width: 56px;
@@ -656,7 +655,6 @@ p { line-height: 1.7; }
    ============================================================ */
 .testimonials { background: var(--bg-dark); }
 .testimonial-card {
-  background: #1c1e24;
   border-radius: var(--radius-lg);
   padding: 2rem;
   border: 1px solid rgba(255,255,255,0.07);
@@ -1057,7 +1055,6 @@ p { line-height: 1.7; }
   align-items: start;
 }
 .pricing-card {
-  background: #1c1e24;
   border: 1.5px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   padding: 2.5rem;
@@ -1188,7 +1185,6 @@ p { line-height: 1.7; }
    CONTACT FORM
    ============================================================ */
 .contact-form {
-  background: #1c1e24;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   padding: 2.5rem;
@@ -2011,7 +2007,7 @@ p { line-height: 1.7; }
     width: 100%;
     max-width: 680px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: visible;
   }
   .hero-image-frame { width: 100%; }
 }
@@ -2216,3 +2212,371 @@ p { line-height: 1.7; }
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
+
+/* ============================================================
+   FUTURISTIC REDESIGN OVERRIDES
+   ============================================================ */
+
+/* Force dark futuristic body background */
+body {
+  background-color: #0b0c0f !important;
+  position: relative;
+}
+
+/* Moving Mesh Background behind content */
+.moving-mesh-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(114, 193, 146, 0.035) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(90, 192, 236, 0.035) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(136, 194, 72, 0.015) 0%, transparent 50%);
+  z-index: -3;
+  pointer-events: none;
+  animation: meshMovement 25s ease-in-out infinite alternate;
+}
+
+@keyframes meshMovement {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(3%, -2%);
+  }
+  100% {
+    transform: scale(1) translate(-2%, 3%);
+  }
+}
+
+/* Global Lightfall Canvas Overlay */
+.global-lightfall-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Soft dark vignette above Lightfall for readability — no blur so animation shows through */
+.global-lightfall-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(11, 12, 15, 0.05) 0%, rgba(11, 12, 15, 0.55) 85%);
+  pointer-events: none;
+}
+
+/* Floating shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.1;
+  animation: floatShape 25s infinite ease-in-out alternate;
+}
+
+.shape-green-glow {
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: var(--brand);
+  animation-duration: 20s;
+}
+
+.shape-blue-glow {
+  bottom: 15%;
+  right: 5%;
+  width: 350px;
+  height: 350px;
+  background: var(--accent);
+  animation-duration: 28s;
+  animation-delay: -5s;
+}
+
+.shape-orb-3 {
+  top: 45%;
+  left: 55%;
+  width: 250px;
+  height: 250px;
+  background: var(--accent-light);
+  animation-duration: 22s;
+  animation-delay: -10s;
+}
+
+@keyframes floatShape {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(60px, -50px) scale(1.1) rotate(180deg);
+  }
+  100% {
+    transform: translate(-30px, 30px) scale(0.95) rotate(360deg);
+  }
+}
+
+/* --- Alternate section backgrounds --- */
+.hero {
+  background: transparent !important;
+}
+.trust-strip {
+  background: rgba(24, 25, 29, 0.28) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.section:nth-of-type(even), 
+section:nth-of-type(even) {
+  background: rgba(24, 25, 29, 0.28) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.section:nth-of-type(odd),
+section:nth-of-type(odd) {
+  background: transparent !important;
+  border: none !important;
+}
+.cta-section {
+  background: transparent !important;
+}
+
+/* ===== CARD GLASSMORPHISM & HOVER GLOW ===== */
+.card, .service-card, .testimonial-card, .process-step, .pricing-card, .value-card {
+  position: relative;
+  background: rgba(24, 25, 29, 0.38) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 28px !important; /* Large border radius 24px-32px */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease !important;
+  overflow: hidden;
+}
+
+/* Subtle float effect and premium shadow on hover */
+.card:hover, .service-card:hover, .testimonial-card:hover, .process-step:hover, .pricing-card:hover, .value-card:hover {
+  transform: translateY(-8px) scale(1.015) !important;
+  border-color: rgba(114, 193, 146, 0.2) !important;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(114, 193, 146, 0.06) !important;
+}
+
+/* Dynamic BorderGlow effect using coordinates tracked by FuturisticOverlay */
+.card::before, .service-card::before, .testimonial-card::before, .process-step::before, .pricing-card::before, .value-card::before, .hero-image-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.card:hover::before, .service-card:hover::before, .testimonial-card:hover::before, .process-step:hover::before, .pricing-card:hover::before, .value-card:hover::before, .hero-image-frame:hover::before {
+  opacity: 1;
+}
+
+/* Override active state glows for featured pricing card */
+.pricing-card.featured {
+  background: linear-gradient(135deg, rgba(114, 193, 146, 0.1), rgba(90, 192, 236, 0.1)) !important;
+  border-color: rgba(114, 193, 146, 0.4) !important;
+}
+
+/* ===== NAVBAR GLASS & ACTIVE STATE ===== */
+.navbar {
+  background: rgba(11, 12, 15, 0.45) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(11, 12, 15, 0.78) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth hover underline for navbar link */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Glow effect on active item */
+.nav-link.active {
+  color: #fff !important;
+  text-shadow: 
+    0 0 10px rgba(114, 193, 146, 0.4),
+    0 0 20px rgba(90, 192, 236, 0.2);
+}
+
+.dropdown-item.active {
+  background: rgba(114, 193, 146, 0.15) !important;
+  color: #fff !important;
+}
+
+
+/* ===== ANIMATION SYSTEM ===== */
+
+/* Fade Up initialized states */
+.fade-up-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.fade-up-init.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger transition delay utility for grids (up to 8 children) */
+.grid-2 > .card:nth-child(1), .grid-3 > .card:nth-child(1), .grid-4 > .card:nth-child(1),
+.grid-2 > .service-card:nth-child(1), .grid-3 > .service-card:nth-child(1), .services-grid > .service-card:nth-child(1),
+.grid-2 > .testimonial-card:nth-child(1), .grid-3 > .testimonial-card:nth-child(1),
+.process-steps > .process-step:nth-child(1) { transition-delay: 0.05s; }
+
+.grid-2 > .card:nth-child(2), .grid-3 > .card:nth-child(2), .grid-4 > .card:nth-child(2),
+.grid-2 > .service-card:nth-child(2), .grid-3 > .service-card:nth-child(2), .services-grid > .service-card:nth-child(2),
+.grid-2 > .testimonial-card:nth-child(2), .grid-3 > .testimonial-card:nth-child(2),
+.process-steps > .process-step:nth-child(2) { transition-delay: 0.15s; }
+
+.grid-2 > .card:nth-child(3), .grid-3 > .card:nth-child(3), .grid-4 > .card:nth-child(3),
+.grid-2 > .service-card:nth-child(3), .grid-3 > .service-card:nth-child(3), .services-grid > .service-card:nth-child(3),
+.grid-2 > .testimonial-card:nth-child(3), .grid-3 > .testimonial-card:nth-child(3),
+.process-steps > .process-step:nth-child(3) { transition-delay: 0.25s; }
+
+.grid-2 > .card:nth-child(4), .grid-3 > .card:nth-child(4), .grid-4 > .card:nth-child(4),
+.process-steps > .process-step:nth-child(4) { transition-delay: 0.35s; }
+
+.process-steps > .process-step:nth-child(5) { transition-delay: 0.45s; }
+
+/* ============================================================
+   RESPONSIVE CARD LAYOUTS (Overflow & Grid Fixes)
+   ============================================================ */
+.featured-success-card {
+  background: var(--gradient-brand);
+  border-radius: 24px;
+  padding: 4rem;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  box-shadow: var(--shadow-brand);
+}
+
+.featured-success-card .stat-box {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.featured-success-card .stat-box .stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  font-weight: 900;
+  color: #7ec8e3;
+  line-height: 1;
+}
+
+.newsletter-card {
+  background: var(--dark);
+  color: #fff;
+  border-radius: 28px;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.faq-support-card {
+  background: linear-gradient(135deg, var(--dark-2) 0%, var(--brand-dark) 100%);
+  border: 1.5px solid rgba(114, 193, 146, 0.18);
+  border-radius: 24px;
+  padding: 4rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: var(--shadow-brand);
+}
+
+@media (max-width: 768px) {
+  .featured-success-card {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1.25rem !important;
+    gap: 2rem !important;
+  }
+  .featured-success-card .stat-box {
+    padding: 1.75rem 1rem !important;
+  }
+  
+  .newsletter-card {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1.25rem !important;
+    gap: 2rem !important;
+  }
+
+  .faq-support-card {
+    padding: 2rem 1.25rem !important;
+  }
+}
+

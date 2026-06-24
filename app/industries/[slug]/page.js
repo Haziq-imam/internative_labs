@@ -281,7 +281,7 @@ export default function IndustryPage({ params }) {
       {/* Case Study Snippet */}
       <section className="section" style={{ background: 'var(--bg-gray)' }}>
         <div className="container">
-          <div className="responsive-grid" style={{ background: 'var(--gradient-brand)', borderRadius: 24, padding: '4rem', color: '#fff', display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '3rem', alignItems: 'center', boxShadow: 'var(--shadow-brand)' }}>
+          <div className="featured-success-card">
             <div>
               <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
                 Featured Success Story
@@ -294,8 +294,8 @@ export default function IndustryPage({ params }) {
                 Read Full Case Study →
               </Link>
             </div>
-            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.08)', borderRadius: 20, padding: '2.5rem', border: '1px solid rgba(255,255,255,0.15)' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: '4.5rem', fontWeight: 900, color: '#7ec8e3', lineHeight: 1 }}>
+            <div className="stat-box">
+              <div className="stat-num">
                 {data.caseStudy.stat}
               </div>
               <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#fff', marginTop: 10 }}>

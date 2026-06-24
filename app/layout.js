@@ -2,6 +2,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Preloader from '@/components/Preloader';
+import FuturisticOverlay from '@/components/FuturisticOverlay';
 import Script from 'next/script';
 
 export const metadata = {
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-PMN6R0ES15');
           `}
         </Script>
+        <FuturisticOverlay />
         <Preloader />
         <Navbar />
         <main>{children}</main>

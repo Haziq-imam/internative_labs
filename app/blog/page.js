@@ -247,7 +247,7 @@ export default function BlogPage() {
       {/* Newsletter */}
       <section className="section" style={{ background: 'var(--bg-gray)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="container">
-          <div className="responsive-grid" style={{ background: 'var(--dark)', color: '#fff', borderRadius: 28, padding: '4rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', boxShadow: 'var(--shadow-xl)' }}>
+          <div className="newsletter-card">
             <div>
               <span className="section-label" style={{ color: '#7ec8e3', borderColor: 'rgba(125,200,227,0.3)', background: 'rgba(125,200,227,0.1)' }}>
                 Weekly Newsletter

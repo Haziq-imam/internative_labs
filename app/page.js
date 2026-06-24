@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fi';
 import FloatingCard from '@/components/FloatingCard';
 import SectionPattern from '@/components/SectionPattern';
+import StatCounter from '@/components/StatCounter';
 
 export const metadata = {
   title: 'Digital Agency | Web Dev, Mobile Apps & SEO — InterNative Labs',
@@ -194,7 +195,9 @@ export default function HomePage() {
                   { num: '15+', label: 'Countries Served' },
                 ].map(s => (
                   <div key={s.label}>
-                    <div className="hero-stat-num">{s.num}</div>
+                    <div className="hero-stat-num">
+                      <StatCounter value={s.num} />
+                    </div>
                     <div className="hero-stat-label">{s.label}</div>
                   </div>
                 ))}
@@ -331,14 +334,13 @@ export default function HomePage() {
               { num: '187%', label: 'Avg Traffic Increase', sub: 'For SEO clients' },
               { num: '4.9★', label: 'Google Rating', sub: 'From verified reviews' },
             ].map(s => (
-              <div key={s.label} style={{
+              <div key={s.label} className="card" style={{
                 textAlign: 'center', padding: '2rem 1.5rem',
-                background: 'rgba(114,193,146,0.04)',
-                borderRadius: 16,
-                border: '1px solid rgba(114,193,146,0.15)',
                 transition: 'border-color 0.3s',
               }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 800, background: 'linear-gradient(to right, #88c248, #5ac0ec)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, marginBottom: 8 }}>{s.num}</div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 800, background: 'linear-gradient(to right, #88c248, #5ac0ec)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, marginBottom: 8 }}>
+                  <StatCounter value={s.num} />
+                </div>
                 <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.95rem', marginBottom: 4 }}>{s.label}</div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem' }}>{s.sub}</div>
               </div>
@@ -414,7 +416,7 @@ export default function HomePage() {
           </div>
           <div className="process-steps">
             {[
-              { n: '01', title: 'Discovery & Strategy', desc: 'We analyze your business, competition, and target audience to define project goals.' },
+              { n: '01', title: 'Discovery & Strategy', desc: 'We analyze your business, competition, and target audience to define goals.' },
               { n: '02', title: 'UI/UX Design', desc: 'Wireframes and high-fidelity mockups approved before writing a single line of code.' },
               { n: '03', title: 'Development', desc: 'Agile sprints with weekly demos. Clean, documented code that scales.' },
               { n: '04', title: 'Testing & QA', desc: 'Cross-browser, cross-device testing, security checks, and accessibility compliance.' },

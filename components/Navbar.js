@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   FiGlobe, FiShoppingCart, FiSmartphone, FiSearch,
   FiSettings, FiTrendingUp, FiMapPin, FiRadio, FiMessageSquare,
@@ -30,12 +31,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const isActive = (href) => pathname === href || (href !== '/' && pathname?.startsWith(href));
 
   return (
     <>
@@ -47,14 +51,14 @@ export default function Navbar() {
 
           <div className="nav-links">
             <div className="nav-dropdown">
-              <button className="nav-link" style={{ background: 'none', color: 'rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <button className={`nav-link${pathname?.startsWith('/services') ? ' active' : ''}`} style={{ background: 'none', color: 'rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 Services <FiChevronDown size={14} />
               </button>
               <div className="nav-dropdown-menu" style={{ minWidth: '320px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px' }}>
                 {services.map(s => {
                   const Icon = s.icon;
                   return (
-                    <Link key={s.href} href={s.href} className="dropdown-item">
+                    <Link key={s.href} href={s.href} className={`dropdown-item${isActive(s.href) ? ' active' : ''}`}>
                       <span className="dropdown-icon"><Icon size={14} /></span>
                       <span>{s.label}</span>
                     </Link>
@@ -62,11 +66,11 @@ export default function Navbar() {
                 })}
               </div>
             </div>
-            <Link href="/portfolio" className="nav-link">Portfolio</Link>
-            <Link href="/case-studies" className="nav-link">Case Studies</Link>
-            <Link href="/about" className="nav-link">About</Link>
-            <Link href="/pricing" className="nav-link">Pricing</Link>
-            <Link href="/blog" className="nav-link">Blog</Link>
+            <Link href="/portfolio" className={`nav-link${isActive('/portfolio') ? ' active' : ''}`}>Portfolio</Link>
+            <Link href="/case-studies" className={`nav-link${isActive('/case-studies') ? ' active' : ''}`}>Case Studies</Link>
+            <Link href="/about" className={`nav-link${isActive('/about') ? ' active' : ''}`}>About</Link>
+            <Link href="/pricing" className={`nav-link${isActive('/pricing') ? ' active' : ''}`}>Pricing</Link>
+            <Link href="/blog" className={`nav-link${isActive('/blog') ? ' active' : ''}`}>Blog</Link>
             <Link href="/free-consultation" className="btn btn-primary btn-sm nav-cta">
               Free Consultation
             </Link>
@@ -119,7 +123,7 @@ export default function Navbar() {
                 { href: '/blog', label: 'Blog' },
                 { href: '/contact', label: 'Contact' },
               ].map(l => (
-                <Link key={l.href} href={l.href} className="nav-link" onClick={() => setMenuOpen(false)}>
+                <Link key={l.href} href={l.href} className={`nav-link${isActive(l.href) ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>
                   {l.label}
                 </Link>
               ))}
