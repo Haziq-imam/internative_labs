@@ -1218,7 +1218,8 @@ p { line-height: 1.7; }
   background: rgba(255,255,255,0.06);
 }
 .form-textarea { resize: vertical; min-height: 140px; }
-.form-select { appearance: none; cursor: pointer; color-scheme: dark; }
+.form-select { appearance: none; cursor: pointer; color-scheme: dark; background-color: #111215; }
+.form-select option { background-color: #111215; color: var(--text-primary); }
 
 /* ============================================================
    TRUST BADGES
