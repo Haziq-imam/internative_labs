@@ -191,8 +191,8 @@ export default function FreeConsultationPage() {
                   <a href="mailto:info@internativelabs.com" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <FiMail size={14} /> info@internativelabs.com
                   </a>
-                  <a href="tel:+18889085040" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <FiPhone size={14} /> +1 (888) 908-5040
+                  <a href="tel:+14044651869" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <FiPhone size={14} /> +1 (404) 465-1869
                   </a>
                 </div>
               </div>

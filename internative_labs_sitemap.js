@@ -1100,7 +1100,7 @@ const doc = new Document({
       h2('CONTACT INFORMATION'),
       new Paragraph({ spacing: { before: 80 } }),
       body('[EMAIL] Email: info@internativelabs.com'),
-      body('[PHONE] Phone: +1 (888) 908-5040'),
+      body('[PHONE] Phone: +1 (404) 465-1869'),
       body('[ADDRESS] Address: 811 Mason Grove Pkwy, Lawrenceville, GA 30043, USA'),
       body('[HOURS] Business Hours: Monday - Friday, 9:00 AM - 6:00 PM EST'),
       new Paragraph({ spacing: { before: 80 } }),
@@ -1135,7 +1135,7 @@ const doc = new Document({
 
       h2('Company Info'),
       body('InterNative Labs — Your trusted digital partner for web development, mobile apps, SEO, and digital marketing.'),
-      body('811 Mason Grove Pkwy, Lawrenceville, GA 30043 | +1 (888) 908-5040 | info@internativelabs.com'),
+      body('811 Mason Grove Pkwy, Lawrenceville, GA 30043 | +1 (404) 465-1869 | info@internativelabs.com'),
 
       new Paragraph({ spacing: { before: 120 } }),
       h2('Footer Navigation'),

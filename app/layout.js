@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Preloader from '@/components/Preloader';
 import FuturisticOverlay from '@/components/FuturisticOverlay';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import Script from 'next/script';
 
 export const metadata = {
@@ -50,7 +51,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/logo-header.png" />
         <link rel="shortcut icon" href="/logo-header.png" />
@@ -89,6 +90,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

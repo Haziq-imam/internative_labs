@@ -189,7 +189,7 @@ export default function IndustryPage({ params }) {
     'provider': {
       '@type': 'LocalBusiness',
       'name': 'InterNative Labs',
-      'telephone': '+18889085040',
+      'telephone': '+14044651869',
       'url': 'https://www.internativelabs.com'
     },
     'description': data.meta

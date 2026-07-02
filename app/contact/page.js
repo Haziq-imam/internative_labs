@@ -37,7 +37,7 @@ export default function ContactPage() {
               <h2 style={{ color: 'var(--brand)', marginBottom: '2rem' }}>Contact Information</h2>
               {[
                 { icon: FiMail, label: 'Email', value: 'info@internativelabs.com', href: 'mailto:info@internativelabs.com' },
-                { icon: FiPhone, label: 'Phone', value: '+1 (888) 908-5040', href: 'tel:+18889085040' },
+                { icon: FiPhone, label: 'Phone', value: '+1 (404) 465-1869', href: 'tel:+14044651869' },
                 { icon: FiMapPin, label: 'USA Office', value: '811 Mason Grove Pkwy, Lawrenceville, GA 30043, USA', href: null },
                 { icon: FiMapPin, label: 'Canada Office', value: '5005 Dalhousie Dr NW Unit 175, Calgary, AB T3A 5R8, Canada', href: null },
                 { icon: FiClock, label: 'Hours', value: 'Monday – Friday, 9:00 AM – 6:00 PM EST', href: null },

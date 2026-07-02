@@ -80,7 +80,7 @@ export default function Footer() {
               </div>
               <div className="footer-contact-item">
                 <FiPhone size={14} style={{ color: 'var(--brand)', flexShrink: 0 }} />
-                <a href="tel:+18889085040">+1 (888) 908-5040</a>
+                <a href="tel:+14044651869">+1 (404) 465-1869</a>
               </div>
               <div className="footer-contact-item">
                 <FiMapPin size={14} style={{ color: 'var(--brand)', flexShrink: 0 }} />

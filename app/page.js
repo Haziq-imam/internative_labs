@@ -23,7 +23,7 @@ const jsonLd = {
   '@type': 'LocalBusiness',
   name: 'InterNative Labs',
   url: 'https://www.internativelabs.com',
-  telephone: '+18889085040',
+  telephone: '+14044651869',
   email: 'info@internativelabs.com',
   address: [
     {
